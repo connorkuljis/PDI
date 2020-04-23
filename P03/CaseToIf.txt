@@ -1,0 +1,30 @@
+// FILE:     CaseToIf.txt
+// AUTHOR:   Connor Kuljis
+// USERNAME: 19459138
+// UNIT: PDI
+// PURPOSE: Converting to an IF statement
+// REFERENCE: 
+// COMMENTS: 
+// REQUIRES:
+// LAST MOD: 24th March 2020
+
+PROGRAM CaseToIf
+MAIN:
+    OUTPUT "Please enter the directon you would like to go in (L)eft, (R)ight, (U)p, (D)own"
+    INPUT direction (Character)
+
+    IF (direction IS 'L' OR 'l') THEN
+        OUTPUT "Going west"
+    ELSE IF (direction IS 'R' OR 'r') THEN
+        OUTPUT "Going east"
+    ELSE IF (direction IS 'U' or 'u') THEN
+        OUTPUT "Going up"
+    ELSE IF (direction IS 'D' or 'd') THEN
+        OUTPUT "Going down"
+    ELSE
+        OUTPUT "Going nowhere"
+    END IF
+END
+
+ 
+  

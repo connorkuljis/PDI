@@ -1,0 +1,30 @@
+// FILE:     CelsToFaren
+// AUTHOR:   Connor Kuljis
+// USERNAME: 19459138
+// UNIT: PDI
+// PURPOSE: Allows user to select which temperature unit to convert to
+// REFERENCE:
+// COMMENTS:
+// REQUIRES:
+// LAST MOD: 24th March 2020
+
+PROGRAM CelsToFaren
+    MAIN:
+        OUTPUT "What Temperature are you working with?"
+        INPUT choice (Character)
+
+        IF (choice = 'C' OR 'c') THEN
+            INPUT tempInCels (Real)
+
+            farenheit := ((tempInCels * 9.0) / 5.0) + 32.0
+        
+            OUTPUT "Temp in farenheit: " farenheit
+        ELSE IF (choice = 'F' OR 'f') THEN
+            INPUT tempInFaren (Real)
+         
+            celcius := (tempInFaren - 32) * 5/9
+  
+            OUTPUT "Temp in celcius: " celcius
+        END IF
+    END MAIN
+END

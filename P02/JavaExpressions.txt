@@ -1,0 +1,42 @@
+// JavaExpressions.txt
+
+String marvel = "Avengers";
+double x = 314.219, y = 240.213;
+int mcu = 1999, prime = 614, cap = 2;
+
+(a)
+(int)x - mcu / 100
+--> 314 - 1999 / 100 = 
+--> -1685 / 100 
+--> -16
+
+(b)
+"Avengers" + 614
+--> incompatible types 
+
+(c)
+(double)((prime - (int) y)/2)
+sub --> (double)((614 - (int) 240.213)/2)
+--> double((614 - 240)/2)
+--> double(374/2)
+--> 187
+
+(d)
+(1999 / 100 * 2) * 2 - 614 / 10
+--> (1999 / 200)
+--> 9.995 * 2 - 614 / 10
+--> 19.99 - 614 / 10
+--> 19.99 - 61.4
+--> -41.41
+
+(e)
+(mcu % 10 != 0 && (cap > 10 || y > 100))
+(1999 % 10 != 0 && (2 > 10 || 240.213 > 100))
+(9 != 0 && ( 2 > 0 || 240.213 > 100))
+--> True
+9 does not equal 0 and (2 is greater than 0 OR 240/213 is greater than 100)
+
+
+
+
+

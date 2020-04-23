@@ -1,0 +1,28 @@
+Program: Arrays
+Design Date:
+Test Date: 6th April
+
+Total Tests: 3
+Tests Passed: 3
+Tests Failed: 0
+
+Note: `
+     
+
+Please fill in the ? with your own calculations/predictions
+
+TEST RESULTS:
+ID: Category:           Test Data:                  Expected Result:            Actual Result:              Pass(P)/Fail(F)
+____________________________________________________________________________________________________________________________
+1   Valid               20, 5                       random number between 1 and 15   11                      P
+                       
+____________________________________________________________________________________________________________________________
+2   Edge Case           5, 6                        Not found : 6                Not found : 6               P
+                    
+____________________________________________________________________________________________________________________________
+3   Invalid             A, 5                        java exception              inputmismatch exception      P 
+    (incorrect data)    
+____________________________________________________________________________________________________________________________
+
+
+

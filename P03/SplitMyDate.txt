@@ -1,0 +1,50 @@
+START SplitMyDate
+    MAIN:
+        OUTPUT "Please enter date as a full integer"
+        INPUT date (integer)
+
+        day := date DIV 1000000
+        roundedDay = day (convert to integer)
+
+        month := (day MOD roundedDay) * 100
+        roundedMonth := month (convert to integer)
+
+        year := month MOD roundedMonth * 10000
+        roundedyear = year (convert to integer)
+
+        CASE roundedMonth
+            1: 3: 5: 7: 8: 10: 12:
+                IF (0 < roundedDay <= 31) THEN
+                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                ELSE
+                    OUTPUT "Invalid"
+                ENDIF
+            4: 6: 9: 11
+                IF (0 < roundedDay <= 30) THEN
+                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                ELSE
+                    OUTPUT "Invalid"
+                ENDIF
+            2:
+                IF (roundedYear MOD 4 does not equal 0) THEN
+                    IF (0 < roundedDay <= 29) THEN
+                        OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                    ELSE
+                        OUTPUT "Invalid"
+                    ENDIF
+                ELSE
+                    IF (0 < roundedDay <= 29) THEN
+                        OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear "It is a leap year"
+                    ELSE
+                        OUTPUT "Invalid"
+                    ENDIF
+                ENDIF
+            DEFAULT:
+                OUTPUT "Invalid"
+        ENDCASE
+ 
+
+               
+
+        
+        

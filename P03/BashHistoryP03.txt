@@ -1,0 +1,500 @@
+   55  vim CharConverter.java
+   56  javac CharConverter.java 
+   57  java CharConverter 
+   58  java CharConverter 
+   59  vim CharConverter.java
+   60  javac CharConverter.java 
+   61  java CharConverter 
+   62  ls
+   63  vim Menu.txt 
+   64  cat CelsToFaren.txt 
+   65  vim Menu.txt 
+   66  vim CelsToFaren.txt
+   67  vim CharConverter.txt
+   68  vim Menu.txt 
+   69  cd ../P01
+   70  ls
+   71  vim Calculator.txt
+   72  cat Calculator.txt 
+   73  cd ../P03
+   74  ls
+   75  vim Menu.txt 
+   76  clear
+   77  exit
+   78  ls
+   79  cd Documents/PDI
+   80  ls
+   81  cd P03
+   82  ls
+   83  ls
+   84  vim CharConverter.txt
+   85  tmux
+   86  cd Documents/
+   87  ls
+   88  cd PDI/
+   89  ls
+   90  cd P03
+   91  ls
+   92  vim Menu.txt 
+   93  tmux ls
+   94  tmux -a 2
+   95  tmux
+   96  cd Documents/PDI/P03
+   97  ls
+   98  vim Menu.txt 
+   99  ls
+  100  cd Documents/PDI/P03
+  101  B
+  102  ls
+  103  vim Menu.java 
+  104  vim Menu.java 
+  105  javac Menu.java 
+  106  vim Menu.java 
+  107  javac Menu.java 
+  108  vim Menu.java 
+  109  javac Menu.java 
+  110  vim Menu.java 
+  111  javac Menu.java 
+  112  vim Menu.java 
+  113  javac Menu.java 
+  114  vim Menu.java 
+  115  javac Menu.java 
+  116  vim Menu.java 
+  117  javac Menu.java 
+  118  java Menu 
+  119  java Menu 
+  120  java Menu 
+  121  java Menu 
+  122  vim Menu.java 
+  123  javac Menu.java 
+  124  java Menu 
+  125  java Menu 
+  126  vim Menu.java 
+  127  javac Menu.java 
+  128  java Menu 
+  129  java Menu 
+  130  ls
+  131  clear
+  132  ls -l
+  133  vim CaseToIf.txt
+  134  vim Menu.txt 
+  135  vim BooleanExpressions.txt
+  136  vim BooleanExpressions.java
+  137  javac BooleanExpressions.java 
+  138  vim BooleanExpressions.java
+  139  javac BooleanExpressions.java 
+  140  vim BooleanExpressions.java
+  141  javac BooleanExpressions.java 
+  142  vim BooleanExpressions.java
+  143  javac BooleanExpressions.java 
+  144  vim BooleanExpressions.java
+  145  javac BooleanExpressions.java 
+  146  java BooleanExpressions 
+  147  vim BooleanExpressions.java
+  148  java BooleanExpressions 
+  149  javac BooleanExpressions.java 
+  150  java BooleanExpressions 
+  151  vim BooleanExpressions.java
+  152  javac BooleanExpressions.java 
+  153  java BooleanExpressions 
+  154  vim BooleanExpressions.java
+  155  javac BooleanExpressions.java 
+  156  java BooleanExpressions 
+  157  vim BooleanExpressions.java
+  158  exit
+  159  ls
+  160  cd Documents/PDI/P03
+  161  ls
+  162  vim CharConverter.java 
+  163  cat CharConverter.java 
+  164  exit
+  165  cd Documents/PDI/P03
+  166  ls
+  167  vim Menu.java 
+  168  javac Menu.
+  169  javac Menu.java 
+  170  java Menu
+  171  vim Menu.java 
+  172  tmux ls
+  173  tmux
+  174  exit
+  175  exit
+  176  cd Documents/PDI/P03
+  177  ls
+  178  vim FixThis.java 
+  179  exir
+  180  exit
+  181  cd Documents/
+  182  cd PDI/P03
+  183  ls
+  184  javac FixThis.java 
+  185  javac FixThis.java 
+  186  javac FixThis.java 
+  187  exit
+  188  cd Documents/PDI/P03
+  189  ls
+  190  vim FixThis.java 
+  191  javac FixThis.java 
+  192  vim FixThis.java 
+  193  javac FixThis.java 
+  194  tmux
+  195  tmux
+  196  exit
+  197  cd cd Documents/PDI/P03
+  198  ls
+  199  cd Documents/
+  200  ls
+  201  cd PDI/
+  202  cd P03
+  203  ls
+  204  vim Menu.java
+  205  javac Menu.java 
+  206  java Menu 
+  207  java Menu 
+  208  exit
+  209  cd cd Documents/PDI/P03
+  210  cd Documents/PDI/P03
+  211  l
+  212  ls
+  213  vim CaseToIf.txt 
+  214  vim Menu.txt
+  215  vim BooleanExpressions.txt 
+  216  tmux
+  217  PDI
+  218  cd P03
+  219  ls
+  220  vim BooleanExpressions.txt 
+  221  ls
+  222  cd Documents/PDI/P03
+  223  ls
+  224  vim CharConverter.java 
+  225  ls
+  226  cat CharConverter.txt 
+  227  s
+  228  ls
+  229  vim Menu.java
+  230  ls
+  231  cd Documents/
+  232  ls
+  233  cd PDI/
+  234  l
+  235  sl
+  236  ls
+  237  cd P03
+  238  ls
+  239  vim CharConverter.txt 
+  240  vim Menu.txt 
+  241  ls
+  242  PDI
+  243  ls
+  244  cd P03
+  245  ls
+  246  vim BooleanExpressions.java 
+  247  ls
+  248  cd Documents/PDI/
+  249  cd P03
+  250  ls
+  251  vim Menu.txt 
+  252  vim CelsToFaren.java
+  253  cat CelsToFaren.java 
+  254  tmux
+  255  tmux new
+  256  tmux ls
+  257  w
+  258  clear
+  259  cat CelsToFaren.java 
+  260  tmux -s 
+  261  tmux new -s foo
+  262  javac Menu.java 
+  263  PDI
+  264  ls
+  265  cd P03
+  266  ls -lah
+  267  ls -l
+  268  vim BooleanExpressions.ja
+  269  vim BooleanExpressions.java 
+  270  javac BooleanExpressions.java 
+  271  vim BooleanExpressions.java 
+  272  javac BooleanExpressions.java 
+  273  vim BooleanExpressions.java 
+  274  javac BooleanExpressions.java 
+  275  vim BooleanExpressions.java 
+  276  javac BooleanExpressions.java 
+  277  vim BooleanExpressions.java 
+  278  javac BooleanExpressions.java 
+  279  java BooleanExpressions 
+  280  vim BooleanExpressions.java 
+  281  java BooleanExpressions 
+  282  javac BooleanExpressions.java 
+  283  vim BooleanExpressions.java 
+  284  javac BooleanExpressions.java 
+  285  java BooleanExpressions 
+  286  vim BooleanExpressions.java 
+  287  javac BooleanExpressions.java 
+  288  java BooleanExpressions 
+  289  vim BooleanExpressions.java 
+  290  javac BooleanExpressions.java 
+  291  vim BooleanExpressions.java 
+  292  javac BooleanExpressions.java 
+  293  java BooleanExpressions 
+  294  vim BooleanExpressions.java 
+  295  javac BooleanExpressions.java 
+  296  vim BooleanExpressions.java 
+  297  javac BooleanExpressions.java 
+  298  java BooleanExpressions 
+  299  vim BooleanExpressions.java 
+  300  javac BooleanExpressions.java 
+  301  vim BooleanExpressions.java 
+  302  javac BooleanExpressions.java 
+  303  vim BooleanExpressions.java 
+  304  javac BooleanExpressions.java 
+  305  vim BooleanExpressions.java 
+  306  javac BooleanExpressions.java 
+  307  vim BooleanExpressions.java 
+  308  javac BooleanExpressions.java 
+  309  vim BooleanExpressions.java 
+  310  javac BooleanExpressions.java 
+  311  java BooleanExpressions 
+  312  vim BooleanExpressions.java 
+  313  tmux
+  314  PDI
+  315  ls
+  316  tree
+  317  cd P03
+  318  ls
+  319  vim BooleanExpressions.txt
+  320  exit
+  321  exit
+  322  PDI
+  323  ls
+  324  cd P03
+  325  javac FixThis.java 
+  326  javac FixThis.java 
+  327  javac FixThis.java 
+  328  javac FixThis.java 
+  329  java FixThis 
+  330  javac FixThis.java 
+  331  java FixThis 
+  332  javac FixThis.java 
+  333  java FixThis 
+  334  javac FixThis.java 
+  335  java FixThis 
+  336  javac FixThis.java 
+  337  javac FixThis.java 
+  338  java FixThis 
+  339  javac FixThis.java 
+  340  java FixThis 
+  341  javac FixThis.java 
+  342  java FixThis 
+  343  javac FixThis.java 
+  344  java FixThis 
+  345  javac FixThis.java 
+  346  javac FixThis.java 
+  347  javac FixThis.java 
+  348  java FixThis 
+  349  java FixThis 
+  350  javac FixThis.java 
+  351  java FixThis 
+  352  java FixThis 
+  353  java FixThis 
+  354  java FixThis 
+  355  exit
+  356  PDI
+  357  l
+  358  ls
+  359  tree
+  360  cd P03
+  361  ls
+  362  vim BooleanExpressions.java 
+  363  vim FixThis.java 
+  364  exit
+  365  tmux
+  366  exit
+  367  PDI
+  368  tree
+  369  ls
+  370  cd P03
+  371  ls
+  372  vim BooleanExpressions.txt 
+  373  java FixThis 
+  374  java FixThis 
+  375  ls
+  376  cd ../P02
+  377  ls
+  378  cd AssignmentTask/
+  379  ls
+  380  cd ../
+  381  ls
+  382  cp Prac02_Test.txt ../P03
+  383  cd ../P03
+  384  ls
+  385  mv Prac02_Test.txt TestFixThis.txt
+  386  vim TestFixThis.txt 
+  387  vim FixThis.java 
+  388  vim FixThis.java 
+  389  exit
+  390  apt
+  391  sudo apt install cowsay
+  392  apt install cowsay
+  393  PDI
+  394  cd P03
+  395  ls
+  396  java FixThis 
+  397  java FixThis 
+  398  exit
+  399  apt list --upgradable
+  400  ls
+  401  tmux
+  402  ls
+  403  cd Documents/
+  404  ls 
+  405  cd PDI/P03
+  406  ls
+  407  ls -l
+  408  vim SplitMyDate.java
+  409  javac SplitMyDate.java 
+  410  vim SplitMyDate.java
+  411  javac SplitMyDate.java 
+  412  java SplitMyDate 
+  413  vim SplitMyDate.java
+  414  javac SplitMyDate.java 
+  415  java SplitMyDate 
+  416  vim SplitMyDate.java
+  417  javac SplitMyDate.java 
+  418  vim SplitMyDate.java
+  419  javac SplitMyDate.java 
+  420  java SplitMyDate 
+  421  vim SplitMyDate.java
+  422  javac SplitMyDate.java 
+  423  java SplitMyDate 
+  424  vim SplitMyDate.java
+  425  javac SplitMyDate.java 
+  426  java SplitMyDate 
+  427  vim SplitMyDate.java
+  428  javac SplitMyDate.java 
+  429  java SplitMyDate 
+  430  vim SplitMyDate.java
+  431  javac SplitMyDate.java 
+  432  vim SplitMyDate.java
+  433  javac SplitMyDate.java 
+  434  java SplitMyDate 
+  435  vim SplitMyDate.jav
+  436  vim SplitMyDate.java
+  437  javac SplitMyDate.java 
+  438  java SplitMyDate 
+  439  vim SplitMyDate.java
+  440  javac SplitMyDate.java 
+  441  java SplitMyDate 
+  442  vim SplitMyDate.java
+  443  javac SplitMyDate.java 
+  444  vim SplitMyDate.java
+  445  javac SplitMyDate.java 
+  446  java SplitMyDate 
+  447  vim SplitMyDate.java
+  448  javac SplitMyDate.java 
+  449  java SplitMyDate 
+  450  vim SplitMyDate.java
+  451  javac SplitMyDate.java 
+  452  java SplitMyDate 
+  453  vim SplitMyDate.java
+  454  javac SplitMyDate.java 
+  455  java SplitMyDate 
+  456  vim SplitMyDate.java
+  457  javac SplitMyDate.java 
+  458  java SplitMyDate 
+  459  vim SplitMyDate.java
+  460  javac SplitMyDate.java 
+  461  java SplitMyDate 
+  462  vim SplitMyDate.java
+  463  javac SplitMyDate.java 
+  464  vim SplitMyDate.java
+  465  javac SplitMyDate.java 
+  466  vim SplitMyDate.java
+  467  javac SplitMyDate.java 
+  468  java SplitMyDate 
+  469  vim SplitMyDate.java
+  470  javac SplitMyDate.java 
+  471  java SplitMyDate 
+  472  javac SplitMyDate.java 
+  473  vim SplitMyDate.java
+  474  javac SplitMyDate.java 
+  475  java SplitMyDate 
+  476  vim SplitMyDate.java
+  477  javac SplitMyDate.java 
+  478  java SplitMyDate 
+  479  vim SplitMyDate.java
+  480  javac SplitMyDate.java 
+  481  java SplitMyDate 
+  482  vim SplitMyDate.java
+  483  javac SplitMyDate.java 
+  484  vim SplitMyDate.java
+  485  javac SplitMyDate.java 
+  486  java SplitMyDate 
+  487  java SplitMyDate 
+  488  java SplitMyDate 
+  489  vim SplitMyDate.java
+  490  javac SplitMyDate.java 
+  491  vim SplitMyDate.java
+  492  javac SplitMyDate.java 
+  493  java SplitMyDate 
+  494  20022019
+  495  20022019
+  496  java SplitMyDate 
+  497  java SplitMyDate 
+  498  ls
+  499  vim TestFixThis.txt 
+  500  vim TestFixThis.txt 
+  501  ls
+  502  cd Documents/
+  503  ls
+  504  cd PDI
+  505  ls
+  506  cd P03
+  507  ls
+  508  vim SplitMyDate.java 
+  509  cat SplitMyDate.java 
+  510  ls
+  511  ls
+  512  clear
+  513  ls
+  514  vim CelsToFaren.java
+  515  vim CelsToFaren.txt 
+  516  vim CharConverter.java
+  517  vim CharConverter.txt 
+  518  cat CelsToFaren.java 
+  519  vim CharConverter.txt 
+  520  vim CharConverter.txt 
+  521  cat CharConverter.java 
+  522  vim CharConverter.txt 
+  523  ls
+  524  vim Menu.java 
+  525  cat Menu.java 
+  526  vim Menu.txt
+  527  ls
+  528  vim CaseToIf.txt 
+  529  vim BooleanExpressions.txt
+  530  vim BooleanExpressions.java 
+  531  javac FixThis.java 
+  532  java FixThis
+  533  vim FixThis.java 
+  534  vim TestFixThis.txt 
+  535  vim FixThis.java 
+  536  ls
+  537  cat CelsToFaren.java
+  538  cd ../
+  539  ls
+  540  tar -cvzf 19459138_P03.tar.gz P03
+  541  ls
+  542  firefox
+  543  ls
+  544  rm 19459138_P03.tar.gz 
+  545  cd P03
+  546  ls
+  547  history >BashHistoryP03.txt
+  548  ls
+  549  ls
+  550  ls -l
+  551  history >/BashHistory.txt
+  552  ls
+  553  cd ../
+  554  history >~/Documents/PDI/P03/BashHistoryP03.txt

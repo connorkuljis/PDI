@@ -1,0 +1,11 @@
+PROGRAM CharConverter
+    MAIN:
+        OUTPUT "Please enter an uppercase character"
+        INPUT uppercaseChar
+
+        ascii := (Convert to integer) uppercaseChar
+        lowercaseChar := (Convert to lowercase) uppercaseChar
+
+        OUTPUT "The ASCII value of " uppercaseChar " is: " ascii
+        OUTPUT "The lowercase value of " uppercaseChar " is: " lowercaseChar
+END

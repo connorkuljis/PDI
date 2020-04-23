@@ -1,0 +1,500 @@
+   29  vim strings3.py
+   30  python3 strings3.py 
+   31  vim strings3.py
+   32  python3 strings3.py 
+   33  vim strings3.py
+   34  python3 strings3.py 
+   35  vim strings3.py
+   36  python3 strings3.py 
+   37  wq
+   38  cp strings3.py strings4.
+   39  ls
+   40  vim strings4.py
+   41  python3 strings4.py 
+   42  vim strings4.py
+   43  python3 strings4.py 
+   44  vim strings4.py
+   45  python3 strings4.py 
+   46  vim strings4.py
+   47  python3 strings4.py 
+   48  ls
+   49  vim bucket1.py
+   50  python3 bucket1.py 
+   51  vim bucket1.py
+   52  python3 bucket1.py 
+   53  vim bucket1.py
+   54  python3 bucket2.py
+   55  vim bucket2.py 
+   56  python3 bucket2.py
+   57  vim bucket2.py 
+   58  python3 bucket2.py
+   59  vim bucket2.py 
+   60  python3 bucket2.py
+   61  vim bucket2.py 
+   62  python3 bucket2.py
+   63  vim bucket2.py 
+   64  vim assorted.py
+   65  ls
+   66  python3 assorted.py 
+   67  vim assorted.py
+   68  python3 assorted.py 
+   69  vim assorted.py
+   70  python3 assorted.py 
+   71  y
+   72  vim assorted.py
+   73  python3 assorted.py 
+   74  vim assorted.py
+   75  python3 assorted.py 
+   76  vim assorted.py
+   77  python3 assorted.py 
+   78  vim assorted.py
+   79  python3 assorted.py 
+   80  vim assorted.py
+   81  python3 assorted.py 
+   82  vim assorted.py
+   83  python3 assorted.py 
+   84  vim assorted.py
+   85  python3 assorted.py 
+   86  vim assorted.py
+   87  python3 assorted.py 
+   88  vim assorted.py
+   89  python3 assorted.py 
+   90  vim assorted.py
+   91  python3 assorted.py 
+   92  vim assorted.py
+   93  python3 assorted.py 
+   94  vim assorted.py
+   95  python3 assorted.py 
+   96  t
+   97  vim assorted.py
+   98  vim darts.py
+   99  python3 darts.py 
+  100  vim darts.py
+  101  python3 darts.py 
+  102  vim darts.py
+  103  python3 darts.py 
+  104  vim cointoss.py
+  105  python3 cointoss.py 
+  106  vim cointoss.py
+  107  python3 cointoss.py 
+  108  vim cointoss.py
+  109  python3 cointoss.py 
+  110  vim cointoss.py
+  111  python3 cointoss.py 
+  112  vim cointoss.py
+  113  python3 cointoss.py 
+  114  vim cointoss.py
+  115  python3 cointoss.py 
+  116  vim cointoss.py
+  117  python3 cointoss.py 
+  118  vim cointoss.py
+  119  python3 cointoss.py 
+  120  vim cointoss.py
+  121  python3 cointoss.py 
+  122  vim cointoss.py
+  123  ls
+  124  vim README 
+  125  ls
+  126  cd Documents/
+  127  ls
+  128  cd FOP/Prac02
+  129  ls
+  130  ls -l
+  131  vim bucket1.py 
+  132  vim bucket2.py 
+  133  vim darts.py
+  134  vim cointoss.py 
+  135  ls -l
+  136  vim cd ../Prac01
+  137  l
+  138  ls -l
+  139  vim assorted.py 
+  140  cd ../Prac01
+  141  ls
+  142  vim contact 
+  143  cd ../Prac02
+  144  ls -l
+  145  ls
+  146  cd Documents/
+  147  ls
+  148  cd FOP
+  149  ls
+  150  cd Prac02
+  151  ls
+  152  ls -l
+  153  ls
+  154  vim review.py
+  155  python3 review.py
+  156  vim review.py
+  157  python3 review.py
+  158  vim review.py
+  159  python3 review.py
+  160  vim review.py
+  161  python3 review.py
+  162  vim review.py
+  163  python3 review.py
+  164  vim review.py
+  165  python3 review.py
+  166  vim review.py
+  167  python3 review.py
+  168  vim review.py
+  169  python3 review.py
+  170  vim review.py
+  171  python3 review.py
+  172  vim review.py
+  173  python3 review.py
+  174  vim review.py
+  175  python3 review.py
+  176  vim review.py
+  177  python3 review.py
+  178  vim review.py
+  179  python3 review.py
+  180  vim review.py
+  181  python3 review.py
+  182  vim review.py
+  183  python3 review.py
+  184  vim review.py
+  185  python3 review.py
+  186  vim review.py
+  187  python3 review.py
+  188  vim review.py
+  189  python3 review.py
+  190  vim review.py
+  191  python3 review.py
+  192  vim review.py
+  193  python3 review.py
+  194  ls
+  195  vim assorted.py 
+  196  python3 assorted.py 
+  197  vim assorted.py 
+  198  python3 assorted.py 
+  199  vim assorted.py 
+  200  vim assorted.py 
+  201  vim README 
+  202  ls
+  203  vim README 
+  204  ls -lgh
+  205  ls -l
+  206  vim strings4.py 
+  207  vim strings4.py 
+  208  python3 strings4.py 
+  209  vim strings4.py 
+  210  vim strings4.py 
+  211  cp cointoss.py sixsidetoss.py
+  212  ls
+  213  vim sixsidetoss.py 
+  214  python3 sixsidetoss.py 
+  215  vim sixsidetoss.py 
+  216  python3 sixsidetoss.py 
+  217  vim sixsidetoss.py 
+  218  python3 sixsidetoss.py 
+  219  vim sixsidetoss.py 
+  220  python3 sixsidetoss.py 
+  221  vim sixsidetoss.py 
+  222  python3 sixsidetoss.py 
+  223  vim sixsidetoss.py 
+  224  python3 sixsidetoss.py 
+  225  python3 sixsidetoss.py 
+  226  vim sixsidetoss.py 
+  227  python3 sixsidetoss.py 
+  228  python3 sixsidetoss.py 
+  229  vim sixsidetoss.py 
+  230  python3 sixsidetoss.py 
+  231  vim sixsidetoss.py 
+  232  python3 sixsidetoss.py 
+  233  vim sixsidetoss.py 
+  234  python3 sixsidetoss.py 
+  235  vim sixsidetoss.py 
+  236  python3 sixsidetoss.py 
+  237  python3 sixsidetoss.py 
+  238  vim sixsidetoss.py 
+  239  python3 sixsidetoss.py 
+  240  vim sixsidetoss.py 
+  241  python3 sixsidetoss.py 
+  242  vim sixsidetoss.py 
+  243  python3 sixsidetoss.py 
+  244  vim sixsidetoss.py 
+  245  python3 sixsidetoss.py 
+  246  vim sixsidetoss.py 
+  247  python3 sixsidetoss.py 
+  248  python3 sixsidetoss.py 
+  249  vim sixsidetoss.py 
+  250  python3 sixsidetoss.py 
+  251  python3 sixsidetoss.py 
+  252  vim sixsidetoss.py 
+  253  python3 sixsidetoss.py 
+  254  vim sixsidetoss.py 
+  255  ls -l
+  256  cp assorted.py cards.py
+  257  vim cards.py 
+  258  python3 cards.py 
+  259  vim cards.py 
+  260  python3 cards.py 
+  261  vim cards.py 
+  262  python3 cards.py 
+  263  vim cards.py 
+  264  python3 cards.py 
+  265  vim cards.py 
+  266  python3 cards.py 
+  267  vim cards.py 
+  268  python3 cards.py 
+  269  vim cards.py 
+  270  python3 cards.py 
+  271  vim cards.py 
+  272  python3 cards.py 
+  273  vim cards.py 
+  274  python3 cards.py 
+  275  vim cards.py 
+  276  python3 cards.py 
+  277  vim cards.py 
+  278  python3 cards.py 
+  279  vim cards.py 
+  280  python3 cards.py 
+  281  clear
+  282  python3 cards.py 
+  283  vim cards.py 
+  284  python3 cards.py 
+  285  python3 cards.py 
+  286  vim cards.py 
+  287  python3 cards.py 
+  288  vim cards.py 
+  289  python3 cards.py 
+  290  vim cards.py 
+  291  python3 cards.py 
+  292  n
+  293  python3 cards.py 
+  294  vim cards.py 
+  295  ls
+  296  pwd
+  297  zip Prac02_19459138.zip
+  298  l
+  299  zip Prac02_19459138
+  300  ls
+  301  zip Prac02_19459138 *
+  302  ls
+  303  cd Documents/FOP/Prac02
+  304  ls
+  305  vim sixsidetoss.py 
+  306  ls
+  307  ls -l
+  308  vim spam.py
+  309  python3 spam.py 
+  310  vim spam.py
+  311  python3 spam.py 
+  312  rm spam.py 
+  313  vim strings1.py 
+  314  ls
+  315  cd Documents/OOPD
+  316  ls
+  317  cd P01
+  318  ls
+  319  vim MyFirstJavaApplication
+  320  vim MyFirstJavaApplication.java
+  321  java MyFirstJavaApplication
+  322  vim MyFirstJavaApplication.java
+  323  java MyFirstJavaApplication
+  324  vim MyFirstJavaApplication.java
+  325  javac MyFirstJavaApplication.java 
+  326  java MyFirstJavaApplication
+  327  vim conversions.pdf 
+  328  ls
+  329  ls -l
+  330  cd ../P02
+  331  ls
+  332  vim psudocode.txt 
+  333  vim ShapeConverter.java
+  334  vim .bashrc
+  335  source .bashrc
+  336  vim .bashrc
+  337  java
+  338  which java
+  339  ls
+  340  cd ..
+  341  which java
+  342  ls
+  343  cd P02
+  344  ls
+  345  ls -lgh
+  346  ls -l
+  347  vim ShapeConverter.java
+  348  javac ShapeConverter.java
+  349  java ShapeConverter.
+  350  java ShapeConverter
+  351  vim ShapeConverter.java
+  352  javac ShapeConverter.java
+  353  cp ShapeConverter.jav ShapeCalc1.java
+  354  cp ShapeConverter.java ShapeCalc1.java
+  355  ls
+  356  vim ShapeCalc1.java 
+  357  javac ShapeCalc1.java 
+  358  vim ShapeCalc1.java 
+  359  javac ShapeCalc1.java 
+  360  vim ShapeCalc1.java 
+  361  javac ShapeCalc1.java 
+  362  vim ShapeCalc1.java 
+  363  javac ShapeCalc1.java 
+  364  java ShapeCalc1
+  365  vim ShapeCalc1.java 
+  366  javac ShapeCalc1.java 
+  367  java ShapeCalc1
+  368  vim ShapeCalc1.java 
+  369  javac ShapeCalc1.java 
+  370  java ShapeCalc1
+  371  vim ShapeCalc1.java 
+  372  javac ShapeCalc1.java 
+  373  java ShapeCalc1
+  374  vim ShapeCalc1.java 
+  375  javac ShapeCalc1.java 
+  376  java ShapeCalc1
+  377  vim ShapeCalc1.java 
+  378  javac ShapeCalc1.java 
+  379  vim ShapeCalc1.java 
+  380  javac ShapeCalc1.java 
+  381  vim ShapeCalc1.java 
+  382  javac ShapeCalc1.java 
+  383  java ShapeCalc1
+  384  javac ShapeCalc1.java 
+  385  vim ShapeCalc1.java 
+  386  javac ShapeCalc1.java 
+  387  java ShapeCalc1
+  388  javac ShapeCalc1.java 
+  389  vim ShapeCalc1.java 
+  390  javac ShapeCalc1.java 
+  391  java ShapeCalc1
+  392  vim ShapeCalc1.java 
+  393  ls -l
+  394  cd 
+  395  ls
+  396  cd Downloads/
+  397  ls
+  398  cd Assignment/
+  399  ls
+  400  vim Storage.java 
+  401  cd
+  402  ls
+  403  cd Documents/
+  404  ls
+  405  cd FOP
+  406  ls
+  407  cd Prac01
+  408  ls
+  409  vim contact 
+  410  ls
+  411  cd Documents/FOP
+  412  ls
+  413  cd Prac02
+  414  ls
+  415  ls -l
+  416  cd ../Prac03/
+  417  ls -l
+  418  mv skipdosage\(1\).py skipdosage.py
+  419  ls
+  420  ls -l
+  421  cd ../
+  422  cd Prac01
+  423  ls
+  424  cp growth.py ../Prac03
+  425  cd ../Prac03
+  426  ls
+  427  mv growth.py growthplot.py
+  428  ls
+  429  vim growthplot.py 
+  430  python3 growthplot.py 
+  431  vim growthplot.py 
+  432  python3 growthplot.py 
+  433  ls
+  434  cd Documents/
+  435  ls
+  436  cd FOP
+  437  ls
+  438  cd Prac03
+  439  ls
+  440  ls -l
+  441  vim growthplot.py 
+  442  python3 growthplot.py 
+  443  exit
+  444  ls
+  445  exit
+  446  ls
+  447  cd Documents/
+  448  ls
+  449  cd OOPD/
+  450  ls
+  451  cd P01
+  452  ls
+  453  vim MyFirstJavaApplication
+  454  vim MyFirstJavaApplication.java
+  455  cd ../P02
+  456  ls
+  457  ls -l
+  458  vim ShapeCalc1.java 
+  459  javac ShapeCalc1.java
+  460  java ShapeCalc1
+  461  cd ../
+  462  cd P04
+  463  ls
+  464  vim q1a.java
+  465  javac q1a.java
+  466  java q1a
+  467  exit
+  468  ls
+  469  cd Documents/
+  470  ls
+  471  cd OOPD/
+  472  ls
+  473  cd P11
+  474  ls
+  475  vim ShapeBox.txt 
+  476  cd ../
+  477  cd P06
+  478  ls
+  479  vim FactorialCalc.java
+  480  java FactorialCalc
+  481  vim FactorialCalc.java
+  482  javac FactorialCalc.java
+  483  vim FactorialCalc.java
+  484  javac FactorialCalc.java
+  485  java FactorialCalc
+  486  vim FactorialCalc.java
+  487  javac FactorialCalc.java
+  488  vim FactorialCalc.java
+  489  javac FactorialCalc.java
+  490  java FactorialCalc
+  491  vim FactorialCalc.java
+  492  javac FactorialCalc.java
+  493  java FactorialCalc
+  494  vim FactorialCalc.java
+  495  javac FactorialCalc.java
+  496  java FactorialCalc
+  497  vim ~/.vimrc
+  498  cd
+  499  ls
+  500  exit
+  501  cd Documents/PDI/P01/
+  502  ls
+  503  ls
+  504  cd ..
+  505  ls
+  506  cd ..
+  507  ls
+  508  mkdir junk
+  509  cd PDI
+  510  ls
+  511  cd P01
+  512  ls
+  513  vim Calculator.java
+  514  javac Calculator.
+  515  javac Calculator.java 
+  516  java Calculator.
+  517  java Calculator
+  518  vim Calculator.java
+  519  javac Calculator.java 
+  520  vim Calculator.java
+  521  javac Calculator.java 
+  522  javac Calculator.java 
+  523  javac Calculator.java 
+  524  java Calculator
+  525  ls
+  526  ls -a
+  527  ls
+  528  history > BashHistoryP01.txt

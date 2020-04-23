@@ -1,0 +1,29 @@
+Program: Menu
+Design Date:
+Test Date: 6th April 2020
+
+Total Tests: 4
+Tests Passed: 3
+Tests Failed: 1
+
+Note: If we validate input within the menu, is there much point in testing in this black box approach?
+     
+
+Please fill in the ? with your own calculations/predictions
+
+TEST RESULTS:
+ID: Category:           Test Data:                  Expected Result:            Actual Result:              Pass(P)/Fail(F)
+____________________________________________________________________________________________________________________________
+1   Valid               0                           Goodbye!                    Goodbye!                    P
+                        1, 5, 6                     5 + 6 = 11                  11                          P                        
+                       
+____________________________________________________________________________________________________________________________
+2   Edge Case           7                            loops                       loops                       P
+____________________________________________________________________________________________________________________________
+3   Invalid             X                            loops                       Exception in thread         F
+                                                                                "main" java.util.InputMismatchException
+    (incorrect data)    
+____________________________________________________________________________________________________________________________
+
+
+

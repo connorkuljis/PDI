@@ -1,0 +1,37 @@
+FILE: TwoDArrays.txt
+AUTHOR: Connor Kuljis
+USERNAME: 19459138
+UNIT: PDI
+PURPOSE: print a matrix (2D array) of the times table
+REFERENCE: Worksheet 4
+COMMENTS:
+REQUIRES:
+LAST MOD: 6th April 2020
+
+PROGRAM: TwoDArrays
+    MAIN:
+        OUTPUT "Please Enter Rows: "
+        INPUT rows (Integer)
+        OUPUT "Please Enter Columns: "
+        INPUT cols (Integer)
+
+        OUTPUT " The " + rows + " times " + cols + " table. (NEW LINE)"
+        OUTPUT " | "
+        FOR j := 0 TO cols INC BY 1
+            OUTPUT (j + 1) + (TAB SPACE)
+        ENDFOR
+  
+        OUTPUT "----------------------------------------------------------"
+   
+        twoD (TWO DIMENTIONAL ARRAY OF Integer OF SIZE rows + 1 BY cols + 1) 
+        FOR i := 1 TO (LENGTH OF twoD[i]) INC BY 1
+            OUTPUT i + " | "
+            FOR  j := 1 TO (LENGTH OF twoD[i][j]) INC BY 1
+                twoD[i][j] := i * j
+                OUTPUT twoD[i][j] + (TAB SPACE)
+            END FOR
+            OUTPUT (NEW LINE)
+        END FOR
+     END MAIN
+END PROGRAM
+

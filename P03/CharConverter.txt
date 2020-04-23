@@ -1,0 +1,39 @@
+// FILE:     CharConverter.java
+// AUTHOR:   Connor Kuljis
+// USERNAME: 19459138
+// UNIT: PDI
+// PURPOSE: Allows the user to convert all lowercase to uppercase and vice versa
+// REFERENCE:
+// COMMENTS:
+// REQUIRES:
+// LAST MOD: 24th March 2020
+
+PROGRAM CharConverter
+    MAIN:
+        OUTPUT "Convert to (U)ppercase or (L)owercase? Please select an option."
+        INPUT choice (Character)
+
+        IF (choice = 'U' or 'u') THEN
+            OUTPUT "Enter a lowercase character"
+            INPUT lowercaseChar
+            lowerAscii := (Convert to integer) lowercaseChar
+            
+            IF (96 < lowerAscii > 123) THEN
+                lowerToUpper := (Convert to character) lowerAscii - 32
+                OUTPUT "Uppercase: " lowercaseChar
+            ELSE
+                OUTPUT "Error! Not a lowercase character"
+
+        ELSE IF (choice = 'L' OR 'l') THEN
+            OUTPUT "Enter an uppercase character"
+            INPUT upperhaseChar
+            upperAscii := (Convert to integer) uppercaseChar
+
+            IF (64 < upperAscii > 91) THEN
+                upperToLower :=(Convert to character) upperAscii + 32
+                OUTPUT "Lowercase: " upperToLower
+            ELSE
+                OUTPUT "Error! Not a uppercase character"
+            END IF
+        END IF
+END

@@ -1,0 +1,500 @@
+   50  PDI
+   51  ls
+   52  tree
+   53  cd P03
+   54  ls
+   55  vim BooleanExpressions.txt
+   56  exit
+   57  exit
+   58  PDI
+   59  ls
+   60  cd P03
+   61  javac FixThis.java 
+   62  javac FixThis.java 
+   63  javac FixThis.java 
+   64  javac FixThis.java 
+   65  java FixThis 
+   66  javac FixThis.java 
+   67  java FixThis 
+   68  javac FixThis.java 
+   69  java FixThis 
+   70  javac FixThis.java 
+   71  java FixThis 
+   72  javac FixThis.java 
+   73  javac FixThis.java 
+   74  java FixThis 
+   75  javac FixThis.java 
+   76  java FixThis 
+   77  javac FixThis.java 
+   78  java FixThis 
+   79  javac FixThis.java 
+   80  java FixThis 
+   81  javac FixThis.java 
+   82  javac FixThis.java 
+   83  javac FixThis.java 
+   84  java FixThis 
+   85  java FixThis 
+   86  javac FixThis.java 
+   87  java FixThis 
+   88  java FixThis 
+   89  java FixThis 
+   90  java FixThis 
+   91  exit
+   92  PDI
+   93  l
+   94  ls
+   95  tree
+   96  cd P03
+   97  ls
+   98  vim BooleanExpressions.java 
+   99  vim FixThis.java 
+  100  exit
+  101  tmux
+  102  exit
+  103  PDI
+  104  tree
+  105  ls
+  106  cd P03
+  107  ls
+  108  vim BooleanExpressions.txt 
+  109  java FixThis 
+  110  java FixThis 
+  111  ls
+  112  cd ../P02
+  113  ls
+  114  cd AssignmentTask/
+  115  ls
+  116  cd ../
+  117  ls
+  118  cp Prac02_Test.txt ../P03
+  119  cd ../P03
+  120  ls
+  121  mv Prac02_Test.txt TestFixThis.txt
+  122  vim TestFixThis.txt 
+  123  vim FixThis.java 
+  124  vim FixThis.java 
+  125  exit
+  126  apt
+  127  sudo apt install cowsay
+  128  apt install cowsay
+  129  PDI
+  130  cd P03
+  131  ls
+  132  java FixThis 
+  133  java FixThis 
+  134  exit
+  135  apt list --upgradable
+  136  ls
+  137  tmux
+  138  ls
+  139  cd Documents/
+  140  ls 
+  141  cd PDI/P03
+  142  ls
+  143  ls -l
+  144  vim SplitMyDate.java
+  145  javac SplitMyDate.java 
+  146  vim SplitMyDate.java
+  147  javac SplitMyDate.java 
+  148  java SplitMyDate 
+  149  vim SplitMyDate.java
+  150  javac SplitMyDate.java 
+  151  java SplitMyDate 
+  152  vim SplitMyDate.java
+  153  javac SplitMyDate.java 
+  154  vim SplitMyDate.java
+  155  javac SplitMyDate.java 
+  156  java SplitMyDate 
+  157  vim SplitMyDate.java
+  158  javac SplitMyDate.java 
+  159  java SplitMyDate 
+  160  vim SplitMyDate.java
+  161  javac SplitMyDate.java 
+  162  java SplitMyDate 
+  163  vim SplitMyDate.java
+  164  javac SplitMyDate.java 
+  165  java SplitMyDate 
+  166  vim SplitMyDate.java
+  167  javac SplitMyDate.java 
+  168  vim SplitMyDate.java
+  169  javac SplitMyDate.java 
+  170  java SplitMyDate 
+  171  vim SplitMyDate.jav
+  172  vim SplitMyDate.java
+  173  javac SplitMyDate.java 
+  174  java SplitMyDate 
+  175  vim SplitMyDate.java
+  176  javac SplitMyDate.java 
+  177  java SplitMyDate 
+  178  vim SplitMyDate.java
+  179  javac SplitMyDate.java 
+  180  vim SplitMyDate.java
+  181  javac SplitMyDate.java 
+  182  java SplitMyDate 
+  183  vim SplitMyDate.java
+  184  javac SplitMyDate.java 
+  185  java SplitMyDate 
+  186  vim SplitMyDate.java
+  187  javac SplitMyDate.java 
+  188  java SplitMyDate 
+  189  vim SplitMyDate.java
+  190  javac SplitMyDate.java 
+  191  java SplitMyDate 
+  192  vim SplitMyDate.java
+  193  javac SplitMyDate.java 
+  194  java SplitMyDate 
+  195  vim SplitMyDate.java
+  196  javac SplitMyDate.java 
+  197  java SplitMyDate 
+  198  vim SplitMyDate.java
+  199  javac SplitMyDate.java 
+  200  vim SplitMyDate.java
+  201  javac SplitMyDate.java 
+  202  vim SplitMyDate.java
+  203  javac SplitMyDate.java 
+  204  java SplitMyDate 
+  205  vim SplitMyDate.java
+  206  javac SplitMyDate.java 
+  207  java SplitMyDate 
+  208  javac SplitMyDate.java 
+  209  vim SplitMyDate.java
+  210  javac SplitMyDate.java 
+  211  java SplitMyDate 
+  212  vim SplitMyDate.java
+  213  javac SplitMyDate.java 
+  214  java SplitMyDate 
+  215  vim SplitMyDate.java
+  216  javac SplitMyDate.java 
+  217  java SplitMyDate 
+  218  vim SplitMyDate.java
+  219  javac SplitMyDate.java 
+  220  vim SplitMyDate.java
+  221  javac SplitMyDate.java 
+  222  java SplitMyDate 
+  223  java SplitMyDate 
+  224  java SplitMyDate 
+  225  vim SplitMyDate.java
+  226  javac SplitMyDate.java 
+  227  vim SplitMyDate.java
+  228  javac SplitMyDate.java 
+  229  java SplitMyDate 
+  230  20022019
+  231  20022019
+  232  java SplitMyDate 
+  233  java SplitMyDate 
+  234  ls
+  235  vim TestFixThis.txt 
+  236  vim TestFixThis.txt 
+  237  ls
+  238  cd Documents/PDI/
+  239  cd P03
+  240  ls
+  241  vim SplitMyDate.txt
+  242  java FixThis 
+  243  91
+  244  java FixThis 
+  245  vim SplitMyDate.txt
+  246  vim FixThis.java 
+  247  javac FixThis.java 
+  248  java FixThis 
+  249  java FixThis 
+  250  java FixThis 
+  251  ls
+  252  cd Documents/
+  253  ls
+  254  cd PDI
+  255  ls
+  256  cd P03
+  257  ls
+  258  vim SplitMyDate.java 
+  259  cat SplitMyDate.java 
+  260  ls
+  261  ls
+  262  clear
+  263  ls
+  264  vim CelsToFaren.java
+  265  vim CelsToFaren.txt 
+  266  vim CharConverter.java
+  267  vim CharConverter.txt 
+  268  cat CelsToFaren.java 
+  269  vim CharConverter.txt 
+  270  vim CharConverter.txt 
+  271  cat CharConverter.java 
+  272  vim CharConverter.txt 
+  273  ls
+  274  vim Menu.java 
+  275  cat Menu.java 
+  276  vim Menu.txt
+  277  ls
+  278  vim CaseToIf.txt 
+  279  vim BooleanExpressions.txt
+  280  vim BooleanExpressions.java 
+  281  javac FixThis.java 
+  282  java FixThis
+  283  vim FixThis.java 
+  284  vim TestFixThis.txt 
+  285  vim FixThis.java 
+  286  ls
+  287  cat CelsToFaren.java
+  288  cd ../
+  289  ls
+  290  tar -cvzf 19459138_P03.tar.gz P03
+  291  ls
+  292  firefox
+  293  ls
+  294  rm 19459138_P03.tar.gz 
+  295  cd P03
+  296  ls
+  297  history >BashHistoryP03.txt
+  298  ls
+  299  ls
+  300  ls -l
+  301  history >/BashHistory.txt
+  302  ls
+  303  cd ../
+  304  history >~/Documents/PDI/P03/BashHistoryP03.txt
+  305  cd P03
+  306  ls
+  307  cd ../
+  308  ls
+  309  cd P03
+  310  ls
+  311  cd ../
+  312  tar -cvzf 19459138_P03.tar.gz P03
+  313  ls
+  314  firefox
+  315  ls
+  316  PDI
+  317  ls
+  318  mv 19459138_P03.tar.gz tarballs/
+  319  ls
+  320  cd P03
+  321  ls
+  322  vim CharConverter.java 
+  323  vim Menu.java
+  324  ls
+  325  exit
+  326  ls
+  327  cd Documents/
+  328  ls
+  329  cd PDI
+  330  ls
+  331  mkdir P04
+  332  ls
+  333  cd P04
+  334  ls
+  335  cd ../
+  336  cd P03
+  337  ls
+  338  ls -l
+  339  ls *txt
+  340  clear
+  341  ls
+  342  cp Menu.java ../P04/
+  343  cp Menu.txt ../P04
+  344  cd ../
+  345  ls
+  346  cd P04
+  347  ls
+  348  javac Menu.java 
+  349  java Menu 
+  350  vum
+  351  vim Menu.java
+  352  javac Menu.java 
+  353  vim Menu.java
+  354  javac Menu.java 
+  355  vim Menu.java
+  356  javac Menu.java 
+  357  java Menu
+  358  vim Menu.java
+  359  javac Menu.java 
+  360  vim Menu.java
+  361  javac Menu.java 
+  362  vim Menu.java
+  363  javac Menu.java 
+  364  java Menu
+  365  vim Menu.java
+  366  java Menu
+  367  javac Menu.java 
+  368  java Menu
+  369  java Menu
+  370  vim Menu.java
+  371  javac Menu.java 
+  372  java Menu
+  373  ls
+  374  PDI
+  375  ls
+  376  cd P04
+  377  ls
+  378  PDI
+  379  ls
+  380  cd P04
+  381  ls
+  382  vim Menu.txt
+  383  vim Menu.java
+  384  vim Menu.txt
+  385  java Menu 
+  386  java Menu 
+  387  vim Menu.java
+  388  javac Menu.java 
+  389  java Menu 
+  390  java Menu 
+  391  vim Menu.java
+  392  javac Menu.java 
+  393  vim Menu.java
+  394  javac Menu.java 
+  395  vim Menu.java
+  396  javac Menu.java 
+  397  vim Menu.java
+  398  javac Menu.java 
+  399  vim Menu.java
+  400  javac Menu.java 
+  401  java Menu 
+  402  vim Menu.java
+  403  javac Menu.java 
+  404  java Menu 
+  405  vim dowhile.java
+  406  javac dowhile.java 
+  407  vim dowhile.java
+  408  javac dowhile.java 
+  409  java dowhile.java 
+  410  java dowhile
+  411  vim dowhile.java
+  412  java dowhile
+  413  vim dowhile.java
+  414  vim Menu.java
+  415  javac Menu.java 
+  416  vim Menu.java
+  417  javac Menu.java 
+  418  vim Menu.java
+  419  javac Menu.java 
+  420  vim Menu.java
+  421  javac Menu.java 
+  422  vim Menu.java
+  423  javac Menu.java 
+  424  java Menu
+  425  vim Menu.java
+  426  javac Menu.java 
+  427  java Menu
+  428  vim Menu.java
+  429  javac Menu.java 
+  430  java Menu
+  431  vim Menu.java
+  432  java Menu
+  433  javac Menu.java 
+  434  java Menu
+  435  vim Menu.java
+  436  javac Menu.java 
+  437  java Menu
+  438  vim Menu.java
+  439  cp Menu.java Menu_backup.java
+  440  ls
+  441  vim Menu.java
+  442  javac Menu.java
+  443  java Menu 
+  444  vim Menu.java
+  445  javac Menu.java
+  446  java Menu 
+  447  vim Menu.java
+  448  javac Menu.java
+  449  vim Menu.java
+  450  javac Menu.java
+  451  java Menu 
+  452  vim Menu.java
+  453  javac Menu.java
+  454  java Menu 
+  455  vim Menu.java
+  456  PDI
+  457  PDI
+  458  ls
+  459  cd P04
+  460  ls
+  461  cat Menu.java 
+  462  vim Menu.java 
+  463  javac Menu.java 
+  464  java Menu 
+  465  vim Menu.java 
+  466  javac Menu.java 
+  467  java Menu 
+  468  vim Menu.java 
+  469  javac Menu.java 
+  470  java Menu 
+  471  vim Menu.java 
+  472  javac Menu.java 
+  473  java Menu 
+  474  vim Menu.java 
+  475  javac Menu
+  476  javac Menu.java 
+  477  java Menu 
+  478  vim Menu.java 
+  479  javac Menu.java 
+  480  java Menu 
+  481  vim Menu.java 
+  482  javac Menu
+  483  javac Menu.java 
+  484  java Menu 
+  485  vim Menu.java 
+  486  javac Menu.java 
+  487  java Menu 
+  488  vim Menu.java 
+  489  javac Menu.java 
+  490  vim Menu.java 
+  491  javac Menu.java 
+  492  java Menu 
+  493  vim Menu.java 
+  494  javac Menu.java 
+  495  java Menu 
+  496  vim Menu.java 
+  497  javac Menu.java 
+  498  java Menu 
+  499  vim Menu.java 
+  500  exit
+  501  PDI
+  502  cd P04
+  503  ls
+  504  vim Menu.txt 
+  505  vim Arrays.txt
+  506  vim TwoDArrays.txt
+  507  vim Arrays.txt 
+  508  vim Arrays.
+  509  vim Arrays.txt 
+  510  cat Arrays.txt 
+  511  vim TwoDArrays.txt 
+  512  ls -a
+  513  ls -l
+  514  vim testfile.txt
+  515  cp testfile.txt Menu_Testfile.txt
+  516  vim Menu_Testfile.txt 
+  517  vim testfile.txt 
+  518  vim Menu_Testfile.txt 
+  519  java Menu 
+  520  vim Menu_Testfile.txt 
+  521  java Menu 
+  522  vim Menu_Testfile.txt 
+  523  ls
+  524  ls -a
+  525  ls -l
+  526  java Arrays 
+  527  cp testfile.txt Arrays_Testfile.txt
+  528  vim Arrays_Testfile.txt 
+  529  java Arrays 
+  530  vim Arrays_Testfile.txt 
+  531  java Arrays 
+  532  vim Arrays_Testfile.txt 
+  533  cp testfile.txt TwoDArrays_Testfile.txt
+  534  vim TwoDArrays_Testfile.txt 
+  535  java TwoDArrays 
+  536  vim TwoDArrays_Testfile.txt 
+  537  java TwoDArrays
+  538  java TwoDArrays
+  539  vim TwoDArrays_Testfile.txt 
+  540  ls -l
+  541  cat Arrays.java 
+  542  vim Arrays.java 
+  543  cat Arrays.java 
+  544  ls
+  545  vim Menu.java 
+  546  vim TwoDArrays.java 
+  547  vim Menu.java 
+  548  ls
+  549  history > BashHistoryP04.txt

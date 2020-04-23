@@ -1,0 +1,25 @@
+Program: FixThis
+Design Date: 14 March 2020
+Test Date: 24 March 2020
+
+Total Tests: 3
+Tests Passed: 2
+Tests Failed: 1
+
+Note: 
+
+
+Please fill in the ? with your own calculations/predictions
+
+TEST RESULTS:
+ID: Category:           Test Data:                  Expected Result:            Actual Result:              Pass(P)/Fail(F)
+____________________________________________________________________________________________________________________________
+1   Valid               91, 92.45, 99                 94.235                      94.235 with a grade of HD-9
+____________________________________________________________________________________________________________________________
+2   Edge Case           -2, 106, 55                   nothing                     53.199999999999996 with a grade of P-5
+____________________________________________________________________________________________________________________________
+3   invalid             'apples', 9000, 'a'           java error                  java.util.InputMismatchException 
+    (incorrect data)
+____________________________________________________________________________________________________________________________
+
+

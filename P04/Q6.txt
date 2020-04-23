@@ -1,0 +1,17 @@
+Describe 3 errors and describe why each is a problem
+
+1: 
+    ERROR: lines 1 and 15 are redundant
+    DESCRIPTION: found (booelean)  is set to TRUE twice
+    REASONING: because found is initialised as true, writing the expression again is an area
+               of redundancy, additionally the boolean is not used at any point in this piece of code and serves no purpose
+
+2:
+    ERROR: line 16 does not align with coding standards
+    DESCRIPTION: According to the standards in this course, a break in any other place than a switch statement will be penalised
+    REASONING: a break automatically exits the code and ignores the control structure it is in
+
+3:
+    ERROR: line 11 could be re-written in a different way
+    DESCRIPTION: numElements is used to describe the depth of the search, this should instead be written as the LENGHT OF the array
+    REASONING: the number of elements is not always the same as the count of elements in the array

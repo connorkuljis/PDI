@@ -1,0 +1,103 @@
+// FILE:     Menu.txt
+// AUTHOR:   Connor Kuljis
+// USERNAME: 19459138
+// UNIT: PDI
+// PURPOSE: Combines all the programs up to prac 3 into a single menu 
+// REFERENCE: see P02 and P03
+// COMMENTS: ignored option 6
+// REQUIRES:
+// LAST MOD: 24th March 2020
+
+PROGRAM Menu
+    MAIN:
+        OUTPUT "Welcome to Programming Design and Implementation, Workshop 3"
+        OUTPUT "What would you like to do?"
+        OUTPUT "1. Sum of 2 Integers"
+        OUTPUT "2. Convert Temperature"
+        OUTPUT "3. Convert a Character's Case"
+        OUTPUT "4. Print the ASCII equivalent of a Character"
+        OUTPUT "5. Check if 2 Integers are Divisable"
+        OUTPUT "6. Split a Date into its components"
+        OUTPUT "0. Exit"
+
+    INPUT choice (Integer)
+    CASE choice
+        1:
+            OUTPUT "Please enter the first number: "
+            INPUT numOne
+
+            OUTPUT "Please enter the second number: "
+            INPUT numTwo
+
+            answer =: numOne + numTwo
+
+            OUTPUT "The answer is " numOne " + " numTwo " = " answer
+
+        2:
+            OUTPUT "What Temperature are you working with?"
+            INPUT choice (Character)
+
+            IF (choice = 'C' OR 'c') THEN
+                INPUT tempInCels (Real)
+
+                farenheit := ((tempInCels * 9.0) / 5.0) + 32.0
+
+                OUTPUT "Temp in farenheit: " farenheit
+            ELSE IF (choice = 'F' OR 'f') THEN
+                INPUT tempInFaren (Real)
+
+                celcius := (tempInFaren - 32) * 5/9
+
+                OUTPUT "Temp in celcius: " celcius
+            END IF
+   
+        3:
+            OUTPUT "Convert to (U)ppercase or (L)owercase? Please select an option."
+            INPUT choice (Character)
+
+            IF (choice = 'U' or 'u') THEN
+                OUTPUT "Enter a lowercase character"
+                INPUT lowercaseChar
+                lowerAscii := (Convert to integer) lowercaseChar
+
+                IF (96 < lowerAscii > 123) THEN
+                    lowerToUpper := (Convert to character) lowerAscii - 32
+                    OUTPUT "Uppercase: " lowercaseChar
+                ELSE
+                    OUTPUT "Error! Not a lowercase character"
+
+            ELSE IF (choice = 'L' OR 'l') THEN
+                OUTPUT "Enter an uppercase character"
+                INPUT upperhaseChar
+                upperAscii := (Convert to integer) uppercaseChar
+
+                IF (64 < upperAscii > 91) THEN
+                    upperToLower :=(Convert to character) upperAscii + 32
+                    OUTPUT "Lowercase: " upperToLower
+                ELSE
+                    OUTPUT "Error! Not a uppercase character"
+                END IF
+            END IF
+     
+        4:
+            OUTPUT "Enter a character to convert to an ASCII number."
+            INPUT myChar (Character)
+          
+            charToAscii := (Convert to Integer) myChar
+            OUTPUT "ASCII value: " charToAscii
+  
+        5:
+            OUTPUT "Check if two integers are divisible"
+            INPUT (Integer) intOne, intTwo
+    
+            IF (intOne MOD intTwo != 0) THEN
+                OUTPUT "not divisable!"
+            ELSE
+                OUTPUT "divisable!"
+
+        6:
+            OUTPUT "This has not been implemented yet"
+
+        0:
+            OUTPUT "Good-bye. "
+

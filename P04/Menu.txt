@@ -1,0 +1,189 @@
+// FILE:     Menu.txt
+// AUTHOR:   Connor Kuljis
+// USERNAME: 19459138
+// UNIT: PDI
+// PURPOSE: Combines all the programs up to prac 3 into a single menu 
+// REFERENCE: see P02 and P03
+// COMMENTS: ignored option 6
+// REQUIRES:
+// LAST MOD: 24th March 2020
+
+PROGRAM Menu
+    MAIN:
+        close := false
+        DO
+            OUTPUT "Welcome to Programming Design and Implementation, Workshop 3"
+            OUTPUT "What would you like to do?"
+            OUTPUT "1. Sum of 2 Integers"
+            OUTPUT "2. Convert Temperature"
+            OUTPUT "3. Convert a Character's Case"
+            OUTPUT "4. Print the ASCII equivalent of a Character"
+            OUTPUT "5. Check if 2 Integers are Divisable"
+            OUTPUT "6. Split a Date into its components"
+            OUTPUT "0. Exit"
+
+            INPUT choice (Integer)
+            CASE choice
+                1:
+                        OUTPUT "Please enter the first number: "
+                        WHILE (NOT AN INTEGER) DO 
+                             INPUT notInt (TOKEN)
+                             OUTPUT "Not an integer: " + notInt
+                             OUTPUT "Please enter the first integer"
+                        ENDWHILE
+                        INPUT numOne (Integer)
+
+                        OUTPUT "Please enter the second number: "
+                        WHILE (NOT AN INTEGER) DO 
+                             INPUT notInt (TOKEN)
+                             OUTPUT "Not an integer: " + notInt
+                             OUTPUT "Please enter the second integer"
+                        ENDWHILE
+                        INPUT numTwo (Integer)
+                       
+                        answer := numOne + numTwo
+                        OUTPUT "The answer is " + numOne + " + " + numTwo + " = " + answer
+
+                2:
+                    finish := false
+                    DO
+                        OUTPUT "Which temperature are you working with (C)elcius or (F)arenheit"
+                        INPUT choiceA (Character)
+                        choiceA := (Convert to Uppercase) choiceA
+                         
+                        CASE
+                            C:
+                                OUTPUT "Enter temperature in celcius"
+                                INPUT tempInCels (Real)
+
+                                farenheit := (tempInCels * 9.0 / 5.0)  + 32.0
+                                OUTPUT "Temp in farenheit: " + farenheit
+                                finish := true
+                            F:
+                                OUTPUT "Enter temperature in farenheit"
+                                INPUT tempInFaren (Real
+ 
+                                celcius = (tempInFaren - 32) * 5 /9
+                                OUTPUT "Temp in celcius " + celcius
+                                finish := true
+                         END CASE
+                      WHILE (!finish)
+
+                3:
+                    cd := false
+                    DO
+                        OUTPUT "Convert to (U)ppercase or (L)owercase? Please select an option."
+                        INPUT choice (Character)
+                        choice := (Conver to Uppercase) choice 
+
+                        CASE choice
+                            U:
+                                DO
+                                    OUTPUT "Enter a lowercase character"
+                                    INPUT lowercaseChar (Character)
+                                    lowerAscii := lowercaseChar (Convert to Integer)
+                                WHILE (96 > lowerAscii > 123)
+
+                                lowerToUpper := (lowerAscii - 32) (Convert to Character)
+                                OUTPUT "Upper: " + lowerToUpper
+                                cd := true
+                         
+                             L:
+                                 DO
+                                     OUTPUT "Enter an uppercase character
+                                     INPUT uppercaseChar (Character)
+                                     upperAscii := uppercaseChar (Convert to Integer)
+                                 WHILE ( 64 > upperAscii > 91 )
+                                 
+                                 upperToLower = (upperAscii + 32) (Convert to Character)
+                                 OUTPUT "Lower: " + upperToLower
+                                 cd := true
+                            
+                              DEFAULT:
+                                  OUTPUT "Error. Invalid Selection"
+                        END CASE
+                    WHILE (!cd)
+
+                4:
+                    DO
+                        OUTPUT "Enter a character to convert to associated ASCII number."
+                        INPUT myChar (Character)
+                        charToAscii := (Convert to Integer) myChar
+                    WHILE (0 > charToAscii > 127)
+         
+                    OUPUT "Ascii value: " + charToAscii
+          
+                5:
+                    OUTPUT "Check if two integers are divisble"
+                    DO
+                        OUTPUT "Enter first integer"
+                        INPUT intOne (Integer)
+                    WHILE (numOne > 0)
+  
+                    DO
+                        OUTPUT "Enter second integer"
+                        INPUT intTwo (Integer)
+                    WHILE (numOne > 0)
+  
+            
+                    IF (intOne MOD intTwo != 0) THEN
+                        OUTPUT "not divisible!"
+                    ELSE
+                        OUTPUT "divisible!"
+                    END IF
+
+                6:
+                    stra := "Please enter the date as an integer eg: 27032000 for 27th March 2000."
+                    errorStr := "Error. The value must be between 01010001 and 31129999. "
+                    outStr = str
+                    DO
+                        OUTPUT outstr
+                        INPUT input (Real)
+                        outStr = errorStr + str
+                    WHILE (01010001 > input > 31129999)
+
+                    day := date DIV 1000000
+                    roundedDay = day (convert to integer)
+
+                    month := (day MOD roundedDay) * 100
+                    roundedMonth := month (convert to integer)
+
+                    year := month MOD roundedMonth * 10000
+                    roundedyear = year (convert to integer)
+
+                    CASE roundedMonth
+                        1: 3: 5: 7: 8: 10: 12:
+                            IF (0 < roundedDay <= 31) THEN
+                                OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                            ELSE
+                                OUTPUT "Invalid"
+                            ENDIF
+                        4: 6: 9: 11
+                            IF (0 < roundedDay <= 30) THEN
+                                OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                            ELSE
+                                OUTPUT "Invalid"
+                            ENDIF
+                        2:
+                            IF ((roundedYear MOD 4 does not equal 0) AND (roundedYear MOD 4 does not equal 0) THEN
+                                IF (0 < roundedDay <= 29) THEN
+                                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                                ELSE
+                                    OUTPUT "Invalid"
+                                ENDIF
+                            ELSE
+                                IF (0 < roundedDay <= 28) THEN
+                                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear "It is a leap year"
+                                ELSE
+                                    OUTPUT "Invalid"
+                                ENDIF
+                            ENDIF
+                        DEFAULT:
+                            OUTPUT "Invalid"
+                    ENDCASE
+
+                0:
+                    OUTPUT "Good-bye. "
+                    close := true
+
+        WHILE(close DOES NOT EQUAL false)

@@ -1,0 +1,28 @@
+Program: TwoDArrays
+Design Date:
+Test Date: 6th April
+
+Total Tests: 3
+Tests Passed: 2
+Tests Failed: 1
+
+Note: 
+     
+
+Please fill in the ? with your own calculations/predictions
+
+TEST RESULTS:
+ID: Category:           Test Data:                  Expected Result:            Actual Result:              Pass(P)/Fail(F)
+____________________________________________________________________________________________________________________________
+1   Valid               9, 9                        9 x 9 times table           9 x 9 times table           P    
+                       
+____________________________________________________________________________________________________________________________
+2   Edge Case           6, 1                        6 x 1 times table           6 x 1 times table           P     
+____________________________________________________________________________________________________________________________
+3   Invalid             10, 10                      array out of bounds         10 x 10 times table         F
+                                                                               (slight formatting mis alignment
+    (incorrect data)    
+____________________________________________________________________________________________________________________________
+
+
+

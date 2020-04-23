@@ -1,0 +1,35 @@
+PROGRAM: MatrixMultiplication
+    MAIN:
+        arrayA (ARRAY OF Integer) := IMPORT ARRAY_A
+        arrayB (ARRAY OF Integer) := IMPORT ARRAY_B
+        
+        aRows = (LENGTH OF arrayA)
+        aCols = (LENGHT of arrayA[0])
+ 
+        bRows = (LENGTH OF arrayB)
+        bCols = (LENGHT of arrayB[0])
+  
+        OUTPUT "Matrix A : " + aRows + " x " + aCols
+        OUTPUT "Matrix B : " + bRows + " x " + bCols
+  
+        IF ( aCols = bRows ) THEN
+            arrayC (ARRAY OF Integer OF SIZE aRows BY bCols)
+           
+            FOR i := 0 TO LENGTH OF arrayC INC BY 1
+                FOR j := 0 TO LENGTH OF arrayC[0] INC BY 1
+                    FOR k := 0 TO LENGHT OF arrayA[0] INC BY 1
+                        sum := sum + arrayA[i][k] * arrayB[k][j]  
+                    END FOR
+                    arrayC[i][j] := sum
+                    sum :=0
+                END FOR
+            END FOR 
+   
+            OUTPUT arrayC
+
+        ELSE
+            OUTPUT "Error: can not multiply"
+        END IF
+    END MAIN
+END 
+ 

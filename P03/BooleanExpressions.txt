@@ -1,0 +1,37 @@
+// FILE:     BooleanExpressions.txt
+// AUTHOR:   Connor Kuljis
+// USERNAME: 19459138
+// UNIT: PDI
+// PURPOSE: crafting boolean expressions
+// REFERENCE: 
+// COMMENTS: booleans expressed in java notation
+// REQUIRES:
+// LAST MOD: 24th March 2020
+
+public static final TOL = 0.001;
+String susan, jane;
+double steve, tony;
+int luke, scott, lucas;
+char john, matthew;
+
+(a) Deciding if susan is the same as 'sarah'
+    (susan = "sarah")
+
+(b) Deciding if lucas is an even number and scott is an odd number
+    (lucas MOD 2 = 0 AND scott MOD 2 DOES NOT EQUAL 0)
+
+(c) Deciding if john or matthew are equal to the letter 'S'
+    ((john = 'S') OR (john = 'S")
+
+(d) Deciding if jane starts with the letter 'V'
+    (Jane(Character at position 0) = 'V')
+
+(e) Deciding if john is the same as matthew
+    (john = matthew)
+
+(f) Deciding if steve is the same as tony
+    (steve = tony)
+
+(g) Deciding if luke is positive or steve is between 25.0 and 125.0
+    ((luke >= 0) OR ((steve >= 25.0) AND (steve <= 125.0)))
+ 

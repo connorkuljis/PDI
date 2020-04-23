@@ -1,0 +1,16 @@
+README
+--Practical 04--
+Author: Connor Kuljis
+ID: 19450138
+
+~~~~~~~~~~~~~~~~~~~~~
+Arrays.java      : Uses simple for loops to populate and index an array with random numbers
+dowhile.java     : A scratch application to run a piece of code from a lecture slide
+Menu_backup.java : old copy of menu.java in case need to roll back
+Menu.java        : A monolithic menu that validates input for all prevoius 6 programs from the last practical
+SplitMyData.java : Java code for the split date option using in Menu.java
+TwoDArrays.java  : Uses nested for loops and 2D Arrays to produce a times table matrix
+Q6.txt           : Includes 3 discriptions of errors from a sample code in the worksheet
+Matrix.java      : Contains a class of arrays to be used in MatrixMultiplication
+MatrixMultiplication : Multiplies two arrays aka matrix mulitiplication
+
