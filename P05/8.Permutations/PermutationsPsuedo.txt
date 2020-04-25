@@ -1,0 +1,51 @@
+PROGRAM: Permutations
+    MAIN:
+        n := getInt <- "Enter the number of elements in the set n between 5 and 50 inclusive", 5, 50
+        rMax := getInt <- "Enter the maximum number of elements that should be selected between 2 and n inclusive" 2, n
+        populatedArray := populateArray <- n, rMax
+        printArray <- populatedArray
+    END MAIN
+
+    SUBMODULE: populateArray
+    IMPORT: n (Integer), rMax (Integer)
+    EXPORT: pmArray (ARRAY OF integer)
+    ALGORITHM:
+        nFact := factorial <- n
+        pmArray[rMax - 1]
+        FOR i := 0 TO LENGTH OF pmArray (exclusive) INC BY 1
+            r := 2 + i
+            pmArray[i] := nFact / (factorical <- (n-r))
+        END FOR
+    END populateArray
+
+    SUBMODULE: factorial
+    IMPORT: x (Integer)
+    EXPORT: sum (Integer)
+    ALGORITHM:
+        sum := 1
+        FOR i := 0 TO x (inclusive) INC BY 1
+            sum := sum + 1
+        END FOR
+    END factorial
+
+    SUBMODULE: printArray
+    IMPORT: pArray
+    EXPORT: none
+    ALGORITHM: 
+        FOR i := 0 TO LENGTH OF pArray INC BY 1
+            OUTPUT pArray[i] + " "
+        END FOR
+    END printArray
+
+    SUBMODULE: getInt
+    IMPORT: msg (String), min (Integer), max (Integer)
+    EXPORT: intValue (Integer)
+    ALGORITHM:
+        outString := string
+        errorString := "Error"
+        DO
+            OUTPUT outString
+            INPUT intValue
+            outString := errorString + outString
+        WHILE ((min < intValue) OR (intValue > max))
+    END getInt

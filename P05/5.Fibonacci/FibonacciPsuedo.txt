@@ -1,0 +1,75 @@
+PROGRAM: Fibonacci
+    MAIN:
+        OUTPUT "Fibonacci: Enter mode of generation"
+        fibArray (ARRAY OF Integers) := fibonacci <- none
+        menu <- fibArray
+    END MAIN
+
+    SUBMODULE: getInt           
+    IMPORTS: prompt (String), min (integer), max (integer)  
+    EXPORTS: integerValue (integer)
+    ALGORITHM:                                              
+    ¦   errorPrompt := "Error - input must be between" + min + " and " + max + " inclusive"
+    ¦   outprompt := prompt 
+    ¦   DO              
+    ¦   ¦   OUTPUT outPrompt
+    ¦   ¦   INPUT integerValue
+    ¦   ¦   outPrompt := errorPrompt + prompt
+    ¦   WHILE (min < integerValue > max)   
+    END getInt
+
+    SUBMODULE: fibonacci
+    IMPORTS: none
+    EXPORTS: elements (ARRAY OF integers)
+    ALGORITHM:
+        add := true
+        mode := getInt <- "1. Addition 2. Subtraction", 1, 2
+        IF (mode = 2) THEN
+            add := false
+        END IF
+
+        numElements := getInt <- "Enter number of elements: ", 5, 50
+        elements (ARRAY OF Integer OF SIZE numElements)
+        elements[0] := getInt <- "first digit", -100, 100
+        elements[1] := getInt <- "second digit", -100, 100
+
+        FOR i := 2 TO LENGTH OF elements (exclusive) INC BY 1
+            IF (add = true) THEN
+                elements[i] := elements[i-2] + elements[i-1]
+            ELSE
+                elements[i] := elements[i-2] - elements[i-1]
+            END IF
+        END FOR
+    END fibonacci
+
+    SUBMODULE: menu
+    IMPORTS: elements (ARRAY OF integers)
+    EXPORTS: none
+    ALGORITHM:
+        close := false
+        DO
+            choice := getInt <- "1. View an Element\n2. Print the array\n0. Exit", 0, 2
+            CASE choice
+                1:
+                    position := getInt <- "Enter search position: ", 0, LENGTH OF elements
+                    position := position -1
+                    OUTPUT "Found:" + elements[position]
+                2:
+                    printArray <- elements
+                0:
+                    close := true
+            END CASE
+        WHILE(NOT CLOSE)  
+    END menu    
+  
+    SUBMODULE: printArray
+    IMPORTS: elements (ARRAY OF Integers)
+    EXPORTS: none
+    ALGORITHM:
+        FOR i := 0 TO LENGTH OF ELEMENTS (exclusive) INC BY 1
+            OUTPUT elements[i] + " "
+        END FOR
+    END printArray
+END Program
+
+   

@@ -1,0 +1,125 @@
+PROGRAM: AssignmentTask
+    MAIN:
+        OUTPUT "Welcome the the assignment task"
+        menu <- none
+    END MAIN:
+
+    SUBMODULE: menu
+    IMPORTS: none
+    EXPORTS: none
+    Purpose: adds looping functionality
+    ALGORITHM:
+        close := flase
+        DO
+            OUTPUT (Choose a matrix:)
+            mChoice := getInt <- "1. MATRIX_A\n2. MATRIX_B\n3. MATRIX_C\n0. EXIT", 0, 4
+            CASE mCHoice
+                1:
+                    convolute := Convolute.MATRIX_A
+                    kernel := getKernel <- none
+                    resultArray := createResultArray <- convolute, kernel
+                    calcResult <- resultArray, convolute, kernel
+                    printArray <- "Convolute", convolute
+                    printArray <- "Kernel", kernel
+                    printArray <- "Result", resultArray
+                2:
+                    convolute := Convolute.MATRIX_B
+                    kernel := getKernel <- none
+                    resultArray := createResultArray <- convolute, kernel
+                    calcResult <- resultArray, convolute, kernel
+                    printArray <- "Convolute", convolute
+                    printArray <- "Kernel", kernel
+                    printArray <- "Result", resultArray
+                3:
+                    convolute := Convolute.MATRIX_C
+                    kernel := getKernel <- none
+                    resultArray := createResultArray <- convolute, kernel
+                    calcResult <- resultArray, convolute, kernel
+                    printArray <- "Convolute", convolute
+                    printArray <- "Kernel", kernel
+                    printArray <- "Result", resultArray
+                4:
+                    convolute := Convolute.MATRIX_B
+                    kernel := getKernel <- none
+                    resultArray := createResultArray <- convolute, kernel
+                    calcResult <- resultArray, convolute, kernel
+                    printArray <- "Convolute", convolute
+                    printArray <- "Kernel", kernel
+                    printArray <- "Result", resultArray
+                0:
+                    OUTPUT "Goodbye"
+                    close := true
+            END CASE
+        WHILE (NOT CLOSE)
+    END menu
+
+    SUBMODULE: getKernel
+    IMPORT: nothing
+    EXPORT: kernel (2D ARRAY OF integers)
+    ALGORITHM:
+        OUTPUT "choose a kernel"
+        kChoice := getInt <- "1. HORIZONTAL\n 2. VERTICAL" 
+        IF (kChoice = 1) THEN
+            kernel := Kernel.Horizontal
+        ELSE
+            kernel := Kernel.Vertical
+        END IF
+    END getKernel
+
+    SUBMODULE: getInt           
+    IMPORTS: prompt (String), min (integer), max (integer)  
+    EXPORTS: integerValue (integer)
+    ALGORITHM:                                              
+    ¦   errorPrompt := "Error - input must be between" + min + " and " + max + " inclusive"
+    ¦   outprompt := prompt 
+    ¦   DO              
+    ¦   ¦   OUTPUT outPrompt
+    ¦   ¦   INPUT integerValue
+    ¦   ¦   outPrompt := errorPrompt + prompt
+    ¦   WHILE (min < integerValue > max)   
+    END getInt
+
+
+    SUBMODULE: createResultArray
+    IMPORT: convolute (2D array of integers), kernel (2D array of integers)
+    EXPORT: resultArray (2D array of integers)
+    ALGORITHM:
+    
+        n := (LENGTH OF convolute )
+        m := (LENGTH OF convolute[0])
+        k := (LENGTH OF kernel)
+
+        resultArray (ARRAY OF Integers of SIZE (n - k + 1) by SIZE (m - k + 1))
+    END createResultArray
+
+    SUBMODULE: calcResult
+    IMPORT: resultArray (2D array of integers), convolute (2D array of integers), kernel (2D array of integers)
+    EXPORT: resultArray (2D array of integers)
+    ALGORITHM:
+        FOR i := 0 TO LENGTH OF resultArray (exclusive) INC by 1
+            FOR j := 0 TO LENGTH OF resultArray[0] (exclusive) INC by 1
+                resultArray[i][j] = calcConvolute <- i, j, convolute, kernel
+            END FOR
+        END FOR
+    END calcResult
+
+    SUBMODULE: calcConvolute
+    IMPORT: x (integer), y (integer), resultArray (2D array of integers), convolute (2D array of integers), kernel (2D array of integers)
+    EXPORT result (integer)
+    ALGORITHM:
+        result := 0
+        FOR a := 0 TO LENGTH OF kernel (exclusive) INC by 1
+            FOR b := 0 TO LENTH OF kernel[0] (exclusive) INC by 1
+            result := result + convolute[a + x][b + y] * kernel[a][b]
+            END FOR
+        END FOR
+    END calcConvolute  
+ 
+    SUBMODULE: printArray
+    IMPORT: name (String) pArray(ARRAY OF Integers)
+    EXPORT: nothing
+    ALGORITHM:
+        OUTPUT pArray
+    END printArray
+
+

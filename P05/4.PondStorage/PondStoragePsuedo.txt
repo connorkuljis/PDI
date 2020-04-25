@@ -1,0 +1,110 @@
+PROGRAM: PondCalculator
+    MAIN:
+        names := getNames <- none
+        volumes := calcVolumes <- names
+        menu <- volumes
+    END MAIN
+
+    SUBMODULE: inputInt
+    IMPORTS: prompt(String), min (integer), max (integer)
+    EXPORTS: integerValue (Integer)
+    ALGORITHM:
+        error: "ERROR value must be between " + min + " and " + max
+        outPrompt:= prompt + error
+        DO
+            OUTPUT outPromp
+            INPUT integerValue
+            outPrompt := error + NEWLINE + prompt
+        WHILE (value < min) OR (value > max)
+    END inputInt
+            
+    SUBMODULE: calcVolumes
+    IMPORTS: names (ARRAY OF Strings)
+    EXPORTS: volumes (ARRAY OF Integers)
+    ALGORITHM:
+        volumes (ARRAY OF Integers OF SIZE 3)
+        FOR i := 0 TO LENGTH OF VOLUMES (exclusive) INC BY 1
+            OUTPUT names[i] + "'s pool"
+            INPUT lengthOfPool
+            INPUT widthOfPool
+            INPUT depthOfPool
+            volumeOfPool := lengthOfPool * widthOfPool * depthOfPool
+            volumes[i] := volumeOfPool
+    END calcVolumes
+
+    SUBMODULE: getNames
+    IMPORTS: nothing
+    EXPORTS: names (ARRAY OF Strings)
+    ALGORITHM:
+        names := "Joey", "Corey", "Rachel"
+    END getNames
+
+    SUBMODULE: getAnimals
+    IMPORTS: nothing
+    EXPORTS: animal (ARRAY OF Strings)
+    ALGORITHM:
+        animals := "String Rays, "Arowana", "Koi", "Puffer Fish", "Turtles", "Frogs"
+    END getNames
+
+    SUBMODULE: getRatios
+    IMPORTS: nothing
+    EXPORTS: ratios (ARRAY OF STRINGS)
+    ALGORITHM:
+        ratios := 0.5, 0.4, 0.6, 1.2, 4.5
+    END getRatios
+
+    SUBMODULE: menu
+    IMPORTS: volumes (ARRAY OF String)
+    EXPORTS: nothing
+    ALGORITHM:
+        close := false
+        DO
+            person := inputInt <- NEWLINE "Choose a person: " + NEWLINE + "1. Joey" + NEWLINE + "2. Corey " + NEWLINE + "3. Rachel" + NEWLINE + 0. EXIT, 0, 3
+            CASE person
+                1:
+                    pondChoice := getInt <- "Pick a pond", 1, 2
+                    pondMenu <- person, pondChoice, volumes, 'his'
+                2:
+                    pondChoice := getInt <- "Pick a pond", 1, 2
+                    pondMenu <- person, pondChoice, volumes, 'his'
+                3:
+                    pondChoice := getInt <- "Pick a pond", 1, 2
+                    pondMenu <- person, pondChoice, volumes, 'her'
+                0:
+                    close := true
+        WHILE(NOT CLOSE)
+    END menu
+ 
+    SUBMODULE: pondMenu
+    IMPORTS: person (Integer), pondChoice (Integer), volumes (ARRAY OF Integer), pronoun (String)
+    EXPORTS: nothing
+    ALGORITHM:
+        names := getNames <- none
+        animals := getAnimals <-none
+        ratios := getRatios <- none
+
+        person := person - 1
+        roundedAnimals := 0
+        CASE pondChoice
+            1: 
+                name := names[person]
+                animal := animals[person]
+                numberOfAnimals := (CONVERT TO REAL) volume / ratio
+                roundedAnimals := (CONVERT TO INTEGER) ((ROUND DOWN) numberOf Animals)
+                OUTPUT name + can store + roundedAnimals + animasl + in + volume + m^3 pond
+            2:
+                name := names[person]
+                animal := animals[person]
+                numberOfAnimals := (CONVERT TO REAL) volume / ratio
+                roundedAnimals := (CONVERT TO INTEGER) ((ROUND DOWN) numberOf Animals)
+                OUTPUT name + can store + roundedAnimals + animasl + in + volume + m^3 pond
+            3:
+                name := names[person]
+                animal := animals[person]
+                numberOfAnimals := (CONVERT TO REAL) volume / ratio
+                roundedAnimals := (CONVERT TO INTEGER) ((ROUND DOWN) numberOf Animals)
+                OUTPUT name + can store + roundedAnimals + animasl + in + volume + m^3 pond
+            DEFAULT:
+                OUTPUT "ERROR"
+        END CASE
+    END pondMenu

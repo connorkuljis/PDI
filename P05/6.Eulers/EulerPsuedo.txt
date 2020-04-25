@@ -1,0 +1,59 @@
+PROGRAM: Euler
+    MAIN:
+        n := getInt <- "Enter the number of terms to approximate e: ", 6, 100
+        factorialArray := (ARRAY OF reals OF SIZE n + 1)
+        factorialArray[0] := 1.0
+      
+        FOR (int i := 1 TO n INC by 1)
+            factorialArray[i] = calcTerms <- i
+        END FOR
+    END MAIN
+ 
+    SUBMODULE: getInt
+    IMPORTS: prompt (String), min (integer), max (integer)
+    EXPORTS: n (integer)
+    ALGORITHM:
+        errorPrompt := "Error - input must be between" + min + " and " + max + " inclusive"   
+        outprompt := prompt
+
+        DO
+            OUTPUT outPrompt
+            INPUT n
+            outPrompt := errorPrompt + prompt
+        WHILE (min < n > max)
+    END getInt
+
+    SUBMODULE: calcTerms
+    IMPORTS: x (integer)
+    EXPORTS: value (real)
+    ALGORITHM:
+        factorial := 1.0
+        FOR (int i := 0 TO x INC BY 1)
+            factorial = factorial * i
+        END FOR
+        value := 1.0 / factorial
+    END calcTerms
+
+    SUBMODULE: printArray
+    IMPORTS: pArray (ARRAY OF reals)
+    EXPORTS: none
+    ALGORITHM:
+        FOR (int i := 0 TO length of pArray INC by 1)
+            OUTPUT pArray[i]
+        END FOR
+    END printArray
+
+    SUBMODULE: lastValue
+    IMPORTS: myArray (ARRAY OF reals)
+    EXPORTS: none
+    ALGORITHM:
+        e := 0.0
+        limit := length of myArray - 1
+        
+        FOR (int i := 0 TO limit INC BY 1)
+            e = e + myArray[i]
+        END FOR
+
+        myArray[limit] = e
+        printArray <- myArray
+    END lastValue

@@ -1,0 +1,71 @@
+PROGRAM: PI
+    MAIN: 
+        piArray := storeArray <- none
+        newArray := sumArray <- piArray
+        printArray <- newArray
+    END MAIN
+
+    SUBMODULE: storeArray
+    IMPORTS: nothing
+    EXPORTS: piArray (2D Array of Integers)
+    ALGORITHM:
+        k := inputInt <- "Enter the number of term (k) between 20 and 100"
+        theta := inputDouble("Enter degrees between 0 and 360 inclusive: ", 0, 360)
+        radians := theta (CONVERT TO RATIANS)
+       
+        piArray (ARRAY OF reals OF SIZE k - 1)
+        FOR i := 0 TO LENGTH OF piARRAY (exclusive) INC BY 1
+            nume := (radians * (2 * i) + 1) (CONVERT TO SIN RATIO)
+            pi := pi * 4
+            piArray[i] = pi;
+        END FOR
+    END storeArray
+
+    SUBMODULE: sumArray
+    IMPORTS: piArray (2D ARRAY OF Integer)
+    EXPORTS: piArray (2D ARRAY OF Integer)
+    ALGORITHM:
+        piApprox := 0.0
+        FOR i := 0 TO LENGHT OF piArray (exclusive) INC BY 1 
+            piApprox := piApprox + piArray[i]
+        END FOR
+        piArray[LENGTH OF piArray - 1] := piApprox
+    END sumArray
+
+    SUBMODULE: printArray
+    IMPORTS: piArray (ARRAY OF Integer)
+    EXPORTS: none
+    ALGORITHM:
+        FOR i := 0 TO LENGTH OF piARRAY - 1 (exclusive) INC BY 1
+            OUTPUT (1 + i) + ": " + piArray[i] 
+        END FOR
+        OUTPUT "PI approx: " + piArray[LENGHT OF PI ARRAY - 1]
+    END printArray
+
+    SUBMODULE: inputDouble
+    IMPORTS: prompt (String), lower (Integer), max(Integer)
+    EXPORTS: value (real)
+    ALGORITHM:
+        errorMsg := "Error"
+        outputPrompt := prompt
+        DO
+            OUTPUT outputPrompt
+            INPUT value
+            outputPrompt := errorMsg + prompt
+        WHILE (lower < value > max)
+    END inputDouble
+
+    SUBMODULE: inputInteger
+    IMPORTS: prompt (String), lower (Integer), max(Integer)
+    EXPORTS: value (Integer)
+    ALGORITHM:
+        errorMsg := "Error"
+        outputPrompt := prompt
+        DO
+            OUTPUT outputPrompt
+            INPUT value
+            outputPrompt := errorMsg + prompt
+        WHILE (lower < value > max)
+    END inputInteger
+
+

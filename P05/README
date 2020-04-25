@@ -1,5 +1,38 @@
-bug
+.
+├── 1.Portfolio
+│   ├── PDIPortfolio.class
+│   ├── PDIPortfolio.java
+│   └── PDIPortfolioPseudo.txt
+├── 4.PondStorage
+│   ├── PondCalculator.class
+│   └── PondCalculator.java
+├── 5.Fibonacci
+│   ├── Fibonacci.class
+│   ├── Fibonacci.java
+│   └── FibonacciPsuedo.txt
+├── 6.Eulers
+│   ├── Euler.class
+│   ├── Euler.java
+│   └── EulerPsuedo.txt
+├── 7.PI
+│   ├── NewPi.class
+│   ├── NewPi.java
+│   ├── PI.class
+│   └── PI.java
+├── 8.Permutations
+│   ├── Permutations.class
+│   └── Permutations.java
+├── 9.AssignmentTask
+│   ├── AssignmentTask.class
+│   ├── AssignmentTask.java
+│   ├── AssignmentTaskPsuedo.txt
+│   ├── Convolute.class
+│   ├── Convolute.java
+│   ├── Kernel.class
+│   └── Kernel.java
+├── README
+└── resources
+    ├── Arrays.java
+    └── TwoDArrays.java
 
-Please enter the date as an integer eg: '27032000' for 27th March 2000.
-27022000
-It is day 27 of month 2, in the year 1999
+8 directories, 27 files

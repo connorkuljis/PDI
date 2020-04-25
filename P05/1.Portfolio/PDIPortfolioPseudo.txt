@@ -1,13 +1,3 @@
-// FILE:     Menu.txt
-// AUTHOR:   Connor Kuljis
-// USERNAME: 19459138
-// UNIT: PDI
-// PURPOSE: Combines all the programs up to prac 3 into a single menu 
-// REFERENCE: see P02 and P03
-// COMMENTS: ignored option 6
-// REQUIRES:
-// LAST MOD: 24th March 2020
-
 PROGRAM Menu
     MAIN:
         close := false
