@@ -199,7 +199,8 @@ public class AssignmentTask
         {
             for(int ii = 0; ii < pArray[0].length; ii++)
             {
-                System.out.printf("%4d", pArray[i][ii]);  // formatting using printf
+                // System.out.printf("%4d", pArray[i][ii]);  // formatting using printf
+                System.out.print(pArray[i][ii] + "\t");
             }
             System.out.println();
         }
