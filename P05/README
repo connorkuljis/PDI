@@ -1,38 +1,37 @@
+// FILE: README
+// AUTHOR: Connor Kuljis
+// ID: 1945913
+// UNIT: PDI
+// LAST MOD: 26/04/2020
+// ASSERT: .class files not included
 .
 ├── 1.Portfolio
-│   ├── PDIPortfolio.class
-│   ├── PDIPortfolio.java
-│   └── PDIPortfolioPseudo.txt
+│   ├── PDIPortfolio.java        : Portfolio of all programs so far in PDI
+│   ├── PDIPortfolioPseudo.txt   : Psuedocode
 ├── 4.PondStorage
-│   ├── PondCalculator.class
-│   └── PondCalculator.java
+│   ├── PondCalculator.java      : Calculates how many animals can be stored based on pool volume
+│   └── PondStoragePsuedo.txt    : Psudeocode
 ├── 5.Fibonacci
-│   ├── Fibonacci.class
-│   ├── Fibonacci.java
-│   └── FibonacciPsuedo.txt
+│   ├── Fibonacci.java           : Simulate the fibonacci sequence
+│   └── FibonacciPsuedo.txt      : Psuedocode
 ├── 6.Eulers
-│   ├── Euler.class
-│   ├── Euler.java
-│   └── EulerPsuedo.txt
+│   ├── Euler.java               : Estimate Eulers constant 2.71
+│   └── EulerPsuedo.txt          : Psudeocode
 ├── 7.PI
-│   ├── NewPi.class
-│   ├── NewPi.java
-│   ├── PI.class
-│   └── PI.java
+│   ├── PI.java                  : Estimates PI 3.14
+│   └── PIPsuedo.txt             : Psudeocode
 ├── 8.Permutations
-│   ├── Permutations.class
-│   └── Permutations.java
+│   ├── Permutations.java        : Calculates permutations
+│   └── PermutationsPsuedo.txt   : Psuedocode
 ├── 9.AssignmentTask
-│   ├── AssignmentTask.class
-│   ├── AssignmentTask.java
-│   ├── AssignmentTaskPsuedo.txt
-│   ├── Convolute.class
-│   ├── Convolute.java
-│   ├── Kernel.class
-│   └── Kernel.java
+│   ├── AssignmentTask.java      : Matrix convolutions
+│   ├── AssignmentTaskPsuedo.txt : Psudeocode
+│   ├── Convolute.java           : Class of convolute matrices
+│   ├── Kernel.java              : Class of kernel matricies
+│   └── RESULTS.txt              : testfile
 ├── README
-└── resources
+└── resources                    : old programs for reference
     ├── Arrays.java
     └── TwoDArrays.java
 
-8 directories, 27 files
+8 directories, 31 files

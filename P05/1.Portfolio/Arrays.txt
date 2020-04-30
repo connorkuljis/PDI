@@ -1,0 +1,46 @@
+FILE: Arrays.txt
+AUTHOR: Connor Kuljis
+USERNAME: 19459138
+UNIT: PDI
+PURPOSE: fill an array with random numbers and return value at position
+REFERENCE: Worksheet 4
+COMMENTS:
+REQUIRES:
+LAST MOD: 6th April 2020
+
+PROGRAM: Arrays
+    MAIN:
+        prompt := "Please enter the size of the array (between 1 and 20 inclusive)"
+        errorMsg := "Error: The value must be between 1 and 20"
+        out := prompt
+        DO
+            OUTPUT out
+            INPUT size (Integer)
+            out := errorMsg + prompt
+        WHILE (1 < size < 20)
+
+        myArray (ARRAY of Integers OF SIZE size)
+
+        min := 1
+        max := 15
+        FOR i := 0 TO (LENGTH OF myArray) INC BY 1
+            number := (random integer between 1 and 15 inclusive)
+            myArray[i] := number
+        END FOR
+
+        prompt := "Please enter the array position. "
+        errorMSG := "Error: The value must be greater than zero."
+        out := prompt
+        DO
+            OUTPUT out
+            INPUT search (Integer)
+            out := errorMSsg + prompt
+        WHILE (search <= 0)
+
+        IF (search < LENGHT OF myArray)
+            OUTPUT "Found: " + myArray[search]
+        ELSE
+            OUTPUT "Not found: " + search
+       END IF
+    END MAIN
+END PROGRAM

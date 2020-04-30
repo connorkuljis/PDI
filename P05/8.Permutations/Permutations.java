@@ -1,5 +1,9 @@
-
+// FILE: Permutations.java
+// AUTHOR: Connor Kuljis
+// ID: 19459138
+// UNIT: PDI
 // COMMENTS: There is an integer overflow at n = 17
+// LAST MOD: 26/04/2020
 import java.util.*;
 public class Permutations
 {
@@ -15,6 +19,10 @@ public class Permutations
     }
 
 
+    /* NAME: populateArray
+     * IMPORT: n, rmax
+     * EXPORT: pmArray
+     * PURPOSE: fills pmArray with permutations*/
     public static int[] populateArray(int n, int rMax)
     {
         int nFact = factorial(n); // calculating n! because this never changes;
@@ -30,6 +38,10 @@ public class Permutations
         return pmArray;
     }
 
+    /* NAME: factorial
+     * IMPORT: x
+     * EXPORT: sum
+     * PURPOSE: returns !x*/
     public static int factorial(int x)
     {
         int sum = 1;
@@ -41,6 +53,11 @@ public class Permutations
         return sum;
     }
 
+    
+    /* NAME: printArray
+     * IMPORT: pArray
+     * EXPORT: none
+     * PURPOSE: prints an array*/
     public static void printArray(int[] pArray)
     {
         for(int i=0; i<pArray.length; i++)
@@ -49,6 +66,10 @@ public class Permutations
         }
     }
 
+    /* NAME: getInt
+     * IMPORT: msg, min, max
+     * EXPORT: intValue
+     * PURPOSE: validates integer input */
     public static int getInt(String msg, int min, int max)
     {
         Scanner sc = new Scanner(System.in);

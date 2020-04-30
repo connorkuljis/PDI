@@ -1,0 +1,5 @@
+1. Line 7 Logic error: DIVISON BY ZERO, this is a logical zero and the code may crash
+
+2. Line 2 Inefficiency of WHILE -> DO, the DO is not needed, generally use a while OR do while
+
+3. Line 4 Redundancy x is not updated to the beginning of the while loop, will never loop 

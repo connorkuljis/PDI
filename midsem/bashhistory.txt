@@ -1,0 +1,500 @@
+    7  FOP
+    8  cd
+    9  cd Documents/FOP/
+   10  ls
+   11  vim P05
+   12  mkdir P06
+   13  ls
+   14  cd P06
+   15  ls
+   16  ls
+   17  vim animals.py
+   18  mv animals.py yayeet.py
+   19  vim animals.py
+   20  vim animals.py
+   21  ls
+   22  vim animals.py 
+   23  vim animals.py 
+   24  vim animals.py 
+   25  vim animals.py 
+   26  ls -a
+   27  rm .animals.py.swp 
+   28  vim animals.py 
+   29  vim pets.py
+   30  vim pets.py
+   31  python3 pets.py 
+   32  vim pets.py
+   33  python3 animals.py 
+   34  vim pets.py
+   35  wc -l animals.py 
+   36  vim animals.py 
+   37  python3 animals.py 
+   38  python3 pets.py 
+   39  tmux
+   40  exit
+   41  exit
+   42  PDI
+   43  ls
+   44  mkdir P06
+   45  ls
+   46  cd P06
+   47  ls
+   48  vim ClassModels.md
+   49  ls
+   50  pwd
+   51  cd ../
+   52  ls
+   53  cd 
+   54  cd Documents/
+   55  ls
+   56  cd FOP
+   57  ls
+   58  cd P04/
+   59  ls
+   60  vim conversions.py
+   61  vim testConversions.py
+   62  python3 testConversions.py 
+   63  cd testfolder/
+   64  ls
+   65  cd ../
+   66  ls
+   67  cd testfolder/
+   68  ls
+   69  vim plot1.py 
+   70  vim slices.py 
+   71  ls
+   72  cd ../
+   73  ls
+   74  ls
+   75  cd ../
+   76  ls
+   77  cd SampleTests/
+   78  vim heatsource.py
+   79  vim heatsource.py
+   80  exit
+   81  tmux
+   82  exit
+   83  cd Documents/FOP/
+   84  ls
+   85  cd P05
+   86  ls
+   87  vim heatsource.py 
+   88  ls
+   89  vim heatsource.csv
+   90  cat heatsource.csv
+   91  ls
+   92   vim heatsource.py 
+   93  head -22 heatsource.py 
+   94  :wq
+   95  python3 heatsource.py 
+   96  ls
+   97  exit
+   98  cd Documents/FOP/PracTest3/
+   99  ls
+  100  ls
+  101  vim heatsource.py 
+  102  python3 heatsource.py 
+  103  vim heatsource.py 
+  104  python3 heatsource.py 
+  105  vim heatsource.py 
+  106  vim heatsource.py 
+  107  vim heatsource.py 
+  108  vim heatsource.py 
+  109  cp heatsource.py testheatsource.py
+  110  vim testheatsource.py 
+  111  vim heatsource.py 
+  112  vim heatsource.py 
+  113  vim heat1.csv 
+  114  vim heat2.csv 
+  115  vim heatsource.py 
+  116  ls
+  117  python3 heatsource.py 
+  118  ls
+  119  python3 heatsource.py 
+  120  ls
+  121  ls
+  122  cd ../
+  123  ls
+  124  zip PracTest3/
+  125  cd tarballs/
+  126  ls
+  127  cd ../
+  128  ls
+  129  zip -r 19459138_PracTest3 PracTest3
+  130  ls
+  131  mv 19459138_PracTest3.zip tarballs/
+  132  cd tarballs/
+  133  ls
+  134  mv 19459138_PracTest3.zip PracTest3_19459138.zip
+  135  ls
+  136  cat scpscript.txt 
+  137  exit
+  138  cd Documents/FOP/PracTest3/
+  139  python3 heatsource.py 
+  140  [A
+  141  python3 heatsource.py 
+  142  cd ../
+  143  ls
+  144  cd P05
+  145  ls
+  146  python3 heatsource.py 
+  147  ls
+  148  python3 heat.py 
+  149  vim heat.py
+  150  cd ../PracTest3/
+  151  python3 heatsource.py 
+  152  python3 heatsource.py 
+  153  python3 heatsource.py 
+  154  python3 heatsource.py 
+  155  python3 heatsource.py 
+  156  python3 heatsource.py 
+  157  python3 heatsource.py 
+  158  python3 heatsource.py 
+  159  python3 heatsource.py 
+  160  python3 heatsource.py 
+  161  python3 heatsource.py 
+  162  python3 heatsource.py 
+  163  python3 heatsource.py 
+  164  python3 heatsource.py 
+  165  python3 heatsource.py 
+  166  python3 heatsource.py 
+  167  python3 heatsource.py 
+  168  python3 heatsource.py 
+  169  python3 heatsource.py 
+  170  python3 heatsource.py 
+  171  python3 heatsource.py 
+  172  python3 heatsource.py 
+  173  python3 heatsource.py 
+  174  python3 heatsource.py 
+  175  python3 heatsource.py 
+  176  python3 heatsource.py 
+  177  python3 heatsource.py 
+  178  python3 heatsource.py 
+  179  cd ../P04
+  180  ls
+  181  vim prettyface.py 
+  182  python3 prettyface.py 
+  183  cd ../PracTest3
+  184  ls
+  185  python3 heatsource.py 
+  186  python3 heatsource.py 
+  187  ls
+  188  vim test.py
+  189  python3 test
+  190  python3 test.py
+  191  vim test.py
+  192  python3 heatsource.py 
+  193  ls
+  194  vim heat1.png 
+  195  rm heat1.png
+  196  ls
+  197  rm heat1.csv.png 
+  198  ls
+  199  rm testheatsource.py 
+  200  rm test.py 
+  201  ls
+  202  ls
+  203  mkdir backup
+  204  cp heat1.csv backup/
+  205  cp heat2.csv backup/
+  206  ls
+  207  python3 heatsource.py 
+  208  ls
+  209  open heat1.png 
+  210  python3 heatsource.py 
+  211  ls
+  212  rm heat1.png 
+  213  ls
+  214  python3 heatsource.py 
+  215  ls
+  216  python3 heatsource.py 
+  217  ls
+  218  rm heat1.csv 
+  219  ls
+  220  rm heat1.png
+  221  cp backup/heat1.csv heat1.csv
+  222  ls
+  223  python3 heatsource.py 
+  224  ls
+  225  python3 heatsource.py 
+  226  ls
+  227  vim heat1.png 
+  228  rm heat1.png 
+  229  ls
+  230  python3 heatsource.py 
+  231  python3 heatsource.py 
+  232  ls
+  233  rm heat1.png
+  234  ls
+  235  exit
+  236  ls
+  237  cd Documents/FOP
+  238  ls
+  239  cd tarballs/
+  240  ;s
+  241  ;s
+  242  ls
+  243  pwd
+  244  ls
+  245  cd
+  246  ls
+  247  cd Documents/FOP/tarballs/
+  248  ls
+  249  vim test.txt
+  250  vim test.txt 
+  251  mv test.txt scpscript.txt
+  252  ls
+  253  cd ../
+  254  ls
+  255  mkdir PracTest3
+  256  ls
+  257  cd PracTest3/
+  258  ls
+  259  vim heatsource.py
+  260  python3 heatsource.py 
+  261  vim heatsource.py
+  262  python3 heatsource.py 
+  263  vim heatsource.py
+  264  python3 heatsource.py 
+  265  vim heatsource.py
+  266  python3 heatsource.py 
+  267  vim heat1.csv
+  268  cp heat1.csv heat2.csv
+  269  ls
+  270  vim heat1.csv 
+  271  ls
+  272  rm heat2.csv 
+  273  cp heat1.csv 
+  274  cp heat1.csv heat2.csv
+  275  ls
+  276  vim heat2.csv 
+  277  python3 heatsource.py 
+  278  vim heat2.csv 
+  279  vim heatsource.py 
+  280  python3 heatsource.py 
+  281  vim heatsource.py 
+  282  python3 heatsource.py 
+  283  vim heatsource.py 
+  284  python3 heatsource.py 
+  285  vim heatsource.py 
+  286  vim heatsource.py 
+  287  python3 heatsource.py 
+  288  vim heatsource.py 
+  289  python3 heatsource.py 
+  290  tmux
+  291  ls
+  292  ls
+  293  cd ../
+  294  ls
+  295  exit
+  296  cd Documents/PDI/midsem/
+  297  ls
+  298  vim MarkupPsuedo.txt
+  299  ls
+  300  cd ../
+  301  cd P05/
+  302  ;s
+  303  ls
+  304  cd 6.Eulers/
+  305  vim Euler.java 
+  306  ls
+  307  cd ../
+  308  ls
+  309  cd 8.Permutations/
+  310  ls
+  311  vim Permutations.java 
+  312  cd ../
+  313  ls
+  314  cd 7.PI/
+  315  ls
+  316   vim PI.java 
+  317  exot
+  318  exit
+  319  vim Markup.java
+  320  javac Markup.java 
+  321  cd ../
+  322  ls
+  323  cd 19459138
+  324  ls
+  325  mv Markup.java Documents/PDI/midsem/
+  326  cd Documents/PDI/midsem/
+  327  ;s
+  328  ls
+  329  vim Markup.java 
+  330  javac Markup.java 
+  331  java Markup 
+  332  vim Markup.java 
+  333  javac Markup.java 
+  334  vim Markup.java 
+  335  javac Markup.java 
+  336  javac Markup.java 
+  337  vim Markup.java 
+  338  javac Markup.java 
+  339  vim Markup.java 
+  340  javac Markup.java 
+  341  vim Markup.java 
+  342  javac Markup.java 
+  343  java Markup 
+  344  vim Markup.java 
+  345  javac Markup.java 
+  346  vim Markup.java 
+  347  javac Markup.java 
+  348  vim Markup.java 
+  349  javac Markup.java 
+  350  java Markup 
+  351  vim Markup.java 
+  352  javac Markup.java 
+  353  vim Markup.java 
+  354  javac Markup.java 
+  355  vim Markup.java 
+  356  javac Markup.java 
+  357  vim Markup.java 
+  358  vim Markup.java 
+  359  javac Markup.java 
+  360  vim Markup.java 
+  361  javac Markup.java 
+  362  vim Markup.java 
+  363  javac Markup.java 
+  364  vim Markup.java 
+  365  javac Markup.java 
+  366  vim Markup.java 
+  367  javac Markup.java 
+  368  java Markup 
+  369  vim Markup.java 
+  370  javac Markup.java 
+  371  java Markup 
+  372  java Markup 
+  373  java Markup 
+  374  vim Markup.java 
+  375  javac Markup.java 
+  376  java Markup 
+  377  java Markup 
+  378  vim Markup.java 
+  379  javac Markup.java 
+  380  java Markup 
+  381  vim Markup.java 
+  382  javac Markup.java 
+  383  java Markup 
+  384  java Markup 
+  385  :wq
+  386  vim Markup.java 
+  387  javac Markup.java 
+  388  vim Markup.java 
+  389  javac Markup.java 
+  390  java Markup 
+  391  vim Markup.java 
+  392  vim test.java
+  393  javac test.java 
+  394  java test 
+  395  vim test.java
+  396  javac test.java 
+  397  java test 
+  398  vim test.java
+  399  javac test.java 
+  400  java test 
+  401  vim test.java
+  402  javac test.java 
+  403  java test 
+  404  vim test.java
+  405  javac test.java 
+  406  java test 
+  407  vim test.java
+  408  javac test.java 
+  409  java test 
+  410  vim Markup.java 
+  411  javac Markup.java 
+  412  vim Markup.java 
+  413  javac Markup.java 
+  414  java Markup 
+  415  vim Markup.java 
+  416  javac Markup.java 
+  417  vim Markup.java 
+  418  javac Markup.java 
+  419  java Markup 
+  420  vim Markup.java 
+  421  vim Markup.java 
+  422  javac Markup.java 
+  423  java Markup 
+  424  vim Markup.java 
+  425  javac Markup.java 
+  426  vim Markup.java 
+  427  javac Markup.java 
+  428  vim Markup.java 
+  429  javac Markup.java 
+  430  java Markup 
+  431  vim Markup.java 
+  432  javac Markup.java 
+  433  vim Markup.java 
+  434  javac Markup.java 
+  435  vim Markup.java 
+  436  javac Markup.java 
+  437  java Markup 
+  438  vim Markup.java 
+  439  javac Markup.java 
+  440  java Markup 
+  441  java Markup 
+  442  vim Markup.java 
+  443  javac Markup.java 
+  444  vim Markup.java 
+  445  javac Markup.java 
+  446  vim Markup.java 
+  447  javac Markup.java 
+  448  java Markup 
+  449  java Markup 
+  450  java Markup 
+  451  vim Markup.java 
+  452  javac Markup.java 
+  453  java Markup 
+  454  vim Markup.java 
+  455  javac Markup.java 
+  456  java Markup 
+  457  vim Markup.java 
+  458  javac Markup.java 
+  459  java Markup 
+  460  vim Markup.java 
+  461  javac Markup.java 
+  462  java Markup 
+  463  java Markup 
+  464  vim Markup.java 
+  465  javac Markup.java 
+  466  java Markup 
+  467  vim Markup.java 
+  468  javac Markup.java 
+  469  java Markup 
+  470  ls
+  471  vim Markup.java 
+  472  javac Markup.java 
+  473  vim Markup.java 
+  474  javac Markup.java 
+  475  java Markup
+  476  javac Markup.java 
+  477  vim Markup.java 
+  478  javac Markup.java 
+  479  vim Markup.java 
+  480  javac Markup.java 
+  481  java Markup
+  482  vim Markup.java 
+  483  javac Markup.java 
+  484  vim Markup.java 
+  485  javac Markup.java 
+  486  vim Markup.java 
+  487  javac Markup.java 
+  488  java Markup 
+  489  ls
+  490  rm test.java 
+  491  rm test.class 
+  492  ls
+  493  vim Markup.java
+  494  javac Markup.java 
+  495  java Markup 
+  496  ;s
+  497  ls
+  498  vim QuestionOne.txt
+  499  exit
+  500  ls
+  501  vim history
+  502  cd Documents/PDI
+  503  ls
+  504  mv 19459138_TestAnwers.tar.gz tarballs/
+  505  ls
+  506  history >~/Documents/PDI/midsem/bashhistory.txt

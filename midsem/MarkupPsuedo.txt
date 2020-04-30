@@ -1,0 +1,76 @@
+PROGRAM: Markup
+    MAIN:
+        n := validInput <- "Enter number of terms to approximate Markup's Constant: ", 2, 35
+        k := validInput <- "Enter precision: ", 5, 100
+        emptyArray := createArray <- n
+        markupArray:= calcArray <- emptyArray, k
+        fullArray := lastValue <- markupArray
+        printArray <- fullArray
+    END MAIN:
+
+    SUBMODULE: validInt
+    IMPORTS: prompt (String), min (Integer), max(Integer)
+    EXPORTS: value(Integer)
+    ALGORITHM:
+        errorMsg := "ERROR: Value must be between " + min  " and " + max + " "
+        outMsg := prompt
+        DO
+            OUTPUT outMsg
+            INPUT value
+            outMsg = errorMsg + prompt
+        WHILE (value < min) OR (value > max)
+    END validInt
+
+    SUBMODULE: createArray
+    IMPORTS: n (Integer)
+    EXPORTS: markupArray (ARRAY OF Reals)
+    ALGORITHM;
+        markupArray (ARRAY OF Real OF SIZE n + 1)
+    END createArray
+
+    SUBMODULE: calcMarkup
+    IMPORTS: n (Integer), k (Integer), iterator (Integer)
+    EXPORTS: value(Real)
+    ALGORITHM:
+        i := iterator + 1
+        j := iterator
+ 
+        iSquared := i^2
+        nume := i * (j+1.0)
+        denom := 4.0 * n * k
+        value := nume / denom
+    END calcMarkup
+
+    SUBMODULE: calcArray
+    IMPORTS: markupArray (ARRAY OF Reals), k(Integer)
+    EXPORTS: markupARray (ARRAY OF Reals)
+    ALGORITHM:
+        FOR i=0 TO LENGTH OF markupArray - 1 (inclusive) INC BY 1
+            x := i + 1 
+            markupArray[i] := calcMarkup <- x, k, i
+        END FOR
+    END calcArray
+
+
+    SUBMODULE: lastValue
+    IMPORTS: markupArray (ARRAY OF Reals)
+    EXPORTS: fullArray (ARRAY OF Reals)
+    ALGORITHM:
+        total := 0.0
+        FOR i:=0 TO LENGHT OF markupArray - 1 (inclusive) INC BY 1
+            total := total + markupArray[i]
+        END FOR
+        markupArray[LENGTH OF MARKUP ARRAY -1] := total
+    END lastValue
+
+    SUBMODULE: printArray
+    IMPORTS: printableArray (ARRAY OF REAL)
+    EXPORT: nothing
+    ALGORITHM:
+        OUTPUT "Approximation " + NEWLINE
+        FOR (i:=0 TO LENGTH OF printableArray -1 (Inclusive) INC BY 1)
+            OUTPUT printableArray[i]
+        END FOR
+        OUTPUT "Approx: " + printableArray[LENGHT OF printableArray - 1]
+    END printArray
+END PROGRAM

@@ -9,7 +9,7 @@ PROGRAM: AssignmentTask
     EXPORTS: none
     Purpose: adds looping functionality
     ALGORITHM:
-        close := flase
+        close := false
         DO
             OUTPUT (Choose a matrix:)
             mChoice := getInt <- "1. MATRIX_A\n2. MATRIX_B\n3. MATRIX_C\n0. EXIT", 0, 4

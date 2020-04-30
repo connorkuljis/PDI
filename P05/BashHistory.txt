@@ -1,0 +1,500 @@
+   30  java PI 
+   31  vim PI.java 
+   32  exit
+   33  PDI
+   34  cd P05/AssignmentTask/
+   35  vim AssignmentTask.java 
+   36  ;s
+   37  ls
+   38  git status
+   39  git add AssignmentTask.*
+   40  git status
+   41  git commit -m "Commented and Psudocode Assignment Task"
+   42  git push
+   43  git status
+   44  git rm Convolutions.class
+   45  git rm Convolutions.java
+   46  git rm backup.java 
+   47  git commit -m "cleanup"
+   48  git push
+   49  git status
+   50  ls
+   51  cd ../
+   52  ls
+   53  cd PondCalculator/
+   54  java PondCalculator 
+   55  vim PondCalculator.java 
+   56  javac PondCalculator.java 
+   57  java PondCalculator 
+   58  java PondCalculator 
+   59  vim PondCalculator.java 
+   60  javac PondCalculator.java 
+   61  java PondCalculator 
+   62  vim PondCalculator.java 
+   63  javac PondCalculator.java 
+   64  vim PondCalculator.java 
+   65  javac PondCalculator.java 
+   66  vim PondCalculator.java 
+   67  javac PondCalculator.java 
+   68  vim PondCalculator.java 
+   69  javac PondCalculator.java 
+   70  vim PondCalculator.java 
+   71  javac PondCalculator.java 
+   72  java PondCalculator 
+   73  vim PondCalculator.java 
+   74  git status
+   75  vim PondCalculator.java 
+   76  javac PondCalculator.java 
+   77  vim PondCalculator.java 
+   78  javac PondCalculator.java 
+   79  vim PondCalculator.java 
+   80  javac PondCalculator.java 
+   81  vim PondCalculator.java 
+   82  javac PondCalculator.java 
+   83  vim PondCalculator.java 
+   84  javac PondCalculator.java 
+   85  vim PondCalculator.java 
+   86  javac PondCalculator.java 
+   87  vim PondCalculator.java 
+   88  javac PondCalculator.java 
+   89  vim PondCalculator.java 
+   90  javac PondCalculator.java 
+   91  vim PondCalculator.java 
+   92  javac PondCalculator.java 
+   93  vim PondCalculator.java 
+   94  javac PondCalculator.java 
+   95  vim PondCalculator.java 
+   96  javac PondCalculator.java 
+   97  vim PondCalculator.java 
+   98  javac PondCalculator.java 
+   99  vim PondCalculator.java 
+  100  javac PondCalculator.java 
+  101  vim PondCalculator.java 
+  102  javac PondCalculator.java 
+  103  vim PondCalculator.java 
+  104  javac PondCalculator.java 
+  105  java PondCalculator 
+  106  vim PondCalculator.java 
+  107  java PondCalculator 
+  108  javac PondCalculator.java 
+  109  java PondCalculator 
+  110  java PondCalculator 
+  111  vim PondCalculator.java 
+  112  javac PondCalculator.java 
+  113  java PondCalculator 
+  114  vim PondCalculator.java 
+  115  javac PondCalculator.java 
+  116  java PondCalculator 
+  117  vim PondCalculator.java 
+  118  javac PondCalculator.java 
+  119  java PondCalculator 
+  120  vim PondCalculator.java 
+  121  javac PondCalculator.java 
+  122  java PondCalculator 
+  123  vim PondCalculator.java 
+  124  javac PondCalculator.java 
+  125  java PondCalculator 
+  126  vim PondCalculator.java 
+  127  javac PondCalculator.java 
+  128  java PondCalculator 
+  129  vim PondCalculator.java 
+  130  javac PondCalculator.java 
+  131  java PondCalculator 
+  132  vim PondCalculator.java 
+  133  javac PondCalculator.java 
+  134  java PondCalculator 
+  135  java PondCalculator 
+  136  vim PondCalculator.java 
+  137  ls
+  138  ls
+  139  cd ../
+  140  lls
+  141  ls
+  142  cd PI/
+  143  ls
+  144  java PI 
+  145  vim PI.java 
+  146  javac PI.java 
+  147  java Pi
+  148  java PI
+  149  vim PI.java 
+  150  cd ../
+  151  ls
+  152  cd Euler/
+  153  l
+  154  vim Euler.java 
+  155  cd ../
+  156  ls
+  157  cat PDIPortfolio.java 
+  158  cd PI
+  159  vim PI.java 
+  160  javac PI.java 
+  161  vim PI.java 
+  162  javac PI.java 
+  163  vim PI.java 
+  164  javac PI.java 
+  165  javac PI.java 
+  166  vim PI.java 
+  167  javac PI.java 
+  168  vim PI.java 
+  169  javac PI.java 
+  170  vim PI.java 
+  171  javac PI.java 
+  172  vim PI.java 
+  173  javac PI.java 
+  174  vim PI.java 
+  175  javac PI.java 
+  176  vim PI.java 
+  177  javac PI.java 
+  178  vim PI.java 
+  179  javac PI.java 
+  180  java PI.ja
+  181  java PI
+  182  javac PI.java 
+  183  vim PI.java 
+  184  javac PI.java 
+  185  vim PI.java 
+  186  javac PI.java 
+  187  vim PI.java 
+  188  javac PI.java 
+  189  vim PI.java 
+  190  javac PI.java 
+  191  vim PI.java 
+  192  javac PI.java 
+  193  java PI
+  194  vim PI.java 
+  195  javac PI.java 
+  196  java PI
+  197  vim PI.java 
+  198  javac PI.java 
+  199  java PI
+  200  vim PI.java 
+  201  javac PI.java 
+  202  java PI
+  203  vim PI.java 
+  204  javac PI.java 
+  205  java PI
+  206  java PI
+  207  vim PI.java 
+  208  vim NewPi.java
+  209  javac NewPi.java 
+  210  vim PI.java 
+  211  vi NewPi.java 
+  212  javac NewPi.java 
+  213  java NewPi 
+  214  vi NewPi.java 
+  215  javac NewPi.java 
+  216  java NewPi 
+  217  vi NewPi.java 
+  218  javac NewPi.java 
+  219  java NewPi 
+  220  vi NewPi.java 
+  221  javac NewPi.java 
+  222  java NewPi 
+  223  vi NewPi.java 
+  224  javac NewPi.java 
+  225  java NewPi 
+  226  vi NewPi.java 
+  227  cat NewPi.
+  228  cat NewPi.java 
+  229  vim PI.java 
+  230  javac PI.java 
+  231  vim PI.java 
+  232  javac PI.java 
+  233  java PI
+  234  vim NewPi.java 
+  235  javac NewPi.java 
+  236  java NewPi 
+  237  vim NewPi.java 
+  238  javac NewPi.java 
+  239  java NewPi 
+  240  vim NewPi.java 
+  241  javac NewPi.java 
+  242  java NewPi 
+  243  vim NewPi.java 
+  244  javac NewPi.java 
+  245  java NewPi 
+  246  vim NewPi.java 
+  247  javac NewPi.java 
+  248  java NewPi 
+  249  vim NewPi.java 
+  250  javac NewPi.java 
+  251  java NewPi 
+  252  ls
+  253  cd ../
+  254  ls
+  255  cd Euler/
+  256  java Euler 
+  257  vim Euler.java 
+  258  cd ../PI
+  259  vim NewPi.java 
+  260  javac PI.java 
+  261  java PI
+  262  javac NewPi.java 
+  263  java NewPi 
+  264  java PI
+  265  vim NewPi.java 
+  266  javac NewPi.java 
+  267  java NewPi 
+  268  vim NewPi.java 
+  269  javac NewPi.java 
+  270  java NewPi 
+  271  vim NewPi.java 
+  272  javac NewPi.java 
+  273  java NewPi 
+  274  vim NewPi.java 
+  275  javac NewPi.java 
+  276  java NewPi 
+  277  vim NewPi.java 
+  278  javac NewPi.java 
+  279  java NewPi 
+  280  vim NewPi.java 
+  281  javac NewPi.java 
+  282  java NewPi 
+  283  vim NewPi.java 
+  284  javac NewPi.java 
+  285  java NewPi 
+  286  vim NewPi.java 
+  287  javac NewPi.java 
+  288  java NewPi 
+  289  vim NewPi.java 
+  290  javac NewPi.java 
+  291  java NewPi 
+  292  vim NewPi.java 
+  293  javac NewPi.java 
+  294  java NewPi 
+  295  vim NewPi.java 
+  296  exit
+  297  PDI
+  298  ls
+  299  cd P05
+  300  ls
+  301  ls
+  302  cd AssignmentTask/
+  303  ls
+  304  vim Convolutions.java
+  305  javac Convolutions.java
+  306  java Convolutions
+  307  ls
+  308  ls
+  309  cd ./
+  310  cd ../
+  311  ls
+  312  cd ../
+  313  ls
+  314  git init
+  315  gid add README.md
+  316  git add README.md
+  317  vim README.md
+  318  git add README.md
+  319  gits status
+  320  git status
+  321  git add *
+  322  git status
+  323  git commit -m "first commit"
+  324  git remote add origin https://github.com/connorkuljis/PDI.git
+  325  git push -u origin master
+  326  git status
+  327  ls
+  328  ls -a
+  329  vim README.md
+  330  git status
+  331  git add README.md
+  332  git commit -m "edited readme"
+  333  git push
+  334  git status
+  335  git push
+  336  vim README.md 
+  337  git commit -m "edited readme"
+  338  git add README.md 
+  339  git commit -m "edited readme"
+  340  git push
+  341  ls
+  342  cd P05
+  343  cd AssignmentTask/
+  344  ls
+  345  mv Convolutions.java
+  346  mv Convolutions.java AssignmentTask.java
+  347  vim AssignmentTask.java 
+  348  javac AssignmentTask.java 
+  349  java AssignmentTask 
+  350  ls
+  351  rm Convolutions.class 
+  352  ls
+  353  rm backup.java 
+  354  ls
+  355  vim AssignmentTask.java 
+  356  javac AssignmentTask.java 
+  357  java AssignmentTask 
+  358  vim AssignmentTask.java 
+  359  cd ../
+  360  ls
+  361  cd ../
+  362  cd resources/
+  363  ls
+  364  cat comments.txt 
+  365  cd ./
+  366  cd ../P05/AssignmentTask/
+  367  ls
+  368  vim AssignmentTask.java 
+  369  cd ../
+  370  ls
+  371  cat PDIPortfolio.java 
+  372  cd AssignmentTask/
+  373  vim AssignmentTask.java 
+  374  vim AssignmentTask.java 
+  375  %
+  376  tmux
+  377  exit
+  378  exit
+  379  PDI
+  380  cd P05
+  381  ls
+  382  AssignmentTask/
+  383  ls
+  384  cd AssignmentTask/
+  385  ls
+  386  vim AssignmentTask.txt
+  387  mv AssignmentTask.txt AssignmentTaskPsuedo.txt
+  388  ls
+  389  java AssignmentTask 
+  390  vim AssignmentTask.java 
+  391  javac AssignmentTask.java 
+  392  java AssignmentTask 
+  393  tmux
+  394  PDI
+  395  cd p05
+  396  cd P05
+  397  cd AssignmentTask/
+  398  ls
+  399  cd ../
+  400  ls
+  401  cd Fibonacci/
+  402  cat FibonacciPsuedo.txt 
+  403  exit
+  404  PID
+  405  PDI
+  406  cd P05/AssignmentTask/
+  407  ;s
+  408  ls
+  409  vim AssignmentTaskPsuedo.txt 
+  410  cat ../Fibonacci/FibonacciPsuedo.txt 
+  411  head -20 ../Fibonacci/FibonacciPsuedo.txt 
+  412  vim AssignmentTaskPsuedo.txt 
+  413  xit
+  414  exit
+  415  PDI
+  416  cd P05/AssignmentTask/
+  417  vim AssignmentTask.java 
+  418  wc -l AssignmentTask
+  419  wc -l AssignmentTask.java 
+  420  wc -l *
+  421  cd ../
+  422  ;s
+  423  wc -l *
+  424  java PDIPortfolio 
+  425  tree
+  426  mdir resources
+  427  mkdir resources
+  428  mv Arrays.java resources/
+  429  mv TwoDArrays.java resources/
+  430  ls
+  431  mkdir Portfolio
+  432  mv PDIPortfolio.java Portfolio/
+  433  mv PDIPortfolio.class Portfolio/
+  434  mv PDIPortfolioPseudo.txt Portfolio/
+  435  ls
+  436  mv Portfolio/ 1.Portfolio
+  437  ls
+  438  mv PondCalculator/4.PondStorage
+  439  mv PondCalculator/ 4.PondStorage
+  440  ls
+  441  mv Fibonacci/ 5.Fibonacci
+  442  ls
+  443  mv Euler 6. Eulers
+  444  mv Euler 6.Eulers
+  445  ls
+  446  mv PI 7.PI
+  447  mv Permutations/ 8.Permutations
+  448  ;s
+  449  ls
+  450  vim AssignmentTask/ 9.AssignmentTask
+  451  mv AssignmentTask/ 9.AssignmentTask
+  452  ls
+  453  tree > README
+  454  vim README 
+  455  cd PI
+  456  cd 7.PI/
+  457  ls
+  458  rm -r NewPi.java 
+  459  rm -r NewPi.class 
+  460  ls
+  461  java PI
+  462  java PI
+  463  vi PI.java 
+  464  javac PI.java 
+  465  java PI
+  466  vi PI.java 
+  467  javac PI.java 
+  468  java PI 
+  469  java PI 
+  470  java PI
+  471  vim PI.java 
+  472  javac PI.java 
+  473  java PI
+  474  vim PI.java 
+  475  javac PI.java 
+  476  java PI
+  477  vim PI.java 
+  478  javac PI.java 
+  479  vim PI.java 
+  480  javac PI.java 
+  481  java PI
+  482  vim PI.java 
+  483  javac PI.java 
+  484  java PI
+  485  ls
+  486  cat PI.java
+  487  vim PI.java 
+  488  clear
+  489  ls
+  490  vim PI.java 
+  491  cd ../4.PondStorage/
+  492  vim PondCalculator.java 
+  493  javac --version
+  494  java --version
+  495  vim PondCalculator.java 
+  496  cd ../8.Permutations/
+  497  ls
+  498  vim Permutations.java 
+  499  exit
+  500  PDI
+  501  cd P05/1.Portfolio/
+  502  ;s
+  503  ls
+  504  vim PDIPortfolioPseudo.txt 
+  505  vim PDIPortfolioPseudo.txt 
+  506  cat TwoDArrays.txt >> PDIPortfolioPseudo.txt 
+  507  cat Arrays.txt >> PDIPortfolioPseudo.txt 
+  508  vim PDIPortfolioPseudo.txt 
+  509  ls
+  510  cd ../
+  511  ls
+  512  tree
+  513  cat README 
+  514  tree > README 
+  515  vim README 
+  516  cd 9.AssignmentTask/
+  517  ls
+  518  vim RESULTS.txt 
+  519  cd ../
+  520  ls
+  521  vim README 
+  522  ls
+  523  ls
+  524  cd ../
+  525  tar -cvzf 19459138_P05.tar.gz P05
+  526  ls
+  527  rm 19459138_P05.tar.gz 
+  528  cd P05
+  529  history > BashHistory.txt

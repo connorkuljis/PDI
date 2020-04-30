@@ -44,166 +44,218 @@ PROGRAM Menu
     ALGORITHM:
         numOne := inputInt <- "Enter the first integer", 0, 100
         numTwo := inputInt <- "Enter the second integer", 0, 100
-        answer = numOne + numTwo
+        answer := numOne + numTwo
 
         OUTPUT "The answer is " + numOne + " + " + numeTwo " = " + answer
+    END sum2Ints
 
     SUBMODULE: temp
     IMPORT: none
     EXPORT: none
     ALGORITHM:
-        close = false
+        close := false
         DO
-            OUTPUT "Convert to Upper or Lower case"
-            INPUT choice (Character)
-  
+            OUTPUT "Which temperature are you working with (C)elcius or (F)arenheit"
+            INPUT choice (CONVERT TO UPPERCASE CHARACTER)
             CASE choice
-                'U':
+                'C':
+                    tempInCels := inputInt <- "Enter temperature in celcius", 0, 99999
+                    farenheit := calcFaren <- tempInCels 
+                    OUTPUT "Temp in farenheit: " + farenheit
+                    finish := true
+                'F':
+                    tempInFaren := inputInt <- "Enter temperature in farenheit", 0, 99999
+                    celcius := calcCelcius <- tempInFaren
+                    OUTPUT "Temp in celcius " + celcius
+                    finish := true
+            END CASE
+            WHILE (!finish)
+    END temp
 
-
-
-
-
-                2:
-                    finish := false
+    SUBMODULE charConv
+    IMPORTS: none
+    EXPORTS: none
+    ALGORITHM
+        close := false
+        DO
+            OUTPUT "Convert to (U)ppercase or (L)owercase? Please select an option."
+            INPUT choice (Character)
+            choice := (Conver to Uppercase) choice 
+            CASE choice
+                U:
                     DO
-                        OUTPUT "Which temperature are you working with (C)elcius or (F)arenheit"
-                        INPUT choiceA (Character)
-                        choiceA := (Convert to Uppercase) choiceA
-                         
-                        CASE
-                            C:
-                                OUTPUT "Enter temperature in celcius"
-                                INPUT tempInCels (Real)
+                        OUTPUT "Enter a lowercase character"
+                        INPUT lowercaseChar (Character)
+                        lowerAscii := lowercaseChar (Convert to Integer)
+                    WHILE (96 > lowerAscii > 123)
 
-                                farenheit := (tempInCels * 9.0 / 5.0)  + 32.0
-                                OUTPUT "Temp in farenheit: " + farenheit
-                                finish := true
-                            F:
-                                OUTPUT "Enter temperature in farenheit"
-                                INPUT tempInFaren (Real
+                    lowerToUpper := (lowerAscii - 32) (Convert to Character)
+                    OUTPUT "Upper: " + lowerToUpper
+                    cd := true
+             
+                 L:
+                     DO
+                         OUTPUT "Enter an uppercase character
+                         INPUT uppercaseChar (Character)
+                         upperAscii := uppercaseChar (Convert to Integer)
+                     WHILE ( 64 > upperAscii > 91 )
+                     
+                     upperToLower = (upperAscii + 32) (Convert to Character)
+                     OUTPUT "Lower: " + upperToLower
+                     cd := true
+                
+                  DEFAULT:
+                      OUTPUT "Error. Invalid Selection"
+            END CASE
+        WHILE (!cd)
+    END charConv
+
+    SUBMODULE: asciiConv
+    IMPORT: none
+    EXPORT: none
+    ALGORITHM:
+        DO
+            OUTPUT "Enter a character to convert to associated ASCII number."
+            INPUT myChar (Character)
+            charToAscii := (Convert to Integer) myChar
+        WHILE (0 > charToAscii > 127)
  
-                                celcius = (tempInFaren - 32) * 5 /9
-                                OUTPUT "Temp in celcius " + celcius
-                                finish := true
-                         END CASE
-                      WHILE (!finish)
-
-                3:
-                    cd := false
-                    DO
-                        OUTPUT "Convert to (U)ppercase or (L)owercase? Please select an option."
-                        INPUT choice (Character)
-                        choice := (Conver to Uppercase) choice 
-
-                        CASE choice
-                            U:
-                                DO
-                                    OUTPUT "Enter a lowercase character"
-                                    INPUT lowercaseChar (Character)
-                                    lowerAscii := lowercaseChar (Convert to Integer)
-                                WHILE (96 > lowerAscii > 123)
-
-                                lowerToUpper := (lowerAscii - 32) (Convert to Character)
-                                OUTPUT "Upper: " + lowerToUpper
-                                cd := true
-                         
-                             L:
-                                 DO
-                                     OUTPUT "Enter an uppercase character
-                                     INPUT uppercaseChar (Character)
-                                     upperAscii := uppercaseChar (Convert to Integer)
-                                 WHILE ( 64 > upperAscii > 91 )
-                                 
-                                 upperToLower = (upperAscii + 32) (Convert to Character)
-                                 OUTPUT "Lower: " + upperToLower
-                                 cd := true
-                            
-                              DEFAULT:
-                                  OUTPUT "Error. Invalid Selection"
-                        END CASE
-                    WHILE (!cd)
-
-                4:
-                    DO
-                        OUTPUT "Enter a character to convert to associated ASCII number."
-                        INPUT myChar (Character)
-                        charToAscii := (Convert to Integer) myChar
-                    WHILE (0 > charToAscii > 127)
-         
-                    OUPUT "Ascii value: " + charToAscii
+            OUPUT "Ascii value: " + charToAscii
+    END asciiConv
           
-                5:
-                    OUTPUT "Check if two integers are divisble"
-                    DO
-                        OUTPUT "Enter first integer"
-                        INPUT intOne (Integer)
-                    WHILE (numOne > 0)
-  
-                    DO
-                        OUTPUT "Enter second integer"
-                        INPUT intTwo (Integer)
-                    WHILE (numOne > 0)
-  
-            
-                    IF (intOne MOD intTwo != 0) THEN
-                        OUTPUT "not divisible!"
+    SUBMODULE: divisble
+    IMPORT: none
+    EXPORT: none
+    ALGORITHM:
+        OUTPUT "Check if two integers are divisble"
+        numOne := inputInt("Enter the first number" 0, 9999)
+        numTwo := inputInt("Divided by: ", 0, 9999)
+
+        IF (intOne MOD intTwo != 0) THEN
+            OUTPUT "not divisible!"
+        ELSE
+            OUTPUT "divisible!"
+        END IF
+    END divisble
+
+    SUBMODULE: splitDate
+    IMPORT: none
+    EXPORT: none
+    ALGORITHM:
+        date := inputInt <- "Please enter the date as an integer eg: 27032000 for 27th March 2000.", 1010001, 31129999
+
+        day := date DIV 1000000
+        roundedDay = day (convert to integer)
+
+        month := (day MOD roundedDay) * 100
+        roundedMonth := month (convert to integer)
+
+        year := month MOD roundedMonth * 10000
+        roundedyear = year (convert to integer)
+
+        CASE roundedMonth
+            1: 3: 5: 7: 8: 10: 12:
+                IF (0 < roundedDay <= 31) THEN
+                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                ELSE
+                    OUTPUT "Invalid"
+                ENDIF
+            4: 6: 9: 11
+                IF (0 < roundedDay <= 30) THEN
+                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
+                ELSE
+                    OUTPUT "Invalid"
+                ENDIF
+            2:
+                IF ((roundedYear MOD 4 does not equal 0) AND (roundedYear MOD 4 does not equal 0) THEN
+                    IF (0 < roundedDay <= 29) THEN
+                        OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
                     ELSE
-                        OUTPUT "divisible!"
-                    END IF
+                        OUTPUT "Invalid"
+                    ENDIF
+                ELSE
+                    IF (0 < roundedDay <= 28) THEN
+                        OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear "It is a leap year"
+                    ELSE
+                        OUTPUT "Invalid"
+                    ENDIF
+                ENDIF
+            DEFAULT:
+                OUTPUT "Invalid"
+        ENDCASE
+    END splitDate
 
-                6:
-                    stra := "Please enter the date as an integer eg: 27032000 for 27th March 2000."
-                    errorStr := "Error. The value must be between 01010001 and 31129999. "
-                    outStr = str
-                    DO
-                        OUTPUT outstr
-                        INPUT input (Real)
-                        outStr = errorStr + str
-                    WHILE (01010001 > input > 31129999)
+    SUBMODULE: firstArrays
+    IMPORT: none
+    EXPORT: none
+    ALGORITHM:
+        size := inputInt <- "Enter the size of the array between 1 and 20", 1, 20
+        myArray (ARRAY of Integers OF SIZE size)
 
-                    day := date DIV 1000000
-                    roundedDay = day (convert to integer)
+        min := 1
+        max := 15
+        FOR i := 0 TO (LENGTH OF myArray) INC BY 1
+            number := (random integer between 1 and 15 inclusive)
+            myArray[i] := number
+        END FOR
 
-                    month := (day MOD roundedDay) * 100
-                    roundedMonth := month (convert to integer)
+        search := inputInt <- "Input array position", lower, LENGTH OF myArray
+        IF (search < LENGHT OF myArray) THEN
+            OUTPUT "Found: " + myArray[search]
+        ELSE
+            OUTPUT "Not found: " + search
+       END IF
+    END firstArrays
 
-                    year := month MOD roundedMonth * 10000
-                    roundedyear = year (convert to integer)
+    SUBMODULE: secondArrays
+    IMPORT: none
+    EXPORT: none
+    ALGORITHM:
+        rows := inputInt <- "Please enter rows", 0, 9
+        cols := inputInt <- "Please enter cols", 0, 9
 
-                    CASE roundedMonth
-                        1: 3: 5: 7: 8: 10: 12:
-                            IF (0 < roundedDay <= 31) THEN
-                                OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
-                            ELSE
-                                OUTPUT "Invalid"
-                            ENDIF
-                        4: 6: 9: 11
-                            IF (0 < roundedDay <= 30) THEN
-                                OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
-                            ELSE
-                                OUTPUT "Invalid"
-                            ENDIF
-                        2:
-                            IF ((roundedYear MOD 4 does not equal 0) AND (roundedYear MOD 4 does not equal 0) THEN
-                                IF (0 < roundedDay <= 29) THEN
-                                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear
-                                ELSE
-                                    OUTPUT "Invalid"
-                                ENDIF
-                            ELSE
-                                IF (0 < roundedDay <= 28) THEN
-                                    OUTPUT "It is day" roundedDay "of month" roundedMonth " in the year" roundedYear "It is a leap year"
-                                ELSE
-                                    OUTPUT "Invalid"
-                                ENDIF
-                            ENDIF
-                        DEFAULT:
-                            OUTPUT "Invalid"
-                    ENDCASE
+        OUTPUT " The " + rows + " times " + cols + " table. (NEW LINE)"
+        OUTPUT " | "
+        FOR j := 0 TO cols INC BY 1
+            OUTPUT (j + 1) + (TAB SPACE)
+        ENDFOR
+  
+        OUTPUT "----------------------------------------------------------"
+   
+        twoD (TWO DIMENTIONAL ARRAY OF Integer OF SIZE rows + 1 BY cols + 1) 
+        FOR i := 1 TO (LENGTH OF twoD[i]) INC BY 1
+            OUTPUT i + " | "
+            FOR  j := 1 TO (LENGTH OF twoD[i][j]) INC BY 1
+                twoD[i][j] := i * j
+                OUTPUT twoD[i][j] + (TAB SPACE)
+            END FOR
+            OUTPUT (NEW LINE)
+        END FOR
+    END secondArrays
 
-                0:
-                    OUTPUT "Good-bye. "
-                    close := true
+    SUBMODULE: calcFaren
+    IMPORT: tempInCels (real)
+    EXPORT: farenheit (real)
+    ALGORITM:
+        farenheit := ((tempinCels * 9.0) / 5.0) + 32.0
+    END calcFaren
 
-        WHILE(close DOES NOT EQUAL false)
+    SUBMODULE: calcCelcius
+    IMPORT: tempInFaren (real)
+    EXPORT: celcius (real)
+    ALGORITM:
+        celcius := (tempInFaren - 32.0) * 5 / 9.0
+   
+    SUBMODULE: inputInt
+    IMPORT: prompt (String), lower (integer), upper (integer)
+    EXPORT: integer (integer)
+    ALGORITHM:
+        outStr := prompt
+        error := "error"
+        DO
+            OUTPUT outStr
+            INPUT integer
+            outStr := error + prompt
+        WHILE (lower < integer > upper)
+    END inputInt
+END PROGRAM
