@@ -4,7 +4,8 @@ public class Main
 {
     public static void main(String args[])
     {
-        validDay(29,02,2001);
+        Date a = new Date();
+        System.out.println(a.toString());
     }
 
     private static boolean isLeapYear(int inYear)

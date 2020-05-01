@@ -17,9 +17,9 @@ public class Date
      ************************************************************/
     public Date()
     {
-        day = 0;
-        month = 0;
-        year = 0;
+        day = 1;
+        month = 1;
+        year = 1;
     }
 
     /************************************************************
@@ -31,9 +31,9 @@ public class Date
      ************************************************************/
     public Date(int inDay, int inMonth, int inYear)
     {
-        setDay(inDay, inMonth, inYear);
-        setMonth(inMonth);
         setYear(inYear);
+        setMonth(inMonth);
+        setDay(inDay);
     }
 
     /************************************************************
@@ -52,13 +52,13 @@ public class Date
     //MUTATORS
     /************************************************************
      * SUBMODULE: setDay
-     * IMPORT: inDay (Integer), inMonth (Integer), inYear(Integer)
+     * IMPORT: inDay (Integer)
      * EXPORT: none
      * ASSERTION: sets the day to inDay
      ************************************************************/
-    public void setDay(int inDay, int inMonth, int inYear)
+    public void setDay(int inDay)
     {
-        if (validDay(inDay, inMonth, inYear) == false)
+        if (validDay(inDay) == false)
         {
             throw new IllegalArgumentException("Invalid Day");
         }
@@ -93,6 +93,7 @@ public class Date
             throw new IllegalArgumentException("Invalid Year");
         }
         year = inYear;
+        System.out.println(inYear);
     }
 
     // ACCESSORS
@@ -177,20 +178,16 @@ public class Date
         return suffix;
     }
 
-    private boolean validDay(int inDay, int inMonth, int inYear)
+    private boolean validDay(int inDay)
     {
+        System.out.println(year);
         boolean isValid = false;
         int maxDays;
 
-        System.out.println("year: " + inYear);
-        if(isLeapYear(inYear) == false)
+        if(isLeapYear(year) == false)
         {
             int[] calendarDays = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 ,31};
-
-            maxDays = calendarDays[inMonth - 1];
-
-            System.out.println("month: " + inMonth);
-            System.out.println("maxDays: " + maxDays);
+            maxDays = calendarDays[month - 1];
 
             if((inDay <= maxDays) && (inDay > 0))
             {
@@ -200,11 +197,8 @@ public class Date
         else
         {
             int[] leapCalendarDays = new int[]{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-            
-            maxDays = leapCalendarDays[inMonth - 1];
 
-            System.out.println("month: " + inMonth);
-            System.out.println("maxDays: " + maxDays);
+            maxDays = leapCalendarDays[month - 1];
 
             if((inDay <= maxDays) && (inDay > 0))
             {
