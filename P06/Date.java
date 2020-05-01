@@ -19,7 +19,7 @@ public class Date
     {
         day = 1;
         month = 1;
-        year = 1;
+        year = 0;
     }
 
     /************************************************************
@@ -58,7 +58,7 @@ public class Date
      ************************************************************/
     public void setDay(int inDay)
     {
-        if (validDay(inDay) == false)
+        if (!validDay(inDay, month, year))
         {
             throw new IllegalArgumentException("Invalid Day");
         }
@@ -73,7 +73,7 @@ public class Date
      ************************************************************/
     public void setMonth(int inMonth)
     {
-        if (validMonth(inMonth) == false)
+        if (!validMonth(inMonth))
         {
             throw new IllegalArgumentException("Invalid Month");
         }
@@ -88,12 +88,11 @@ public class Date
      ************************************************************/
     public void setYear(int inYear)
     {
-        if (validYear(inYear) == false)
+        if (!validYear(inYear))
         {
             throw new IllegalArgumentException("Invalid Year");
         }
         year = inYear;
-        System.out.println(inYear);
     }
 
     // ACCESSORS
@@ -140,6 +139,7 @@ public class Date
     // toString(): String
     public String toString()
     {
+        System.out.println(day + month + year);
         return ("It is the " + day + getSuffix(day) + " day of " + getMonthName(month) + " in " + year + " " + printIfLeapYear(year));
     }
 
@@ -147,7 +147,7 @@ public class Date
     public boolean isLeapYear(int inYear)
     {
         boolean isLeapYear = false;
-        if(inYear % 400 == 0)
+        if((inYear % 400 == 0) && (inYear % 100 == 0) && (inYear % 4 == 0))
         {
             isLeapYear = true;
         }
@@ -178,9 +178,8 @@ public class Date
         return suffix;
     }
 
-    private boolean validDay(int inDay)
+    public boolean validDay(int inDay, int month, int year)
     {
-        System.out.println(year);
         boolean isValid = false;
         int maxDays;
 
