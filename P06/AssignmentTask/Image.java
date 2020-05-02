@@ -1,48 +1,70 @@
+// FILE     : Image.java
+// AUTHOR   : Connor Kuljis
+// USERNAME : 19459138
+// UNIT     : PDI
+// PURPOSE  : class of an image object
+// REFERENCE: 
+// COMMENTS : 
+// REQUIRES : Convolute.java, Kernel.java
+// LAST MOD : 02/05/2020
 import java.util.*;
 
 public class Image
 {
     // class fields
     int[][] originalImage;
-
-    // default constructor
+    
+    // NAME: default constructor
+    // IMPORT: none
+    // EXPORT: none
+    // ASSERTION: valid default array should be a empty array, array must not be null
     public Image()
     {
         originalImage = new int[1][1];
     }
 
 
-    // alternate constructor
+    // NAME: alternate constructor
+    // IMPORT: inOriginalImage (2D ARRAY OF Integers)
+    // EXPORT: none
+    // ASSERTION: assume the array is valid
     public Image(int[][] inOriginalImage)
     {
         setOriginalImage(inOriginalImage);
     }
 
-    // copy constructor
+    // NAME: copy constructor
+    // IMPORT: Image inImage
+    // EXPORT: 
+    // ASSERTION: creates an object with an identical object state as the import 
     public Image(Image inImage)
     {
         originalImage = inImage.getOriginalImage();
     }
 
-    // mutators
+    // MUTATORS:
+    // SUBMODULE: setOriginalImage
+    // IMPORT: inOriginalImage(2D ARRAY OF Integer)
+    // EXPORT: none
+    // ASSERTION:
     public void setOriginalImage(int[][] inOriginalImage)
     {
         originalImage = inOriginalImage;
     }
 
-    // accessors
+    // ACCESSORS:
+    // SUBMODULE: getOriginalImage
+    // IMPORT: none
+    // EXPORT: originalImage
     public int[][] getOriginalImage()
     {
         return originalImage;
     }
 
-    // clone
-    public Image clone()
-    {
-        return new Image(this);
-    }
-
-    // equals
+    // SUBMODULE: equals
+    // IMPORT: inObj (Object)
+    // EXPORT: same (boolean)
+    // ASSERTION: two objects are the same if their arrays are same size and have the same values
     public boolean equals(Object inObj)
     {
         boolean same = false;
@@ -53,7 +75,20 @@ public class Image
         }
         return same;
     }
- 
+
+    // SUBMODULE: clone
+    // IMPORT: none
+    // EXPORT: cloneImage (Object)
+    // ASSERTION: returns a closed objet of the current object
+    public Image clone()
+    {
+        return new Image(this);
+    }
+
+    // SUBMODULE: toString
+    // IMPORT: none
+    // EXPORT: str (String)
+    // ASSERTION: 
     public String toString()
     {
         String str = "";
@@ -68,6 +103,10 @@ public class Image
         return str;
     }
 
+    // SUBMODULE: convolution
+    // IMPORT: kernel (2D array of integers)
+    // EXPORT: resultArray (2D array of integers)
+    // ASSERTION: assume the kernel is valid and is n*n in size
     public int[][] convolution(int[][] kernel)
     {
         int[][] resultArray;
@@ -87,20 +126,19 @@ public class Image
         {
             for(int j = 0; j < resultArray[0].length; j++)
             {
-                resultArray[i][j] = calcConvolute(i, j, originalImage, kernel); 
+                resultArray[i][j] = calcConvolute(i, j, kernel); 
             }
         }
         return resultArray;
     }
 
     /*
-     * Name: calcConvolute
-     * Date: 23/04/2020
-     * Import: i (integer), j (integer), convolute (2D array of integers), kernel (2D array of integers)
-     * Export: result (integer)
-     * Purpose: this submodule performs the convolution operation
+     * SUBMODULE: calcConvolute
+     * IMPORT: i (integer), j (integer), kernel (2D array of integers)
+     * EXPORT: result (integer)
+     * ASSERTION: this submodule performs the convolution operation
      */
-    private int calcConvolute(int i, int j, int[][] convolute, int[][] kernel)
+    private int calcConvolute(int i, int j, int[][] kernel)
     {
         int result = 0;
 
@@ -109,7 +147,7 @@ public class Image
         {
             for(int b = 0; b < kernel[0].length; b++)
             {
-                result = result + convolute[a + i][b + j] * kernel[a][b];
+                result += originalImage[a + i][b + j] * kernel[a][b];
             }
         }
         return result;

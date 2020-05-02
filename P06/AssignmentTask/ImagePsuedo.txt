@@ -1,0 +1,108 @@
+CLASS: Image
+
+PUBLIC CLASS CONSTANTS:
+
+CLASS FIELDS: originalImage(2D ARRAY OF Integers)
+
+CONSTRUCTORS:
+Default:
+    IMPORT: none
+    EXPORT: none
+    ASSERTION: valid default array should be a empty array, array must not be null
+    ALGORITHM:
+        originalImage[1][1]
+        
+Alternate:
+    IMPORT: inOriginalImage (2D ARRAY OF Integers)
+    EXPORT: none
+    ASSERTION: assume the array is valid
+    ALGORITHM:
+        setOriginalImage <-  inOriginalImage
+
+Copy:
+    IMPORT: Image inImage
+    EXPORT: 
+    ASSERTION: creates an object with an identical object state as the import 
+    ALGORITHM:
+        originalImage := inImage.getOriginalImage <- none
+
+MUTATORS:
+SUBMODULE: setOriginalImage
+    IMPORT: inOriginalImage(2D ARRAY OF Integer)
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+        originalImage := inOriginalImage
+
+ACCESSORS:
+SUBMODULE: getOriginalImage
+    IMPORT: none
+    EXPORT: originalImage
+  
+SUBMODULE: equals
+    IMPORT: inObj (Object)
+    EXPORT: same (boolean)
+    ASSERTION: two objects are the same if their originalImage arrays are same length and have the same values
+    ALGORITHM:
+        same := FALSE
+        IF (inObj ISA Image) THEN
+            inImage := inObj (CONVERT TO IMAGE)
+            same := originalImage EQUALS inImage.getOriginalImage
+
+SUBMODULE: clone
+    IMPORT: none
+    EXPORT: cloneImage (Object)
+    ASSERTION: returns a closed objet of the current object
+    ALGORITHM:
+        CONSTRUCT cloneImage USING COPY CONSTRUCTOR WITH THIS OBJECT
+
+SUBMODULE: toString
+    IMPORT: none
+    EXPORT: str (String)
+    ASSERTION: 
+    ALGORITHM:
+        str := ""
+        FOR (int i:=0 TO LENGTH OF originalImage (exclusive) INC BY 1)
+            str += NEWLINE
+            FOR (int j:=0 TO LENGTH OF originalImage[0] (exclusive) INC BY 1)
+                str := originalImage[i][j] + NEWTAB
+            END FOR
+        END FOR
+         
+
+PUBLIC SUBMODULES
+SUBMODULE: convolution
+    IMPORT: kernel (2D ARRAY OF Integers)
+    EXPORT: resultArray (2D ARRAY OF Integers)
+    ASSERTION: creates the resultarray and calculates each value in the array by calling the private submodule calcConvolute
+    ALGORITHM:
+        n := ROWS OF originalImage
+        m := COLS OF originalImage
+
+        k := ROWS OF kernel
+
+        resultArray[n-k+1][m-k+1]
+        FOR (int i:=0 TO LENGTH OF resultArray (exclusive) INC BY 1)
+            FOR (int j:=0 TO LENGTH OF resultArray[0] (exclusive) INC BY 1)
+                resultsArray[i][j] := calcConvolute <- i, j, originalImage, kernel
+            END FOR
+        END FOR
+
+
+PRIVATE SUBMODULES
+SUBMODULE: calcConvolute
+    IMPORT: i (Integer), j (Integer), resultArray (2D ARRAY OF Integers), kernel (2D ARRAY OF Integers)
+    EXPORT: result (Integer)
+    ASSERTION: calculates the convolution and returns the single value of that convolution
+    ALGORITHM:
+        result := 0
+        FOR (int i:=0 TO LENGTH OF kernel (exclusive) INC BY 1)
+            FOR (int j:=0 TO LENGTH OF kernel[0] (exclusive) INC BY 1)
+                result := result + resultArray[a+1][b+j] * kernel[a][b]
+            END FOR
+        END FOR
+
+
+
+
+   

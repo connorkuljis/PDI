@@ -1,3 +1,12 @@
+// FILE     : Date.java
+// AUTHOR   : Connor Kuljis
+// USERNAME : 19459138
+// UNIT     : PDI
+// PURPOSE  : class of an date object
+// REFERENCE: worksheet 6 q 2
+// COMMENTS : 
+// REQUIRES : none
+// LAST MOD : 02/05/2020
 import java.util.*;
 public class Date
 {
@@ -111,6 +120,12 @@ public class Date
         return year;
     }
     
+    /************************************************************
+     * SUBMODULE: clone
+     * IMPORT: none
+     * EXPORT: clones current object
+     * ASSERTION: constructs a new object using the copy constructor
+     ************************************************************/
     // clone(): Date
     public Date clone()
     {
@@ -136,15 +151,24 @@ public class Date
         return areEqual;
     }
 
+    /************************************************************
+     * SUBMODULE: toString
+     * IMPORT: none
+     * EXPORT: str (String)
+     ************************************************************/
     // toString(): String
     public String toString()
     {
-        System.out.println(day + month + year);
         return ("It is the " + day + getSuffix(day) + " day of " + getMonthName(month) + " in " + year + " " + printIfLeapYear(year));
     }
 
+    /************************************************************
+     * SUBMODULE: isLeapYear
+     * IMPORT: inYear(integer)
+     * EXPORT: isLeapYear(boolean)
+     ************************************************************/
     // isLeapYear(): Boolean
-    public boolean isLeapYear(int inYear)
+    private boolean isLeapYear(int inYear)
     {
         boolean isLeapYear = false;
         if((inYear % 400 == 0) && (inYear % 100 == 0) && (inYear % 4 == 0))
@@ -154,8 +178,13 @@ public class Date
         return isLeapYear;
     }
 
+    /************************************************************
+     * SUBMODULE: getSuffix
+     * IMPORT: inDay(integer)
+     * EXPORT: suffix(String)
+     ************************************************************/
     // getSuffix(): String
-    public String getSuffix(int inDay)
+    private String getSuffix(int inDay)
     {
         String suffix;
         int lastDigit = inDay % 10;
@@ -178,7 +207,12 @@ public class Date
         return suffix;
     }
 
-    public boolean validDay(int inDay, int month, int year)
+    /************************************************************
+     * SUBMODULE: validDay
+     * IMPORT: inDay(integer), month(integer), year(integer)
+     * EXPORT: isValid(boolean)
+     ************************************************************/
+    private boolean validDay(int inDay, int month, int year)
     {
         boolean isValid = false;
         int maxDays;
@@ -207,6 +241,11 @@ public class Date
         return isValid;
     }
 
+    /************************************************************
+     * SUBMODULE: validMonth
+     * IMPORT: inMonth(integer)
+     * EXPORT: isValid(boolean)
+     ************************************************************/
     private boolean validMonth(int inMonth)
     {
         boolean isValid = false;
@@ -218,6 +257,11 @@ public class Date
 
     }
     
+    /************************************************************
+     * SUBMODULE: validYear
+     * IMPORT: inYear(integer)
+     * EXPORT: isValid(boolean)
+     ************************************************************/
     private boolean validYear(int inYear)
     {
         boolean isValid = false;
@@ -228,6 +272,11 @@ public class Date
         return isValid;
     }
 
+    /************************************************************
+     * SUBMODULE: printIfLeapYear
+     * IMPORT: inYear(integer)
+     * EXPORT: lyString(String)
+     ************************************************************/
     private String printIfLeapYear(int inYear)
     {
         String lyString = "It is not a leap year.";
@@ -238,6 +287,11 @@ public class Date
         return lyString;
     }
 
+    /************************************************************
+     * SUBMODULE: getMonthName
+     * IMPORT: inMonth(integer)
+     * EXPORT: monthNames(String)
+     ************************************************************/
     private String getMonthName(int inMonth)
     {
         String[] monthNames = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
