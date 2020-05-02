@@ -3,28 +3,25 @@ import java.util.*;
 public class Image
 {
     // class fields
-    int[][] originalImage, kernel;
+    int[][] originalImage;
 
     // default constructor
     public Image()
     {
         originalImage = new int[1][1];
-        kernel = new int[1][1];
     }
 
 
     // alternate constructor
-    public Image(int[][] inOriginalImage, int[][] inKernel)
+    public Image(int[][] inOriginalImage)
     {
         setOriginalImage(inOriginalImage);
-        setKernel(inKernel);
     }
 
     // copy constructor
     public Image(Image inImage)
     {
         originalImage = inImage.getOriginalImage();
-        kernel = inImage.getKernel();
     }
 
     // mutators
@@ -33,20 +30,10 @@ public class Image
         originalImage = inOriginalImage;
     }
 
-    public void setKernel(int[][] inKernel)
-    {
-        kernel = inKernel;
-    }
-
     // accessors
     public int[][] getOriginalImage()
     {
         return originalImage;
-    }
-
-    public int[][] getKernel()
-    {
-        return kernel;
     }
 
     // clone
@@ -62,27 +49,26 @@ public class Image
         if(inObj instanceof Image)
         {
             Image inImage = (Image) inObj;
-            same = ((Arrays.equals(originalImage, inImage.getOriginalImage())) && (Arrays.equals(kernel, inImage.getKernel())));
+            same = (Arrays.equals(originalImage, inImage.getOriginalImage()));
         }
         return same;
     }
-
+ 
     public String toString()
     {
-        int[][] printArray = convolution();
         String str = "";
-        for(int i=0; i < printArray.length; i++)
+        for(int i=0; i < originalImage.length; i++)
         {
             str += "\n";
-            for(int j=0; j < printArray[0].length; j++)
+            for(int j=0; j < originalImage[0].length; j++)
             {
-                str += printArray[i][j] + "\t";
+                str += originalImage[i][j] + "\t";
             }
         }
         return str;
     }
 
-    public int[][] convolution()
+    public int[][] convolution(int[][] kernel)
     {
         int[][] resultArray;
         int n, m, k;
