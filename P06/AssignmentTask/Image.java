@@ -64,14 +64,33 @@ public class Image
     // SUBMODULE: equals
     // IMPORT: inObj (Object)
     // EXPORT: same (boolean)
-    // ASSERTION: two objects are the same if their arrays are same size and have the same values
+    // ASSERTION: two objects are the same if the two dimentional arrays are both the same size and for each position 
+    //            the values are the same
     public boolean equals(Object inObj)
     {
         boolean same = false;
         if(inObj instanceof Image)
         {
             Image inImage = (Image) inObj;
-            same = (Arrays.equals(originalImage, inImage.getOriginalImage()));
+            // same = (Arrays.DeepEquals(originalImage, inImage.getOriginalImage()));
+            int[][] comparisonArray = inImage.getOriginalImage();
+            if(originalImage.length == comparisonArray.length && originalImage[0].length == comparisonArray[0].length); // check if they are the same length
+
+            int count = 0;
+            for(int i=0; i < originalImage.length; i++)
+            {
+                for(int j=0; j < originalImage[0].length; j++)
+                {
+                    if(originalImage[i][j] != comparisonArray[i][j])
+                    {
+                        count += 1;
+                    }
+                }
+            }
+            if(count == 0)
+            {
+                same = true;
+            }
         }
         return same;
     }

@@ -10,9 +10,10 @@ public class ImageTestHarness
 
             //object creation
             image[0] = new Image();
-            image[1] = new Image(Convolute.MATRIX_B);
+            image[1] = new Image(Convolute.MATRIX_A);
             image[2] = new Image(image[1]);
             image[3] = image[1].clone();
+            Image convolution = new Image(image[1].convolution(Kernel.VERTICAL));
 
             //print out created objects
             System.out.println("CONSTRUCTOR TESTS:");
@@ -30,6 +31,11 @@ public class ImageTestHarness
             System.out.println("\nGETTERS AND SETTERS:");
             image[0].setOriginalImage(image[1].getOriginalImage());
             System.out.println(image[0].getOriginalImage() + " = " + image[1].getOriginalImage());
+
+            // testing convolutions
+            System.out.println("\nTESTING CONVOLUTION:"); 
+            System.out.println(convolution.toString());
+            
         }
         catch(IllegalArgumentException e)
         {

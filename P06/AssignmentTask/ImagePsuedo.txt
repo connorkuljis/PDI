@@ -47,7 +47,21 @@ SUBMODULE: equals
         same := FALSE
         IF (inObj ISA Image) THEN
             inImage := inObj (CONVERT TO IMAGE)
-            same := originalImage EQUALS inImage.getOriginalImage
+            IF (ROWS OF originalImage = ROWS OF inImage.getOriginalImage AND COLS OF originalImage = COLS OF ) THEN
+                count := 0
+                FOR (int i:=0 TO LENGTH OF originalImage (exclusive) INC BY 1)
+                    FOR (int j:=0 TO LENGTH OF originalImage[0] (exclusive) INC BY 1)
+                        IF originalImage[i][j] DOES NOT EQUAL inImage.getOriginalImage[i][i] THEN
+                            count ++
+                        END IF
+                    END FOR
+                END FOR
+            END IF
+            IF (count = 0) THEN
+                same := true
+            END IF
+        END IF
+                        
 
 SUBMODULE: clone
     IMPORT: none
