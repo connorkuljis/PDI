@@ -1,0 +1,77 @@
+PROGRAM: UserInterface
+
+SUBMODULE: userInput
+IMPORTS: prompt(String), lower(Integer), upper(Integer)
+EXPORTS: value (Integer)
+ALGORITHM:
+    outPrompt := prompt
+    DO
+        TRY
+            OUTPUT: outPrompt + " between " + " and " + upper
+            INPUT: value
+        CATCH (value IS NOT an Integer)
+            displayError <- errorMessage
+            CLEAR INPUT
+            value := lower - 1
+        END TRY
+        outPrompt := "ERROR: please enter a valid value NEWLINE" + prompt
+    WHILE ((value < lower) OR (value > upper))
+
+SUBMODULE: userInput
+IMPORTS: prompt(String), lower(Real), upper(Real)
+EXPORTS: value(Real)
+ALGORITHM:
+    outPrompt := prompt
+    DO
+        TRY
+            OUTPUT: outPrompt + " between " + " and " + upper
+            INPUT: value
+        CATCH (value IS NOT a real number)
+            displayError <- errorMessage
+            CLEAR INPUT
+            value := lower - 1.0
+        END TRY
+        outPrompt := "ERROR: please enter a valid value NEWLINE" + prompt
+    WHILE ((value < lower) OR (value > upper))
+
+SUBMODULE: userInput
+IMPORTS: prompt(String), lower(Character), upper(Character)
+EXPORTS: character(Character)
+ALGORITHM:
+    outPrompt := prompt
+    min := lower (CONVERT TO INTEGER)
+    max := upper (CONVERT TO INTEGER)
+
+    DO
+        TRY
+            OUTPUT: outPrompt + " between " + " and " + upper
+            INPUT: character
+            value := character(CONVERT TO INTEGER)
+        CATCH (value IS NOT a Character)
+            displayError <- errorMessage
+            CLEAR INPUT
+            value := min - 1
+        END TRY
+        outPrompt := "ERROR: please enter a valid value NEWLINE" + prompt
+    WHILE ((value < lower) OR (value > upper))
+
+SUBMODULE: userInput
+IMPORTS: prompt(String)
+EXPORTS: value(String)
+ALGORITHM:
+    value := ""
+ 
+    TRY
+        OUTPUT prompt
+        INPUT value
+    CATCH (value IS NOT A STRING)
+        displayError <- errorMessage
+        CLEAR INPUT
+
+SUBMODULE: displayError
+IMPORTS: error(String)
+EXPORTS: none
+ALGORITHM:
+    OUTPUT "Displaying exception error -> " + error
+
+END PROGRAM
