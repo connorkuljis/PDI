@@ -33,7 +33,7 @@ public class UserInterface
             }
             catch(InputMismatchException e) 
             {
-                displayError(e.getMessage()); // makes the exception message a string
+                displayError(e.getMessage()); // passing the message ti another method, makes the exception message a string
                 sc.next();         // clearing the scanner
                 value = lower - 1; // forcing while statement to loop
             }

@@ -1,3 +1,9 @@
+/**********************************************************************
+ * NAME: PDIMath.java
+ * AUTHOR: Connor Kuljis 19459138
+ * UNIT: PDI SEM 1 2020
+ * PURPOSE: provides static methods to be used for math in PDI
+ **********************************************************************/
 import java.util.*;
 public class PDIMath
 {
@@ -153,22 +159,37 @@ public class PDIMath
     }
 
     // FLOOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    public static int floor(double a)
+    public static int floor(double a) // first integer to the left
     {
         // eg 1.9 returns 1
-        int result;
-        result = (int)(a);
+        int result = 0;
+
+        if(a > 0)
+        {
+            result = (int)(a); // convert to int to round off decimals
+        }
+        if (a < 0)
+        {
+            result = (int)(a) - 1; // convert to int and subtract one (to left)
+        }
         return result;
     }
 
     // CEILING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    public static int ceil(double a)
+    public static int ceil(double a) // first integer to the right
     {
-        // eg 1.1 returns 2
-        //    - 1.5 returns - 2
-        int result;
-        if(a > 0)
-        result = (int)(a) + 1;
+        // eg 0.8 returns 1
+        // eg -0.8 returns 0
+        int result =0;
+
+        if (a > 0)
+        {
+            result = (int)(a) + 1; // convert to int and add one
+        }
+        if (a < 0)
+        {
+            result = (int)(a); // convert to int to round off decimals
+        }
         return result;
     }
 
