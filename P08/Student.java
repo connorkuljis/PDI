@@ -45,11 +45,11 @@ public class Student
     {
         if (validString(inName))
         {
-            name = inName;
+            throw new IllegalArgumentException("Not a valid name, it cannot be empty");
         }
         else
         {
-            throw new IllegalArgumentException("Not a valid name, it cannot be empty");
+            name = inName;
         }
     }
 
