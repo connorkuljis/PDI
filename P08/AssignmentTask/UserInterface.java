@@ -153,7 +153,7 @@ public class UserInterface
         {
             try
             {
-                System.out.println(outPrompt + " between " + lower + " and " + upper); 
+                System.out.println(outPrompt); 
                 character = sc.next().charAt(0);
                 value = (int) character;
             }
@@ -163,7 +163,7 @@ public class UserInterface
                 sc.next();
                 value = min - 1;
             }
-            outPrompt = "ERROR: please enter a valid value \n" + prompt;
+            outPrompt = "ERROR: please enter a valid value between " + lower + " and " + upper + "\n" + prompt;
         } while ((value < min) || (value > max));
         character = (char) value;
         return character;
@@ -202,5 +202,18 @@ public class UserInterface
     public static void displayError(String error)
     {
         System.out.println("Displaying exception error -> " + error); 
+    }
+
+    public static void printTwoDArray(int[][] myArray )
+    {
+        for(int i = 0; i < myArray.length; i++)
+        {
+            for(int j = 0; j < myArray[0].length; j++)
+            {
+                System.out.print(myArray[i][j] + " "); 
+            }
+            System.out.println(" "); 
+        }
+
     }
 }
