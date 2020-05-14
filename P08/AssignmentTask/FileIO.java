@@ -170,35 +170,76 @@ public class FileIO
         }
     }
 
+    public static int[][] readPNG(String fileName) 
+    {
+        BufferedImage img; 
+        File inputFile; 
+        int[][] image = null;
 
+        try
+        {
+            inputFile = new File(fileName); 
+            
+            // Turn file into an Image
+            img = ImageIO.read(inputFile); 
 
+            // Construct array to hold image
+            image = new int[img.getHeight()][img.getWidth()];
 
+            // Loop through each pixel
+            for (int y = 0; y < img.getHeight(); y++) 
+            {
+                for (int x = 0; x < img.getWidth(); x++) 
+                {
+                    // Turn the pixel into a Color object.
+                    Color pixel = new Color(img.getRGB(x, y), true);
+                    // Converts each pixel to a grayscale equivalent // using weightings on each colour. 
+                    image[y][x] = (int)((pixel.getRed() * 0.299) + (pixel.getBlue() * 0.587) + (pixel.getGreen() * 0.114));
+                } 
+            }
+        }
+        catch(IOException e) 
+        {
+            UserInterface.displayError("Error with .png reading: " + e.getMessage());
+            // Alternatively you could rethrow an IllegalArgumentException
+        }
+        return image; 
+    }
 
+    public static void writePNG(String fileName, int[][] writeArray) 
+    {
+        // The following is very Java specific and is implemented in a way to 
+        // // reconstruct a colour image from a set of 8bit colours. 
+        BufferedImage theImage;
+        File outputfile;
+        try
+        {
+            // Open the file
+            outputfile = new File(fileName);
 
+            // Construct a BufferedImage, with dimensions and of type RGB
+            theImage = new BufferedImage(writeArray[0].length, writeArray.length, BufferedImage.TYPE_INT_RGB);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // This will step through each element of our "writeArray"
+            for(int y = 0; y < writeArray.length; y++) 
+            {
+                for (int x = 0; x < writeArray[0].length; x++) 
+                {
+                    // This will ensure that we are only putting a value into // our png, between 0 and 255. (8bit colour depth) 
+                    int value = Math.abs(writeArray[y][x] % 256);
+                    // Turns the greyscale pixel to a "colour" representation
+                    Color newColor = new Color(value, value, value);
+                    // This will set the value of the pixel within the .png
+                    theImage.setRGB(x, y, newColor.getRGB()); }
+                }
+        // Write the image to a .png
+        ImageIO.write(theImage,"png",outputfile); 
+        }
+        catch(IOException e) 
+        {
+            UserInterface.displayError("Error with .png reading: " + e.getMessage());
+            // Alternatively you could rethrow an IllegalArgumentException
+                
+        }
+    }
 }

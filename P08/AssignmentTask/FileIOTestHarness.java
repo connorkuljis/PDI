@@ -14,5 +14,7 @@ public class FileIOTestHarness
         }
 
         FileIO.writeFile("test.csv", myArray);
+        FileIO.readPNG("Supplementary_Files/Balloon.png");
+        FileIO.writePNG("yeet123.png", Supplementary_Files/);
     }
 }
