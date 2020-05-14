@@ -6,11 +6,6 @@ import javax.imageio.*;
  
 public class FileIO
 {
-    public static void main(String[] args)
-    { 
-        int[][] testfile = readFile("HorizontalKernel.csv");
-        System.out.println(testfile[1][0]); 
-    }
     
     public static int[][] readFile(String fileName)
     {
@@ -126,4 +121,84 @@ public class FileIO
         }
         return parsedArray;
     }
+
+    /*
+     * attempts to write a 2D array to a file
+     *
+     *
+     */
+    public static void writeFile(String fileName, int[][] writeArray)
+    {
+        String[] stringArray = new String[writeArray.length];
+        String line = "";
+        FileOutputStream fileStrm = null; 
+        PrintWriter pw;
+        try
+        {
+            fileStrm = new FileOutputStream(fileName, false); // true will append the file, false overwrites.
+            pw = new PrintWriter(fileStrm);
+            for(int i = 0; i < writeArray.length; i++)
+            {
+                for(int j = 0; j < writeArray[0].length; j++)
+                {
+                    if(j == writeArray[0].length - 1)
+                    {
+                        line += String.valueOf(writeArray[i][j]);
+                    }
+                    else
+                    {
+                        line += String.valueOf(writeArray[i][j] + ",");
+                    }
+                }
+                pw.println(line); 
+                line = "";
+            }
+            // pw.println(id + "," + name + "," + assign + "," + test + "," + exam + "," + overall); 
+            pw.close();
+        }
+        catch(IOException e) {
+            if (fileStrm != null) {
+                try
+                {
+                    fileStrm.close();
+                    
+                }
+                catch(IOException ex2) {}
+                
+            }
+            System.out.println("Error in writing to file: " + e.getMessage()); 
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
