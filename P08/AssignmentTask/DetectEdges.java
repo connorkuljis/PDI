@@ -18,7 +18,7 @@ public class DetectEdges
         {
             try
             {
-                String kernelFile = UserInterface.userInput("Please enter the filename of the kernel: ");
+                String kernelFile = "Supplementary_Files/" + UserInterface.userInput("Please enter the filename of the kernel: ");
                 kernel = FileIO.readFile(kernelFile); // this is where the exception is thrown
                 valid = true;
             }
@@ -29,7 +29,7 @@ public class DetectEdges
         }
         // UserInterface.printTwoDArray(FileIO.readFile(kernelFile));
         int[][] image = null;
-        String imageFilename = "";
+        String imageFilename = "Supplementary_Files/";
 
         boolean close = false;
         boolean done = false;
@@ -46,7 +46,7 @@ public class DetectEdges
                     {
                         try
                         {
-                            imageFilename = UserInterface.userInput("Please enter the filename of the CSV: ");
+                            imageFilename += UserInterface.userInput("Please enter the filename of the CSV: ");
                             image = FileIO.readFile(imageFilename);
                             done = true;
                         }
@@ -65,7 +65,7 @@ public class DetectEdges
                     {
                         try
                         {
-                            imageFilename = UserInterface.userInput("Please enter the filename of the PNG: ");
+                            imageFilename += UserInterface.userInput("Please enter the filename of the PNG: ");
                             image = FileIO.readPNG(imageFilename);
                             done = true;
                         }
