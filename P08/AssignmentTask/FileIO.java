@@ -7,14 +7,11 @@ import javax.imageio.*;
 public class FileIO
 {
     
-    public static int[][] readFile(String fileName)
+    public static int[][] readFile(String fileName) throws FileNotFoundException, IllegalArgumentException
     {
-        // Attempts to open the file and read its contents into a 2D array and return that to the caller
-        // we know to construct the 2d array IF
-        //     I want to scan through each line and check that each row has the same amount of elements, this will give me the number of columns. 
-        //     If the amount of elements are different (ragged) do not construct the array
-        //     Then to get the number of rows count each row 
-
+        FileInputStream fileStream = null;
+        InputStreamReader reader;
+        BufferedReader bufReader;
         String line = "";
         int lineNum = 0, totalRows;
         int[][] parsedArray = null;
@@ -22,13 +19,11 @@ public class FileIO
         try
         {
             totalRows = getNumRowsInFile(fileName); // get number of lines in file
-
             String[] stringArray = new String[totalRows]; // making a right sized array to number of lines
-
             // reading the text to a String array
-            FileInputStream fileStream = new FileInputStream(fileName);
-            InputStreamReader reader = new InputStreamReader(fileStream);
-            BufferedReader bufReader = new BufferedReader(reader);
+            fileStream = new FileInputStream(fileName);
+            reader = new InputStreamReader(fileStream);
+            bufReader = new BufferedReader(reader);
             line = bufReader.readLine();
             while(line != null)
             {
@@ -42,13 +37,22 @@ public class FileIO
             {
                 throw new IllegalArgumentException("Array rows differ in size!");
             }
-            // int[][] testArray = parseStringToInt(stringArray, totalRows);
 
             parsedArray = parseStringToInt(stringArray, totalRows);
         }
         catch(IOException e)
         {
-            System.out.println("Error in file processing " + e);
+            if(fileStream != null)
+            {
+                try
+                {
+                    fileStream.close();
+                }
+                catch(IOException ex2)
+                {
+                }
+            }
+            throw new FileNotFoundException("Could not find file!");
         }
         return parsedArray;
     }
@@ -170,7 +174,7 @@ public class FileIO
         }
     }
 
-    public static int[][] readPNG(String fileName) 
+    public static int[][] readPNG(String fileName) throws IOException
     {
         BufferedImage img; 
         File inputFile; 
@@ -200,8 +204,9 @@ public class FileIO
         }
         catch(IOException e) 
         {
-            UserInterface.displayError("Error with .png reading: " + e.getMessage());
+            //UserInterface.displayError("Error with .png reading: " + e.getMessage());
             // Alternatively you could rethrow an IllegalArgumentException
+            throw new FileNotFoundException("Could not find file!");
         }
         return image; 
     }

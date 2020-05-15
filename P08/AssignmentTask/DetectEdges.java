@@ -1,4 +1,8 @@
 // note from last night: you need to refactor to accept USER INPUT and do some validation and error handling eg only print sign off message if the convolute has not failed
+import java.util.*;
+import java.io.*;
+import java.awt.*;
+import javax.imageio.*;
 
 public class DetectEdges
 {
@@ -8,34 +12,87 @@ public class DetectEdges
     }
     public static void detectEdges()
     {
-        String kernelFile = "Supplementary_Files/VerticalKernel.csv"; // UserInterface.userInput("Please enter the filename of the kernel: ");
+        int[][] kernel = null;
+        boolean valid = false;
+        while(!valid)
+        {
+            try
+            {
+                String kernelFile = UserInterface.userInput("Please enter the filename of the kernel: ");
+                kernel = FileIO.readFile(kernelFile); // this is where the exception is thrown
+                valid = true;
+            }
+            catch(IOException e)
+            {
+                UserInterface.displayError(e.getMessage());
+            }
+        }
         // UserInterface.printTwoDArray(FileIO.readFile(kernelFile));
-        int[][] kernel = FileIO.readFile(kernelFile);
         int[][] image = null;
         String imageFilename = "";
 
-        // get the 
-        char ch = UserInterface.userInput("Would you like to perform on (C)SV or (P)NG: ", 'A', 'z');
-        char choice = Character.toUpperCase(ch);
-        // do while here
-        if(choice == 'C')
+        boolean close = false;
+        boolean done = false;
+        do
         {
-            imageFilename = UserInterface.userInput("Please enter the filename of the CSV: ");
-            image = FileIO.readFile("Supplementary_Files/Image_B.csv");// (csvFileName);
-        }
-        if(choice == 'P')
-        {
-            imageFilename = UserInterface.userInput("Please enter the filename of the PNG: ");
-            image = FileIO.readPNG(imageFilename);
-        }
+            char ch = UserInterface.userInput("Would you like to perform on (C)SV or (P)NG: ", 'A', 'z');
+            char choice = Character.toUpperCase(ch);
+            switch(choice)
+            {
+                // READ CSV
+                case 'C':
+                    done = false;
+                    while(!done)
+                    {
+                        try
+                        {
+                            imageFilename = UserInterface.userInput("Please enter the filename of the CSV: ");
+                            image = FileIO.readFile(imageFilename);
+                            done = true;
+                        }
+                        catch(IOException e)
+                        {
+                            UserInterface.displayError(e.getMessage());
+                        }
+                    }
+                    close = true;
+                    break;
 
+                // READ PNG
+                case 'P':
+                    done = false;
+                    while(!done)
+                    {
+                        try
+                        {
+                            imageFilename = UserInterface.userInput("Please enter the filename of the PNG: ");
+                            image = FileIO.readPNG(imageFilename);
+                            done = true;
+                        }
+                        catch(IOException e)
+                        {
+                            UserInterface.displayError(e.getMessage());
+                        }
+                    } 
+                    close = true;
+                    break;
+
+                // DEFAULT
+                default:
+                    System.out.println("Please select a valid option: "); 
+                    break;
+            }
+        } while(!close);
+
+        // convoluting the array
         int[][] resultArray = createResultArray(image, kernel);
         int[][] tempArray = calcResult(resultArray, image, kernel);
 
-        UserInterface.printTwoDArray(tempArray);
-
+        // appending to filename
         String newImageFilename = imageFilename + "_Converted.png";
-        FileIO.writeFile(newImageFilename, tempArray);
+
+        // confirmation message, error handing is done inside the method writeFile
+        FileIO.writePNG(newImageFilename, tempArray);
         System.out.println("File (" + newImageFilename + ") written. Goodbye!"); 
     }
 
