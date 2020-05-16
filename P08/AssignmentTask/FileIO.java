@@ -7,6 +7,12 @@ import javax.imageio.*;
 public class FileIO
 {
     
+    /* Name: readFile
+     * IMPORTS: fileName of a csv file
+     * EXPORTS: multidimenstional array of csv file
+     * Purpose: constructs a 2D array of integers from a csvfile (String)
+     * Assertion: if the csv is ragged it will throw an IllegalArgument Exception
+     * Created: 14th May 2020 */
     public static int[][] readFile(String fileName) throws FileNotFoundException, IllegalArgumentException
     {
         FileInputStream fileStream = null;
@@ -57,6 +63,12 @@ public class FileIO
         return parsedArray;
     }
 
+    /* Name: getNumeRowsInFile
+     * IMPORTS: fileName as a string
+     * EXPORTS: multidimenstional array of csv file
+     * Purpose: constructs a 2D array of integers from a csvfile (String)
+     * Assertion: if the csv is ragged it will throw an IllegalArgument Exception
+     * Created: 14th May 2020 */
     private static int getNumRowsInFile(String fileName) throws IOException 
     {
         int lineNum = 0;

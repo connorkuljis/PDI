@@ -6,12 +6,16 @@ import javax.imageio.*;
 
 public class DetectEdges
 {
-    public static void main(String[] args)
-    {
-        detectEdges();
-    }
+    /*
+     * Name: detectEdges
+     * Purpose: can detect edges in csv or png files, by performing matrix operations
+     * IMPORTS: nothing
+     * EXPORTS: nothing
+     * Created: 15/05/2020
+     */
     public static void detectEdges()
     {
+        System.out.println("Note: Currently looking in the 'Supplementary_Files' subdirectory"); 
         int[][] kernel = null;
         boolean valid = false;
         while(!valid)
@@ -85,18 +89,25 @@ public class DetectEdges
         } while(!close);
 
         // convoluting the array
-        int[][] resultArray = createResultArray(image, kernel);
-        int[][] tempArray = calcResult(resultArray, image, kernel);
+        int[][] convoluteArray = convolute(image, kernel);
 
         // appending to filename
         String newImageFilename = imageFilename + "_Converted.png";
 
         // confirmation message, error handing is done inside the method writeFile
-        FileIO.writePNG(newImageFilename, tempArray);
+        FileIO.writePNG(newImageFilename, convoluteArray);
         System.out.println("File (" + newImageFilename + ") written. Goodbye!"); 
     }
 
-    public static int[][] createResultArray(int[][] convolute, int[][] kernel)
+
+    /*
+     * Name: calcResult
+     * Date: 23/04/2020
+     * Import: resultARray (2D array of integers), convolute (2D array of integers), kernel (2D array of integers)
+     * Export: resultArray (2D array of integers)
+     * Purpose: returns a populated sized result array
+     */
+    private static int[][] convolute(int[][] convolute, int[][] kernel)
     {
         int n, m, k;
         int[][] resultArray;
@@ -110,18 +121,6 @@ public class DetectEdges
         // producing a valid result array
         resultArray = new int[(n - k + 1)][(m - k + 1)];
         
-        return resultArray;
-    }
-
-    /*
-     * Name: calcResult
-     * Date: 23/04/2020
-     * Import: resultARray (2D array of integers), convolute (2D array of integers), kernel (2D array of integers)
-     * Export: resultArray (2D array of integers)
-     * Purpose: returns a populated sized result array
-     */
-    public static int[][] calcResult(int[][] resultArray, int[][] convolute, int[][] kernel)
-    {
         // simply loops through each position in the result array
         for(int i = 0; i < resultArray.length; i++)
         {
