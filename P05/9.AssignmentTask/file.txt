@@ -1,0 +1,10 @@
+// FILE     : AssignmentTask.java
+// AUTHOR   : Connor Kuljis
+// USERNAME : 19459138
+// UNIT     : PDI
+// PURPOSE  : Produces a convoluted matrix/array given the original array and the kernel
+// REFERENCE: Convolute.java, Kernel.java
+// COMMENTS : Unsure of how to output the arrays in a grid format as shown in the worksheet
+// REQUIRES : Convolute.java, Kernel.java
+// LAST MOD : 23/04/2020
+

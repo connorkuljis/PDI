@@ -1,0 +1,500 @@
+   19  python3 shelters.py 
+   20  python3 shelters.py 
+   21  python3 shelters.py 
+   22  python3 shelters.py 
+   23  python3 shelters.py 
+   24  python3 shelters.py 
+   25  clear
+   26  python3 testPeople.py 
+   27  python3 testPeople.py 
+   28  python3 testPeople.py 
+   29  python3 testPeople.py 
+   30  python3 testPeople.py 
+   31  python3 testPeople.py 
+   32  python3 testPeople.py 
+   33  clear
+   34  python3 testPeople.py 
+   35  python3 testPeople.py 
+   36  python3 testPeople.py 
+   37  python3 testPeople.py 
+   38  python3 testPeople.py 
+   39  python3 testPeople.py 
+   40  python3 testPeople.py 
+   41  python3 testPeople.py 
+   42  python3 testPeople.py 
+   43  python3 testPeople.py 
+   44  python3 testPeople.py 
+   45  python3 testPeople.py 
+   46  python3 testPeople.py 
+   47  python3 testPeople.py 
+   48  python3 testPeople.py 
+   49  python3 testPeople.py 
+   50  vim testPeople.py 
+   51  python3 regularReading.py 
+   52  python3 regularReading.py 
+   53  python3 regularReading.py 
+   54  clear
+   55  clear
+   56  python3 regularReading.py 
+   57  python3 regularReading.py 
+   58  python3 regularReading.py 
+   59  python3 regularReading.py 
+   60  python3 regularReading.py 
+   61  clear
+   62  clear
+   63  python3 regularReading.py 
+   64  python3 regularReading.py 
+   65  python3 regularReading.py 
+   66  python3 regularReading.py 
+   67  ls
+   68  python3 testPeople.py 
+   69  asdexit
+   70  exit
+   71  FOP
+   72  vim .bashrc
+   73  FOP
+   74  source .bashrc
+   75  FOP
+   76  cd P07
+   77  vim shelters.py 
+   78  temp.pt
+   79  vim temp.py
+   80  python3 temp.py 
+   81  vim temp.py
+   82  python3 animals.py 
+   83  python3 animals.py 
+   84  python3 animals.py 
+   85  python3 temp.py 
+   86  python3 shelters.py 
+   87  vim shelters.py 
+   88  python3 shelters.py 
+   89  python3 shelters.py 
+   90  python3 shelters.py 
+   91  vim shelters.py 
+   92  clear
+   93  vim testPeople.py 
+   94  vim testPeople.py 
+   95  vim people.csv
+   96  cd
+   97  cd ../
+   98  cd P02
+   99  vim assorted.py 
+  100  cd ../P04
+  101  vim prettyface.py 
+  102  python3 prettyface.py 
+  103  exit
+  104  cd Documents/PDI/P06
+  105  cd AssignmentTask/
+  106  vim ImageTestHarness.java 
+  107  javac ImageTestHarness.java 
+  108  vim ImageTestHarness.java 
+  109  javac ImageTestHarness.java 
+  110  vim ImageTestHarness.java 
+  111  javac ImageTestHarness.java 
+  112  vim ImageTestHarness.java 
+  113  javac ImageTestHarness.java 
+  114  java ImageTestHarness 
+  115  vim ImageTestHarness.java 
+  116  javac ImageTestHarness.java 
+  117  java ImageTestHarness 
+  118  vim ImageTestHarness.java 
+  119  javac ImageTestHarness.java 
+  120  java ImageTestHarness 
+  121  ls
+  122  vim Image.java
+  123  javac Image.java
+  124  vim Image.java
+  125  javac Image.java 
+  126  vim Image.java
+  127  clear
+  128  javac Image.java
+  129  vim Image.java
+  130  javac Image.java
+  131  vim Image.java
+  132  javac Image.java
+  133  java ImageTestHarness 
+  134  vim Image.java
+  135  javac Image.java
+  136  java ImageTestHarness 
+  137  vim ImagePsuedo.txt 
+  138  git add *
+  139  git commit -m "refactors equals method for two d arrays"
+  140  git push
+  141  cd ../
+  142  cd ../
+  143  tar -cvzf 19459138_P06_v2.tar.gz P06
+  144  ls
+  145  mv 19459138_P06_v2.tar.gz tarballs/
+  146  cd ~
+  147  cd Documents/FOP/P07
+  148  ls
+  149  vim animals.py 
+  150  git status
+  151  cal
+  152  clear
+  153  ls
+  154  vim shelters
+  155  ;s
+  156  ls
+  157  cat shelters.py
+  158  rm shelters.py
+  159  mv shelters shelters.py
+  160  vim shelters.py 
+  161  tmux
+  162  exit
+  163  cd Documents/FOP
+  164  cd P07
+  165  vim regularReading.py 
+  166  cd ../
+  167  tree
+  168  cd P05
+  169  vim heat.py 
+  170  vim weather.py 
+  171  exit
+  172  pwd
+  173  PDI
+  174  cd P07
+  175  vim PDIMath.java
+  176  ls
+  177  exit
+  178  PDI
+  179  cd P07
+  180  FOP
+  181  cd Assignment/
+  182  cd Inves1/
+  183  vim powerusage.csv 
+  184  python3 powerusage.py 
+  185  exit
+  186  ls
+  187  PDO
+  188  PDI
+  189  mkdir P07
+  190  cd P07
+  191  tmux
+  192  PDI
+  193  cd P06
+  194  cd AssignmentTask/
+  195  java ImageTestHarness 
+  196  vim ImageTestHarness.java 
+  197  javac Image.java 
+  198  vim Image.java
+  199  vim Image.java
+  200  javac Image.java 
+  201  java ImageTestHarness 
+  202  vim Image.java 
+  203  cd ../
+  204  java DateTestHarness 
+  205  cd Documents/
+  206  ls
+  207  ls -a
+  208  cd .bin/
+  209  cd OOPD/
+  210  cd P07/
+  211  ls *.java
+  212  vim QuestionTwo.java 
+  213  cd P11
+  214  cd ../P11
+  215  cd ~
+  216  cd Documents/
+  217  exit 
+  218  PDI
+  219  cd P07
+  220  vim PDIMath.java 
+  221  exit
+  222  PDI
+  223  cd P06
+  224  cd ../P05
+  225  cd 7.PI/
+  226  vim PI.java 
+  227  cd ../6.Eulers/
+  228  vim Euler.java 
+  229  java Euler 
+  230  vim Euler.java 
+  231  exit
+  232  java --version
+  233  javac --version
+  234  exit
+  235  PDI
+  236  cd P07
+  237  vim PDIMath.java 
+  238  javac PDIMath.java 
+  239  vim PDIMath.java 
+  240  tmux
+  241  FOP
+  242  PDI
+  243  cd P07
+  244  vim PDIMath.java 
+  245  cd AssignmentTask
+  246  mkdir AssignmentTask
+  247  cd A
+  248  cd AssignmentTask
+  249  vim UserInterface.java
+  250  vim TestUI.java
+  251  javac UserInterface.java 
+  252  vim UserInterface.jav
+  253  vim UserInterface.java
+  254  javac UserInterface.java 
+  255  javac TestUI.java 
+  256  java TestUI 
+  257  java TestUI 
+  258  java TestUI 
+  259  clear
+  260  vim UserInterface.java 
+  261  javac TestUI.java 
+  262  vim UserInterface.java 
+  263  vim UserInterface.java 
+  264  asdasd
+  265  ls
+  266  vim UserInterface.java 
+  267  cat text.txt 
+  268  vim UserInterface.java 
+  269  javac UserInterface.java
+  270  clear
+  271  ls
+  272  vim UserInterfaceTestHarness.java 
+  273  javac UserInterfaceTestHarness.java 
+  274  javac UserInterface.java 
+  275  java UserInterfaceTestHarness 
+  276  vim UserInterface.java 
+  277  ls
+  278  cd .
+  279  ls
+  280  cd ../
+  281  ls
+  282  vim PDIMath.java 
+  283  vim PDIMath.java 
+  284  clear
+  285  ls
+  286  exit
+  287  PDI
+  288  cd P07/AssignmentTask/
+  289  javac UserInterface.java 
+  290  javac UserInterface.java 
+  291  javac TestUI.java 
+  292  java TestUI 
+  293  javac TestUI.java 
+  294  java TestUI 
+  295  java TestUI 
+  296  clear
+  297  javac UserInterface.java 
+  298  java TestUI 
+  299  clear
+  300  javac TestUI.java 
+  301  java TestUI 
+  302  asdf
+  303  javac UserInterface.java 
+  304  -
+  305  -
+  306  javac UserInterface.java 
+  307  javac UserInterface.java 
+  308  javac UserInterface.java 
+  309  java UserInterface 
+  310  javac TestUI.java 
+  311  java TestUI 
+  312  javac TestUI.java 
+  313  java TestUI 
+  314  javac UserInterface.java 
+  315  javac TestUI.java 
+  316  java TestUI 
+  317  javac User
+  318  javac UserInterface.java 
+  319  java TestUI 
+  320  cd ../P06
+  321  ls
+  322  cd ../../P06
+  323  java DateTestHarness 
+  324  clear
+  325  ls
+  326  cd ../../P07/As
+  327  cd ../P07/AssignmentTask/
+  328  pwd
+  329  c d../
+  330  cd ../../P05
+  331  cd 6.Eulers/
+  332  java Euler 
+  333  ,
+  334   cd ../
+  335  cd 7.PI/
+  336  java PI 
+  337  PDI
+  338  cd P07
+  339  exit
+  340  cal
+  341  PDI
+  342  cd P07
+  343  cd AssignmentTask/
+  344  java TestUI 
+  345  vim TestUI.java 
+  346  javac TestUI.java 
+  347  java TestUI 
+  348  java TestUI 
+  349  javac UserInterface.java 
+  350  javac UserInterface.java 
+  351  java TestUI 
+  352  javac UserInterface.java 
+  353  javac UserInterface.java 
+  354  javac UserInterface.java 
+  355  javac UserInterface.java 
+  356  [A
+  357  javac UserInterface.java 
+  358  javac UserInterface.java 
+  359  javac UserInterface.java 
+  360  javac UserInterface.java 
+  361  javac UserInterface.java 
+  362  javac UserInterface.java 
+  363  java TestUI 
+  364  javac UserInterface.java 
+  365  java UserInterface 
+  366  javac UserInterface.java 
+  367  java TestUI 
+  368  javac UserInterface.java
+  369  javac UserInterface.java
+  370  javac UserInterface.java 
+  371  java TestUI 
+  372  javac UserInterface.java 
+  373  java TestUI 
+  374  javac UserInterface.java 
+  375  java UserInterface 
+  376  java TestUI 
+  377  java UserInterface 
+  378  javac UserInterface.java 
+  379  java TestUI 
+  380  clear
+  381  javac UserInterface.java 
+  382  javac UserInterface.java 
+  383  javac UserInterface.java 
+  384  javac UserInterface.java 
+  385  javac UserInterface.java 
+  386  javac UserInterface.java 
+  387  vim TestUI.java 
+  388  vim text.txt
+  389  mv TestUI.java UserInterfaceTestHarness.java
+  390  ls
+  391  rm TestUI.class 
+  392  ls
+  393  vim UserInterfaceTestHarness.java 
+  394  javac UserInterfaceTestHarness.java 
+  395  ls
+  396  jav UserInterfaceTestHarness.
+  397  java UserInterfaceTestHarness
+  398  clear
+  399  vim UserInterface.txt
+  400  ls
+  401  vim text.txt 
+  402  vim UserInterface.txt
+  403  vim UserInterfaceTestHarness.java 
+  404  javac UserInterfaceTestHarness.java 
+  405  vim UserInterfaceTestHarness.java 
+  406  javac UserInterfaceTestHarness.java 
+  407  vim UserInterfaceTestHarness.java 
+  408  javac UserInterfaceTestHarness.java 
+  409  java UserInterfaceTestHarness 
+  410  clear
+  411  java UserInterfaceTestHarness 
+  412  clear
+  413  ls
+  414  git status
+  415  git add *
+  416  git commit -m "W7 assi task done"
+  417  git push
+  418  cd ../
+  419  cd ../
+  420  cd P06
+  421  cd ../P05
+  422  cd 6.Eulers/
+  423  vim Euler.java 
+  424  PDI
+  425  cd P07
+  426  vim test.java
+  427  javac PDIMath.java 
+  428  javac PDIMath.java 
+  429  javac PDIMath.java 
+  430  javac PDIMath.java 
+  431  javac PDIMath.java 
+  432  javac PDIMath.java 
+  433  javac PDIMath.java 
+  434  javac PDIMath.java 
+  435  javac PDIMath.java 
+  436  javac PDIMath.java 
+  437  javac PDIMath.java 
+  438  javac PDIMath.java 
+  439  [A
+  440  javac PDIMath.java 
+  441  javac test.java 
+  442  java test 
+  443  javac PDIMath.java 
+  444  java test 
+  445  javac PDIMath.java 
+  446  java test 
+  447  vim test.java 
+  448  javac test.java 
+  449  java test 
+  450  javac PDIMath.java 
+  451  java test 
+  452  vim test.java 
+  453  javac test.java 
+  454  java test 
+  455  vim test.java 
+  456  javac test.java 
+  457  vim test.java 
+  458  java test 
+  459  vim test.java 
+  460  javac test.java 
+  461  java test 
+  462  javac PDIMath.java 
+  463  java test 
+  464  vim test.java 
+  465  javac PDIMath.java 
+  466  java test 
+  467  javac PDIMath.java 
+  468  java test 
+  469  javac PDIMath.java 
+  470  java test 
+  471  javac PDIMath.java 
+  472  java test 
+  473  javac PDIMath.java 
+  474  java test 
+  475  javac PDIMath.java 
+  476  java test 
+  477  vim test.java 
+  478  javac test.java 
+  479  java test 
+  480  javac PDIMath.java 
+  481  java test 
+  482  vim test.java 
+  483  javac test.java 
+  484  java test 
+  485  vim test.java 
+  486  javac test.java 
+  487  java test
+  488  vim test.java 
+  489  java test 
+  490  javac test.java 
+  491  java test 
+  492  wq
+  493  exit
+  494  PDI
+  495  cd PPPPPPP------7
+  496  cd P07
+  497  ls
+  498  vim PDIMath.java 
+  499  tmux
+  500  exit
+  501  PDI
+  502  cd P07
+  503  vim PDIMath.txt
+  504  ls
+  505  cd AssignmentTask/
+  506  rm text.txt link.txt
+  507  mv text.txt link.txt
+  508  ls
+  509  ls
+  510  cd ../
+  511  ls
+  512  cd AssignmentTask/
+  513  cd ../
+  514  git add *
+  515  git commit -m "p07 signoff"
+  516  git push
+  517  ls
+  518  history > P07BashHistory.txt

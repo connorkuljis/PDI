@@ -69,21 +69,22 @@ public class Image
     public boolean equals(Object inObj)
     {
         boolean same = false;
+        int count = 0;
         if(inObj instanceof Image)
         {
             Image inImage = (Image) inObj;
             // same = (Arrays.DeepEquals(originalImage, inImage.getOriginalImage()));
             int[][] comparisonArray = inImage.getOriginalImage();
             if(originalImage.length == comparisonArray.length && originalImage[0].length == comparisonArray[0].length); // check if they are the same length
-
-            int count = 0;
-            for(int i=0; i < originalImage.length; i++)
             {
-                for(int j=0; j < originalImage[0].length; j++)
+                for(int i=0; i < originalImage.length; i++)
                 {
-                    if(originalImage[i][j] != comparisonArray[i][j])
+                    for(int j=0; j < originalImage[0].length; j++)
                     {
-                        count += 1;
+                        if(originalImage[i][j] != comparisonArray[i][j])
+                        {
+                            count += 1;
+                        }
                     }
                 }
             }

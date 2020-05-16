@@ -7,7 +7,18 @@ public class v2Reader
 {
     public static void main(String[] args) throws Exception
     {
-        menu();
+        // get the file name
+        // String fileName = UserInterface.userInput("Enter the file name: ");
+        // Student[] studentArray = readFile(fileName);
+        // calcAverage(studentArray);
+        // viewStudents(studentArray);
+
+        boolean close = false;
+        do
+        {
+
+
+        }while(!close);
     }
 
     public static void menu()
@@ -20,16 +31,16 @@ public class v2Reader
             switch(choice)
             {
                 case 1:
-                    Student[] studentArray = readFile("students.csv");
+                    String fileName = UserInterface.userInput("Enter the file name: ");
+                    Student[] studentArray = readFile(fileName);
                     break;
                 case 2:
                     // calculate average assessment mark
-                    studentArray = readFile("students.csv");
-                    calcAverage(studentArray);
+                    // calcAverage(studentArray);
                     break;
                 case 3:
-                    studentArray = readFile("students.csv");
-                    viewStudents(studentArray);
+                    // studentArray = readFile("students.csv");
+                    // viewStudents(studentArray);
                     break;
                 case 0:
                     close = true;
@@ -58,6 +69,7 @@ public class v2Reader
                 processLine(line, lineNum, stringArray);
             }
             fileStream.close();
+            System.out.println("Succesfully Imported the File!"); 
         }
         catch(IOException e)
         {
@@ -111,7 +123,7 @@ public class v2Reader
         return ((validName) && (validStudentID) && (validMark));
     }
 
-    public static void calcAverage(Student[] studentArray)
+    public static double calcAverage(Student[] studentArray)
     {
         int count = 0;
 
@@ -132,6 +144,7 @@ public class v2Reader
             }
         }
         System.out.println("Average mark is : " + PDIMath.average(results));
+        return PDIMath.average(results);
     }
 
     public static void viewStudents(Student[] studentArray)

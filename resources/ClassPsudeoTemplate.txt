@@ -1,0 +1,65 @@
+CLASS: 
+
+PUBLIC CLASS CONSTANTS:
+
+CLASS FIELDS: 
+
+CONSTRUCTORS:
+Default:
+    IMPORT: none
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+        
+Alternate:
+    IMPORT: 
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+
+Copy:
+    IMPORT: 
+    EXPORT: creates an object with an identical object state as the import
+    ASSERTION:
+    ALGORITHM:
+
+MUTATORS:
+SUBMODULE:
+    IMPORT: 
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+
+ACCESSORS:
+    IMPORT: 
+    EXPORT: none
+  
+SUBMODULE: equals
+    IMPORT: inObj (Object)
+    EXPORT: same (boolean)
+    ASSERTION:
+    ALGORITHM:
+
+SUBMODULE: clone
+    IMPORT: 
+    EXPORT: 
+    ASSERTION:
+    ALGORITHM:
+
+SUBMODULE: toString
+    IMPORT: 
+    EXPORT: 
+    ASSERTION:
+    ALGORITHM:
+
+PRIVATE SUBMODULES
+SUBMODULE:
+    IMPORT: 
+    EXPORT: 
+    ASSERTION:
+    ALGORITHM:
+
+
+
+
+   

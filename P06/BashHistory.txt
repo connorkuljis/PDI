@@ -1,0 +1,500 @@
+   30  javac Main.java 
+   31  java Main 
+   32  javac Date.java 
+   33  javac Main.java 
+   34  java Main 
+   35  javac Date.java 
+   36  java Date 
+   37  java Main 
+   38  javac Main.java 
+   39  java Main 
+   40  javac Date.java 
+   41  java Main 
+   42  javac Main.java 
+   43  java Main 
+   44  javac Main.java 
+   45  java Main 
+   46  javac Main.java 
+   47  java Main 
+   48  javac Main.java 
+   49  java Main 
+   50  javac Main.java 
+   51  javac Main.java 
+   52  java Main 
+   53  javac Main.java 
+   54  java Main 
+   55  javac Main.java 
+   56  java Main 
+   57  javac Main.java 
+   58  java Main 
+   59  javac Date.java 
+   60  javac Main.java 
+   61  java Main 
+   62  javac Date.java 
+   63  javac testDate.java 
+   64  javac Date.java 
+   65  javac testDate.java 
+   66  java testDate 
+   67  javac Date.java 
+   68  java testDate 
+   69  javac testDate.java 
+   70  java testDate 
+   71  javac testDate.java 
+   72  java Date 
+   73  java testDate 
+   74  javac testDate.java 
+   75  java testDate 
+   76  javac testDate.java 
+   77  java testDate 
+   78  javac testDate.java 
+   79  java testDate 
+   80  javac testDate.java 
+   81  java testDate 
+   82  javac testDate.java 
+   83  java testDate 
+   84  javac testDate.java 
+   85  java testDate 
+   86  javac testDate.java 
+   87  java testDate 
+   88  javac testDate.java 
+   89  java testDate 
+   90  javac Date.java 
+   91  javac testDate.java 
+   92  java testDate 
+   93  javac Date.java 
+   94  java Date 
+   95  java testDate 
+   96  javac Date.java 
+   97  javac Date.java 
+   98  javac Date.java 
+   99  javac Date.java 
+  100  javac Date.java 
+  101  javac testDate.java 
+  102  java testDate 
+  103  javac testDate.java 
+  104  java testDate 
+  105  javac Date.java 
+  106  java testDate 
+  107  javac DateTestHarness.java 
+  108  javac DateTestHarness.java 
+  109  javac Date.java 
+  110  javac Date.java 
+  111  javac DateTestHarness.java 
+  112  java DateTestHarness 
+  113  javac Date
+  114  javac Date.java 
+  115  javac Date
+  116  javac DateTestHarness.java 
+  117  java DateTestHarness 
+  118  javac Date.java 
+  119  javac DateTestHarness.java 
+  120  javac DateTestHarness.java 
+  121  java DateTestHarness 
+  122  java testDate 
+  123  javac Date.java 
+  124  java DateTestHarness 
+  125  javac Date.java 
+  126  java DateTestHarness 
+  127  vim DateTestHarness.java 
+  128  vim DateTestHarness.java 
+  129  javac DateTestHarness.java 
+  130  java Date
+  131  javac Date
+  132  javac Date.java 
+  133  java DateTestHarness 
+  134  javac Date.java 
+  135  java DateTestHarness 
+  136  javac Date.java 
+  137  java DateTestHarness 
+  138  javac Date.java 
+  139  java DateTestHarness 
+  140  javac Date.java 
+  141  java DateTestHarness 
+  142  javac Date.java 
+  143  java DateTestHarness 
+  144  s
+  145  ls
+  146  java TestDate 
+  147  javac Date.java 
+  148  javac Date.java
+  149  java DateTestHarness 
+  150  javac Date.java
+  151  java DateTestHarness 
+  152  javac Date.java 
+  153  javac Date.java 
+  154  javac Date.java 
+  155  java DateTestHarness 
+  156  javac Date.java 
+  157  java TestDate 
+  158  java DateTestHarness 
+  159  javac Date.java 
+  160  java DateTestHarness 
+  161  javac Date.java 
+  162  java DateTestHarness 
+  163  javac Date.java 
+  164  java DateTestHarness 
+  165  ls
+  166  rm testDate.class 
+  167  ls
+  168  rm ClassModels.md 
+  169  git add *
+  170  git commit -m "adding test harness"
+  171  git push
+  172  javac Date.java 
+  173  ls
+  174  cat TestDate.java 
+  175  vim TestDate.java 
+  176  javac TestDate.java 
+  177  java TestDate 
+  178  javac Date.java 
+  179  java DateTestHarness 
+  180  javac Date.java 
+  181  java DateTestHarness 
+  182  javac Date.java 
+  183  javac Date.java 
+  184  javac Date.java 
+  185  java DateTestHarness 
+  186  javac Date.java 
+  187  java DateTestHarness 
+  188  javac Date.java 
+  189  java DateTestHarness 
+  190  exit
+  191  ls
+  192  cd Documents/PDI/P06
+  193  vim Date.java 
+  194  vim WheelTestHarness.java
+  195  rm WheelTestHarness.java 
+  196  ls
+  197  git status
+  198  git add *
+  199  git status
+  200  git commit -m "introducing classes"
+  201  git push
+  202  pwd
+  203  ls
+  204  vim scp.txt
+  205  cat scp.txt 
+  206  scp
+  207  pwd
+  208  vim scp.txt 
+  209  ls
+  210  vim WheelTestHarness.java 
+  211  javac WheelTestHarness.java 
+  212  vim WheelTestHarness.java 
+  213  mv WheelTestHarness.java DateTestHarness.java
+  214  vim DateTestHarness.java 
+  215  javac DateTestHarness.java 
+  216  vim DateTestHarness.java 
+  217  clear
+  218  javac Date.java 
+  219  javac DateTestHarness.java 
+  220  java DateTestHarness 
+  221  vim DateTestHarness.java 
+  222  ls
+  223  vim testDate.java 
+  224  javac testDate.java 
+  225  java testDate 
+  226  vim Date.java
+  227  javac Date
+  228  javac Date.java 
+  229  java Main 
+  230  vim Main.java 
+  231  vim testDate.java 
+  232  mv testDate.java  TestDate.java
+  233  javac TestDate.java 
+  234  vim TestDate.java 
+  235  javac TestDate.java 
+  236  java TestDate 
+  237  vim Date.java 
+  238  head -66 Date.java 
+  239  vim Date.java 
+  240  javac Date.java 
+  241  vim Date.java 
+  242  javac Date.java 
+  243  java TestDate 
+  244  java DateTestHarness 
+  245  vim DateTestHarness.java 
+  246  ls
+  247  rm TestDate.java 
+  248  rm TestDate.class 
+  249  ls
+  250  rm scp.txt 
+  251  vim Suffix.java 
+  252  rm Suffix.java 
+  253  rm Suffix.java
+  254  ls
+  255  rm Suffix.class 
+  256  vim TestObj.java
+  257  javac TestObj.java 
+  258  java TestObj 
+  259  javac TestObj.java 
+  260  javac TestObj.java 
+  261  java TestObj 
+  262  javac TestObj.java 
+  263  java TestObj 
+  264  javac TestObj.java 
+  265  java TestObj 
+  266  javac TestObj.java 
+  267  java TestObj 
+  268  clear
+  269  ls
+  270  vim Date.java 
+  271  vim DateTestHarness.java 
+  272  ls
+  273  git add *
+  274  git commit -m "date class works finally!"
+  275  git push
+  276  exit
+  277  cd Documents/PDI/P06
+  278  vim TestObj.java 
+  279  javac Date.java 
+  280  java DateTestHarness.java
+  281  java DateTestHarness
+  282  exit
+  283  vim .bashrc
+  284  source .bashrc
+  285  ls
+  286  cd Documents/
+  287  cd PDI
+  288  cd P06
+  289  vim DateClass.java 
+  290  javac Suffix.java 
+  291  vim Suffix.java 
+  292  javac Suffix.java 
+  293  vim Suffix.java 
+  294  javac Suffix.java 
+  295  java Suffix 
+  296  vim Suffix.java 
+  297  javac Suffix.java 
+  298  vim Suffix.java 
+  299  javac Suffix.java 
+  300  vim Suffix.java 
+  301  javac Suffix.java 
+  302  java Suffix 
+  303  ls
+  304  mv DateClass.java Date.java
+  305  ls
+  306  vim Date.java 
+  307  vim Main.java
+  308  javac Date.java 
+  309  vim Date.java 
+  310  javac Date.java 
+  311  tmux
+  312  exit
+  313  cd Documents/PDI/P06
+  314  ls
+  315  vim Date.java
+  316  cd AssignmentTask/
+  317  javac Image.java 
+  318  javac Image.java 
+  319  javac Image.java 
+  320  javac Image.java 
+  321  javac Image.java 
+  322  javac Image.java 
+  323  javac Image.java 
+  324  javac ImageTestHarness.java 
+  325  javac ImageTestHarness.java 
+  326  java ImageTestHarness 
+  327  javac Image.java 
+  328  java ImageTestHarness 
+  329  javac Image.java 
+  330  java ImageTestHarness 
+  331  javac Image.java 
+  332  java ImageTestHarness 
+  333  ls
+  334  cat Convolute.java 
+  335  cat Kernel.java 
+  336  javac ImageTestHarness.java 
+  337  java ImageTestHarness 
+  338  javac ImageTestHarness.java 
+  339  java ImageTestHarness 
+  340  javac ImageTestHarness.java 
+  341  javac ImageTestHarness.java 
+  342  java ImageTestHarness 
+  343  javac Image.java 
+  344  javac Image.java 
+  345  javac Image.java 
+  346  javac Image.java 
+  347  javac Image.java 
+  348  javac ImageTestHarness.java 
+  349  java ImageTestHarness 
+  350  javac ImageTestHarness.java 
+  351  javac ImageTestHarness.java 
+  352  java ImageTestHarness 
+  353  kkkkkkkkkkkkkk
+  354  javac Image.java 
+  355  javac Image.java 
+  356  javac Image.java 
+  357  java ImageTestHarness 
+  358  exit
+  359  cd Documents/PDI/P06
+  360  mkdir AssignmentTask
+  361  mv Image.java AssignmentTask/
+  362  ls
+  363  cd AssignmentTask/
+  364  vim Image.java 
+  365  cd ../
+  366  ls
+  367  java Date.java
+  368  java DateTestHarness 
+  369  javac Date.java 
+  370  java Date
+  371  clear
+  372  ls
+  373  cd AssignmentTask/
+  374  vim Image.java 
+  375  java ../Date.java
+  376  ls
+  377  vim Image.java 
+  378  javac Image.java 
+  379  vim Image.java 
+  380  git add *
+  381  git commit -m "image class works!"
+  382  git push
+  383  vim Image.java
+  384  git status
+  385  git add *
+  386  git commit -m "refactored image class to have one class field + general cleanup"
+  387  git push
+  388  cd ../
+  389  sl
+  390  ls
+  391  cp DateTestHarness.java AssignmentTask/
+  392  cd AssignmentTask/
+  393  mv DateTestHarness.java ImageTestHarness.java
+  394  vim ImageTE
+  395  vim ImageTestHarness.java 
+  396  javac Image.java 
+  397  javac ImageTestHarness.java 
+  398  javac ImageTestHarness.java 
+  399  javac ImageTestHarness.java 
+  400  java ImageTestHarness 
+  401  ls
+  402  clear
+  403  ls
+  404  ls -l
+  405  rm ImageTE
+  406  ls
+  407  java ImageTestHarness.java 
+  408  java ImageTestHarness
+  409  javac ImageTestHarness.java 
+  410  java ImageTestHarness 
+  411  javac ImageTestHarness.java 
+  412  javac ImageTestHarness.java 
+  413  java ImageTestHarness 
+  414  javac ImageTestHarness.java 
+  415  javac ImageTestHarness.java 
+  416  javac ImageTestHarness.java 
+  417  java ImageTestHarness 
+  418  vim Image.java
+  419  exit
+  420  cd Documents/P05/
+  421  cd Documents/PDI/P05/9.AssignmentTask/
+  422  cat RESULTS.txt 
+  423  ls
+  424  exit
+  425  cd Documents/PDI/P06/AssignmentTask/
+  426  vim ImageTestHarness.java
+  427  cd ../../P05/9.AssignmentTask/
+  428  cp Convolute.java Kernel.java ../../P06/AssignmentTask/
+  429  cd ../../P06/AssignmentTask/
+  430  javac Kernel.java 
+  431  javac Convolute.java 
+  432  vim ImageTestHarness.java 
+  433  rm ImageTestHarness.java 
+  434  rm ImageTestHarness.class 
+  435  vim ImageTestHarness.java 
+  436  clear
+  437  ls
+  438  vim ImagePsuedo.txt
+  439  cp ImagePsuedo.txt ClassPsudeoTemplate.txt
+  440  vim ImagePsuedo.txt 
+  441  cd ../../P05/9.AssignmentTask/
+  442  ls
+  443  cat AssignmentTask.java 
+  444  head -10 AssignmentTask.java > file.txt
+  445  vim file.txt 
+  446  ls
+  447  pwd
+  448  cd ../../P06
+  449  cd AssignmentTask/
+  450  vim Image.java 
+  451  javac Image.java 
+  452  vim Image.java 
+  453  javac Image.java 
+  454  vim Image.java 
+  455  javac Image.java 
+  456  vim Image.java 
+  457  javac Image.java 
+  458  java ImageTestHarness 
+  459  vim ImageTestHarness.java 
+  460  vim ImageTestHarness.java 
+  461  javac Image.java 
+  462  javac ImageTestHarness.java 
+  463  vim ImageTestHarness.java 
+  464  javac ImageTestHarness.java 
+  465  java ImageTestHarness.java
+  466  java ImageTestHarness
+  467  vim ImageTestHarness.java 
+  468  javac ImageTestHarness.java 
+  469  java ImageTestHarness 
+  470  vim ImageTestHarness.java 
+  471  javac ImageTestHarness.java 
+  472  java ImageTestHarness 
+  473  vim ImageTestHarness.java 
+  474  javac ImageTestHarness.java 
+  475  java ImageTestHarness 
+  476  vim ImageTestHarness.java 
+  477  javac ImageTestHarness.java 
+  478  java ImageTestHarness 
+  479  vim ImageTestHarness.java 
+  480  vim Image.java 
+  481  ls
+  482  ls
+  483  vim Image.java
+  484  exit
+  485  ls
+  486  cd Documents/PDI/P06
+  487  vim Date.java 
+  488  java DateTestHarness 
+  489  vim TestObj.java 
+  490  javac TestObj.java 
+  491  java TestObj 
+  492  javac TestObj.java 
+  493  vim TestObj.java 
+  494  javac TestObj.java 
+  495  java TestObj 
+  496  clear
+  497  vim Image.java
+  498  tmux
+  499  exit
+  500  cd Documents/PDI/P06
+  501  ls
+  502  vim Date.java
+  503  vim Date.java 
+  504  vim Date.java 
+  505  vim Date.java 
+  506  vim Date.java 
+  507  vim Date.java 
+  508  vim Date.java 
+  509  javac Date.java 
+  510  java DateTestHarness 
+  511  ls
+  512  git status
+  513  git add *
+  514  git commit -m "final submission P06"
+  515  git push
+  516  cd ../
+  517  cd P06
+  518  cd ../
+  519  tar -cvzf 19459138_P06.tar.gz P06
+  520  ls
+  521  mv 19459138_P06.tar.gz tarballs/
+  522  cd tarballs/
+  523  rm 19459138_P06.tar.gz 
+  524  cd ../
+  525  cd P06
+  526  tree ./ > README.md
+  527  cat README.md 
+  528  history ./BashHistoryP06.txt
+  529  history > BashHistory.txt
