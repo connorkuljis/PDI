@@ -1,3 +1,7 @@
+/* FILE: FileIO.java
+ * AUTHOR: Connor Kuljis 19459138
+ * PURPOSE: class of methods to read and write csv/png's
+ * 
 import java.util.*;
 import java.io.*;
 import java.awt.*; 
