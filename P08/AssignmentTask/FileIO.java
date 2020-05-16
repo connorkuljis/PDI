@@ -41,7 +41,7 @@ public class FileIO
 
             if(!arrayIsRectangle(stringArray))
             {
-                throw new IllegalArgumentException("Array rows differ in size!");
+                throw new IllegalArgumentException("Array rows differ in size! (Ragged)");
             }
 
             parsedArray = parseStringToInt(stringArray, totalRows);
@@ -186,7 +186,7 @@ public class FileIO
         }
     }
 
-    public static int[][] readPNG(String fileName) throws IOException
+    public static int[][] readPNG(String fileName) throws IOException, NullPointerException
     {
         BufferedImage img; 
         File inputFile; 
@@ -214,11 +214,15 @@ public class FileIO
                 } 
             }
         }
+        catch(NullPointerException e)
+        {
+            throw new NullPointerException("Are you sure its a .png file?");
+        }
         catch(IOException e) 
         {
             //UserInterface.displayError("Error with .png reading: " + e.getMessage());
             // Alternatively you could rethrow an IllegalArgumentException
-            throw new FileNotFoundException("Could not find file!");
+            throw new IOException("Error with .png reading!" );
         }
         return image; 
     }

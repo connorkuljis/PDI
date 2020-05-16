@@ -15,25 +15,28 @@ public class DetectEdges
      */
     public static void detectEdges()
     {
-        System.out.println("Note: Currently looking in the 'Supplementary_Files' subdirectory"); 
         int[][] kernel = null;
         boolean valid = false;
         while(!valid)
         {
             try
             {
-                String kernelFile = "Supplementary_Files/" + UserInterface.userInput("Please enter the filename of the kernel: ");
+                String kernelFile = UserInterface.userInput("Please enter the filename of the kernel: ");
                 kernel = FileIO.readFile(kernelFile); // this is where the exception is thrown
                 valid = true;
             }
-            catch(IOException e)
+            catch(IllegalArgumentException e)
+            {
+                UserInterface.displayError(e.getMessage());
+            }
+            catch(FileNotFoundException e)
             {
                 UserInterface.displayError(e.getMessage());
             }
         }
         // UserInterface.printTwoDArray(FileIO.readFile(kernelFile));
         int[][] image = null;
-        String imageFilename = "Supplementary_Files/";
+        String imageFilename = "";
 
         boolean close = false;
         boolean done = false;
@@ -50,11 +53,16 @@ public class DetectEdges
                     {
                         try
                         {
-                            imageFilename += UserInterface.userInput("Please enter the filename of the CSV: ");
+                            imageFilename = UserInterface.userInput("Please enter the filename of the CSV: ");
+                            System.out.println(imageFilename); 
                             image = FileIO.readFile(imageFilename);
                             done = true;
                         }
-                        catch(IOException e)
+                        catch(IllegalArgumentException e)
+                        {
+                            UserInterface.displayError(e.getMessage());
+                        }
+                        catch(FileNotFoundException e)
                         {
                             UserInterface.displayError(e.getMessage());
                         }
@@ -69,9 +77,13 @@ public class DetectEdges
                     {
                         try
                         {
-                            imageFilename += UserInterface.userInput("Please enter the filename of the PNG: ");
+                            imageFilename = UserInterface.userInput("Please enter the filename of the PNG: ");
                             image = FileIO.readPNG(imageFilename);
                             done = true;
+                        }
+                        catch(NullPointerException e)
+                        {
+                            UserInterface.displayError(e.getMessage());
                         }
                         catch(IOException e)
                         {
