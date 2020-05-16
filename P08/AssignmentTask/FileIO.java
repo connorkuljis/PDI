@@ -1,7 +1,7 @@
 /* FILE: FileIO.java
  * AUTHOR: Connor Kuljis 19459138
  * PURPOSE: class of methods to read and write csv/png's
- * 
+ */ 
 import java.util.*;
 import java.io.*;
 import java.awt.*; 
@@ -137,7 +137,7 @@ public class FileIO
                 parsedArray[i][count] = element;
                 // System.out.println(i + ", " + count + "= " + element); 
             }
-            count = -1;
+            count = -1; // resetting the count
         }
         return parsedArray;
     }
@@ -161,19 +161,18 @@ public class FileIO
             {
                 for(int j = 0; j < writeArray[0].length; j++)
                 {
-                    if(j == writeArray[0].length - 1)
+                    if(j == writeArray[0].length - 1) // check if the it is the last element in the row
                     {
-                        line += String.valueOf(writeArray[i][j]);
+                        line += String.valueOf(writeArray[i][j]); // this is the last element so dont put an ',' at the end
                     }
                     else
                     {
-                        line += String.valueOf(writeArray[i][j] + ",");
+                        line += String.valueOf(writeArray[i][j] + ","); // append ',' to the end
                     }
                 }
                 pw.println(line); 
                 line = "";
             }
-            // pw.println(id + "," + name + "," + assign + "," + test + "," + exam + "," + overall); 
             pw.close();
         }
         catch(IOException e) {

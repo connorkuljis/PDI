@@ -1,4 +1,9 @@
-// note from last night: you need to refactor to accept USER INPUT and do some validation and error handling eg only print sign off message if the convolute has not failed
+/* FILE: DetectEdges.java
+ * PURPOSE: a method for detecting edges in png's/csv files
+ * AUTHOR: Connor Kuljis 19459138
+ * UNIT: PDI Sem 1 2020
+ * LAST MOD: 16th May 2020  */
+
 import java.util.*;
 import java.io.*;
 import java.awt.*;
@@ -54,7 +59,6 @@ public class DetectEdges
                         try
                         {
                             imageFilename = UserInterface.userInput("Please enter the filename of the CSV: ");
-                            System.out.println(imageFilename); 
                             image = FileIO.readFile(imageFilename);
                             done = true;
                         }
@@ -93,7 +97,7 @@ public class DetectEdges
                     close = true;
                     break;
 
-                // DEFAULT
+                // DEFAULT - do I even need this
                 default:
                     System.out.println("Please select a valid option: "); 
                     break;

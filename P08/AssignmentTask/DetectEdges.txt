@@ -1,0 +1,89 @@
+PROGRAM: DetectEdges
+
+SUBMODULE: DetectEdges
+IMPORTS: nothing
+EXPORTS: nothing
+ALGORITHM:
+    valid := FALSE
+    WHILE(NOT valid)
+        TRY
+            kernelFile := INPUT <- "Please enter the filename of the kernel: "
+            kernel := READFILE <- kernelFile
+            valid := TRUE
+        CATCH (FILE IS RAGGED)
+            DISPLAY ERROR
+        CATCH (FILE NOT FOUND)
+            DISPLAY ERROR
+        END TRY
+    END WHILE
+
+    image (2D ARRAY OF Integers OF SIZE null)
+    imageFilename := ""
+    close := FALSE
+    done := FALSE
+    DO
+        ch := INPUT <- "Would you like to perform on (C)SV or (P)NG: ", 'A', 'z'
+        choice = ch (CONVERT TO UPPER CASE)
+        CASE ch
+            'C':
+                WHILE(NOT done)
+                    TRY
+                        imageFilename := INPUT <- "Please enter the filename of the CSV: "
+                        image := READFILE <- imageFilename
+                        done := TRUE
+                    CATCH (ILLEGAL ARGUMENT EXCEPTION)
+                            OUTPUT exceptionError
+                    CATCH (FILE NOT FOUND EXCEPTION)
+                            OUTPUT exceptionError
+                END WHILE
+                close := true
+            'P':
+                WHILE(NOT done)
+                    TRY
+                        imageFilename := INPUT <- "Please enter the filename of the PNG: "
+                        image := READPNG <- imageFilename
+                        done := TRUE
+                    CATCH (NULL POINTER EXCEPTION)
+                            OUTPUT exceptionError
+                    CATCH (IOEXCEPTION)
+                            OUTPUT exceptionError
+                END WHILE
+                close := true
+            END CASE
+    WHILE(NOT close)
+    convoluteArray := convolute <- image, kernel
+ 
+    newImageFilename := imageFilename + "_Converted.png"
+
+    WRITEPNG <- newImageFilename, convoluteArray
+    OUTPUT "File (" + newImageFilename + ") written. Goodbye!"
+END DetectEdges
+
+SUBMODULE: calcResult
+IMPORT: resultArray (2D array of integers), convolute (2D array of integers), kernel (2D array of integers)
+EXPORT: resultArray (2D array of integers)
+ALGORITHM:
+    n := (LENGTH OF convolute )
+    m := (LENGTH OF convolute[0])
+    k := (LENGTH OF kernel)
+
+    resultArray (ARRAY OF Integers of SIZE (n - k + 1) by SIZE (m - k + 1))
+        FOR i := 0 TO LENGTH OF resultArray (exclusive) INC by 1
+            FOR j := 0 TO LENGTH OF resultArray[0] (exclusive) INC by 1
+                resultArray[i][j] = calcConvolute <- i, j, convolute, kernel
+            END FOR
+        END FOR
+END calcResult
+
+SUBMODULE: calcConvolute
+IMPORT: x (integer), y (integer), resultArray (2D array of integers), convolute (2D array of integers), kernel (2D array of integers)
+EXPORT result (integer)
+ALGORITHM:
+    result := 0
+    FOR a := 0 TO LENGTH OF kernel (exclusive) INC by 1
+        FOR b := 0 TO LENTH OF kernel[0] (exclusive) INC by 1
+        result := result + convolute[a + x][b + y] * kernel[a][b]
+        END FOR
+    END FOR
+END calcConvolute  
+END DetectEdges
