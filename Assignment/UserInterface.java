@@ -60,7 +60,7 @@ public class UserInterface
         {
             try
             {
-                System.out.println(outPrompt + " between " + lower + " and " + upper); 
+                System.out.print(outPrompt); 
                 value = sc.nextDouble();
             }
             catch(InputMismatchException e) 
@@ -69,7 +69,7 @@ public class UserInterface
                 sc.next();
                 value = lower - 1.0;
             }
-            outPrompt = "ERROR: please enter a valid value \n" + prompt;
+            outPrompt = "ERROR: please enter a valid value \n" + " between " + lower + " and " + upper + prompt;
         } while ((value < lower) || (value > upper));
         return value;
     }

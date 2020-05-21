@@ -4,19 +4,20 @@ public class testMain
     {
         // int[][] k = UserInterface.create2DArray();
         
-        int[][] k = {{0,0,0,0,0,0},
-                     {0,1,1,1,1,0},
-                     {0,1,2,2,1,0},
-                     {0,1,2,10,1,0},
-                     {0,1,1,1,1,0},
-                     {0,0,0,0,0,0}
+        int[][] k = {{0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
+                     {0,1,2,3,4,5,6,7,8,9},
                     };
-        int[][] test = ValidKernel.getSmoothingKernel(k);
+        
+        // int[][] x = UserInterface.create2DArray();
+        int[][] test = ValidKernel.smoothing(k);
         UserInterface.printTwoDArray(test);
-
-        double smoothingValue = 0.7;
-        int avg = ValidKernel.avgArray(test, smoothingValue);
-        System.out.println(avg); 
-
     }
 }
