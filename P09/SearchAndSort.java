@@ -1,3 +1,11 @@
+/*  
+ * FILE: SearchAndSort
+ * AUTHOR: Connor Kuljis 19459138
+ * UNIT: PDI Sem 1 2020
+ * PURPOSE: Linear/Binary Search, Bubble/Insertion/Selection Sort
+ * DATE: 24th May 2020
+ */
+
 import java.util.*;
 import java.io.*;
 
@@ -32,7 +40,7 @@ public class SearchAndSort
      * EXPORTS: none
      * PURPOSE: search through each element starting from index 0 and looping untill matchIdx is flagged
      */
-    public static void linearSearch(String target, Student[] myArr)
+    public static int linearSearch(String target, Student[] myArr)
     {
         long startTime = System.nanoTime();
         int ii = 0;
@@ -53,6 +61,8 @@ public class SearchAndSort
         long endTime = System.nanoTime();
         int total = (int)((double)(endTime - startTime) / 1000.0);
         System.out.println("LINEAR SEARCH: " + total); 
+
+        return matchIdx;
     }
 
     /* NAME: bubbleSort
@@ -108,6 +118,7 @@ public class SearchAndSort
         long endTime = System.nanoTime();
         int total = (int)((double)(endTime - startTime) / 1000.0);
         System.out.println("INSERTION SORT: " + total); 
+
         return myArray;
     }
 
@@ -142,7 +153,7 @@ public class SearchAndSort
     /* NAME: binarySearch
      * IMPORTS: target (String), myArr (ARRAY OF Student Objects)
      * EXPORTS: none
-     * PURPOSE: search through each element starting from index 0 and looping untill matchIdx is flagged
+     * PURPOSE: splitting the array in half each time
      */
     public static void binarySearch(String target, Student[] myArray)
     {

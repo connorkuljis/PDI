@@ -1,0 +1,116 @@
+ROGRAM SearchAndSort
+    MAIN
+        filename := "students7000.csv"
+        stArray = FileIO.readStudentFile <- filename
+
+        linearSearch <- 'Lawrence Cherry', stArray
+
+        bubbleSort <- stArray
+
+        sortedArray := insertionSort <- stArray
+
+        selectionSort <- stArray
+
+        binarySeach <- "Julio Degroat", sortedArray
+    END MAIN
+
+SUBMODULE: linearSearch
+IMPORTS: target(String), myArr (ARRAY OF Student Objects)
+EXPORTS: 
+ALGO:
+    ii := 0
+    matchIdx := -1
+    WHILE (ii < array.length) AND (matchIdx == -1)
+        IF(array[ii].getName EQUALS target)
+             matchIdx := ii
+        ELSE
+             ii := ii + 1
+        END IF
+     END WHILE
+     OUTPUT ii + target
+END linearSearch
+
+SUBMODULE: bubbleSort
+IMPORTS: array (ARRAY OF Student Objects)
+EXPORTS: array (ARRAY OF Student Objects) - sorted
+ALGO:
+    pass := 0 
+    DO
+        sorted := TRUE
+        FOR ii := 0 TO (array.length - 1 - pass) - 1 INC BY 1
+            IF (array[ii].getName.compareTo <- array[ii+1].getName > 0 ) 
+                temp := array[ii] 
+                array[ii] := array[ii+1] 
+                array[ii+1] := temp 
+                sorted := FALSE
+            END IF
+        END FOR
+        pass + 1 WHILE (NOT sorted)
+    END DO
+END bubbleSort
+
+
+SUBMODULE: insertionSort
+IMPORTS: array (ARRAY OF Student Objects)
+EXPORTS: array (ARRAY OF Student Objects) - sorted
+ALGO:
+    FOR nn := 1 TO array.length INC BY 1 
+        ii := nn
+        temp := array[ii]
+        WHILE (ii > 0) AND (array[ii-1].getName.compareTo <- array[ii-1].getName > 0)
+            temp = myArray[ii]
+            array[ii] := array[ii-1]
+            array[ii-1] := temp 
+            ii := ii - 1 
+        END WHILE
+    END FOR
+END insertionSort
+
+SUBMODULE: selctionSort
+IMPORTS: array (ARRAY OF Student Objects)
+EXPORTS: array (ARRAY OF Student Objects) - sorted
+ALGO:
+    FOR nn := 0 TO array.length - 1 INC BY 1 
+        minIdx := nn
+        FOR jj := nn+1 TO array.length - 1 INC BY 1 
+            IF (array[jj].getName.compareTo <- array[minIdx].getName < 0)
+                minIdx := jj END IF
+        END FOR
+        temp := array[minIdx] 
+        array[minIdx] := array[nn] 
+        array[nn] := temp
+    END FOR
+END selectionSort
+
+
+SUBMODULE: binarySearch
+IMPORTS: target (String), myArray(ARRAY OF STUDENTS)
+EXPORTS: none
+ALGO:
+    left := 0
+    right := myArray.length
+    found := FALSE
+   
+    WHILE(left <= right AND NOT FOUND)
+        middle := left + right DIV 2
+        IF (myArray[middle].getName.compareToIgnoreCase <- target > 0)
+            left := middle + 1
+        ELSE IF (myArray[middle].getName.compareToIgnoreCase <- target < 0)
+            right := middle - 1
+        ELSE
+             found := TRUE
+        END IF
+     END WHILE
+END binarySeach
+
+
+
+
+
+
+
+
+
+
+
+
