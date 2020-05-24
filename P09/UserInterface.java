@@ -204,6 +204,14 @@ public class UserInterface
         System.out.println("Displaying exception error -> " + error); 
     }
 
+    public static void printArray(Student[] myArray )
+    {
+        for(int i = 0; i < myArray.length; i++)
+        {
+            System.out.println(myArray[i] + " "); 
+        }
+
+    }
     public static void printTwoDArray(int[][] myArray )
     {
         for(int i = 0; i < myArray.length; i++)
