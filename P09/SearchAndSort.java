@@ -8,17 +8,33 @@ public class SearchAndSort
         String filename = "students7000.csv";
         Student[] stArr = FileIO.readStudentFile(filename);
 
-        // linearSearch("Lawrence Cherry", stArr);
+        linearSearch("Lawrence Cherry", stArr);
+
+        System.out.println(""); 
+
+        bubbleSort(stArr);
+
+        System.out.println(""); 
+
+        Student[] sortedArray = insertionSort(stArr);
+
+        System.out.println(""); 
         
-        // bubbleSort(stArr);
+        selectionSort(stArr);
+
+        System.out.println(""); 
         
-        insertionSort(stArr);
-        
-        // selectionSort(stArr);
+        binarySearch("Julio Degroat", sortedArray);
     }
 
+    /* NAME: linearSearch
+     * IMPORTS: target (String), myArr (ARRAY OF Student Objects)
+     * EXPORTS: none
+     * PURPOSE: search through each element starting from index 0 and looping untill matchIdx is flagged
+     */
     public static void linearSearch(String target, Student[] myArr)
     {
+        long startTime = System.nanoTime();
         int ii = 0;
         int matchIdx = -1;
         while((ii < myArr.length) && (matchIdx == -1))
@@ -33,10 +49,20 @@ public class SearchAndSort
             }
         }
         System.out.println("Found: " + target + " at index: " + matchIdx + "\n\t" + myArr[matchIdx]); 
+
+        long endTime = System.nanoTime();
+        int total = (int)((double)(endTime - startTime) / 1000.0);
+        System.out.println("LINEAR SEARCH: " + total); 
     }
 
+    /* NAME: bubbleSort
+     * IMPORTS: myArray(ARRAY of Student Objects)
+     * EXPORTS: myArray(ARRAY OF Student Objects) - sorted in alphabetical order
+     * PURPOSE: sorts an array by swapping values that are out of place on each pass
+     */
     public static Student[] bubbleSort(Student[] myArray)
     {
+        long startTime = System.nanoTime();
         int pass = 0;
         boolean sorted;
         do
@@ -54,11 +80,20 @@ public class SearchAndSort
             }
             pass++;
         }while(!sorted);
+        long endTime = System.nanoTime();
+        int total = (int)((double)(endTime - startTime) / 1000.0);
+        System.out.println("BUBBLE SORT: " + total); 
         return myArray;
     }
 
-    public static void insertionSort(Student[] myArray)
+    /* NAME: insertionSort
+     * IMPORTS: myArray(ARRAY OF STUDENT OBJECTS)
+     * EXPORTS: myArray(ARRAY OF Student Objects) - sorted in alphabetical order
+     * PURPOSE: left (sorted) vs right (unsorted)
+     */
+    public static Student[] insertionSort(Student[] myArray)
     {
+        long startTime = System.nanoTime();
         for (int nn = 1; nn < myArray.length; nn ++) // had .length -1 causing last number to not be sorted 
         {
             int ii = nn;
@@ -70,11 +105,20 @@ public class SearchAndSort
                 ii--;
             }
         }
-        UserInterface.printArray(myArray);
+        long endTime = System.nanoTime();
+        int total = (int)((double)(endTime - startTime) / 1000.0);
+        System.out.println("INSERTION SORT: " + total); 
+        return myArray;
     }
 
+    /* NAME: selectionSort
+     * IMPORTS: myArray(ARRAY OF Student Objects)
+     * EXPORTS: myArray(ARRAY OF Student Objects) - sorted in alphabetical order
+     * PURPOSE: sorting by scanning the array for the smallest value and sorting them that way
+     */
     public static Student[] selectionSort(Student[] myArray)
     {
+        long startTime = System.nanoTime();
         for (int n = 0; n < myArray.length - 1; n++)
         {
             int minIdx = n;
@@ -89,6 +133,44 @@ public class SearchAndSort
             myArray[minIdx] = myArray[n];
             myArray[n] = temp;
         }
+        long endTime = System.nanoTime();
+        int total = (int)((double)(endTime - startTime) / 1000.0);
+        System.out.println("SELECTION SORT: " + total); 
         return myArray;
+    }
+
+    /* NAME: binarySearch
+     * IMPORTS: target (String), myArr (ARRAY OF Student Objects)
+     * EXPORTS: none
+     * PURPOSE: search through each element starting from index 0 and looping untill matchIdx is flagged
+     */
+    public static void binarySearch(String target, Student[] myArray)
+    {
+        long startTime = System.nanoTime();
+        int left = 0;
+        int right = myArray.length;
+        boolean found = false;
+
+        while(left <= right && !found)
+        {
+            int middle = (left + right) / 2;
+            if(myArray[middle].getName().compareToIgnoreCase(target) < 0) // string is greater than
+            {
+                left = middle + 1;
+            }
+            else if(myArray[middle].getName().compareToIgnoreCase(target) > 0) // string is less than
+            {
+                right = middle - 1;
+            }
+            else
+            {
+                System.out.println("Found: " + target + " at index: " + middle + "\n\t" + myArray[middle]); 
+                found = true;
+            }
+        }
+
+        long endTime = System.nanoTime();
+        int total = (int)((double)(endTime - startTime) / 1000.0);
+        System.out.println("BINARY SEARCH: " + total); 
     }
 }
