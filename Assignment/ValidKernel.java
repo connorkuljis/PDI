@@ -67,6 +67,13 @@ public class ValidKernel
         return ceilAvg;
     }
 
+
+    /* Name: smoothing
+     * IMPORTS: image (2DARRAY OF Integers)
+     * EXPORTS: image (2D ARRAY OF INTEGERS) - that has been smoothed around a given pixel
+     * Purpose: constructs a 2D array of integers from a csvfile (String)
+     * Assertion: a kernel is valid if the file it is reading from exists, each element is an integer and the size is square
+     * Created: 20 May 2020 */
     public static int[][] smoothing(int[][] image)
     {
         int[][] smoothingKernel = null;

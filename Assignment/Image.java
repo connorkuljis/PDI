@@ -117,7 +117,7 @@ public class Image
             str += "\n";
             for(int j=0; j < originalImage[0].length; j++)
             {
-                str += originalImage[i][j] + "\t";
+                str += originalImage[i][j] + " ";
             }
         }
         return str;
@@ -208,66 +208,61 @@ public class Image
      * Purpose: constructs a 2D array of integers from a csvfile (String)
      * Assertion: a kernel is valid if the file it is reading from exists, each element is an integer and the size is square
      * Created: 20 May 2020 */
-    public int[][] smoothing()
+    public int[][] smoothing(int surfaceSize, int x, int y, double smoothingFactor) throws ArrayIndexOutOfBoundsException, IllegalArgumentException
     {
-        int[][] smoothingKernel = null;
-        int surfaceSize, surfaceRange, x_target, y_target; 
-        double smFactor;
-        boolean valid  = false;
+        
 
-        do
+        int x_target = y - 1;    // accounting for 0 index not included for user
+        int y_target = x - 1;    // flipping x and y coordinates in matrix
+
+        if (surfaceSize % 2 == 0) // the surface size must be odd to perfectly surround pixel
         {
-            do
+            throw new IllegalArgumentException("Surface is not odd to perfectly surround target.");
+        }
+
+        if (smoothingFactor < 0.0 || smoothingFactor > 1.0) // factor must be a real number between 0 and 1
+        {
+            throw new IllegalArgumentException("Smoothing factor must be between 0.0 and 1.0 inclusive.");
+        }
+        
+        
+        int surfaceRange = (surfaceSize - 1) / 2; // maximum boundary size at any point from the target pixel
+
+        int[][] smoothingKernel = new int[surfaceSize][surfaceSize];
+
+        // domain of all array positions within the surface range around the target pixel
+        int x_min = (x_target - surfaceRange), x_max = (x_target + surfaceRange);
+        int y_min = (y_target - surfaceRange), y_max = (y_target + surfaceRange);
+        
+        try
+        {
+            int n = -1;        // creating index which will allows to store values starting from 0,0
+            int m;             // because the for loop does not start at 0 and varies depending on starting location
+            for (int i = x_min; i <= x_max; i++)
             {
-                surfaceSize = UserInterface.userInput("Please enter a smoothing surface (must be odd): ", 1, originalImage.length);
-
-            }while(surfaceSize % 2 == 0); // is not an odd integer
-
-            surfaceRange = (surfaceSize - 1) / 2; 
-
-            x_target = UserInterface.userInput("Please enter x-coordinate of pixel to smooth (x): ", 1, originalImage.length);
-            y_target = UserInterface.userInput("Please enter y-coordinate of pixel to smooth (y): ", 1, originalImage.length);
-
-            smFactor = UserInterface.userInput("Please enter a smoothness factor: ", 0.0, 1.0);
-
-            smoothingKernel = new int[surfaceSize][surfaceSize];
-
-            // accounting for 0 index not included for user
-            x_target--;
-            y_target--;
-
-            try
-            {
-                int n = -1;        // creating index which will allow me to store values starting from 0,0
-                int m;             // because the for loop does not start at 0 and varies depending on starting location
-                for (int i = (x_target - surfaceRange); i <= (x_target + surfaceRange); i++)
+                n++;
+                m = -1; // resetting value
+                for (int j = y_min; j <= y_max; j++)
                 {
-                    n++;
-                    m = -1; // resetting value
-                    for (int j = (y_target - surfaceRange); j <= (y_target + surfaceRange); j++)
-                    {
-                        m++;
-                        smoothingKernel[n][m] = originalImage[i][j];        // exceptions thrown here
-                        // System.out.println("(" + i + ", " + j + ")"); 
-                    }
-                }
-
-                int average = avgArray(smoothingKernel, smFactor);
-                for (int i = (x_target - surfaceRange); i <= (x_target + surfaceRange); i++)
-                {
-                    for (int j = (y_target - surfaceRange); j <= (y_target + surfaceRange); j++)
-                    {
-                        // swapping [x][y] to [y][x] = [j][i]
-                        originalImage[j][i] = average;                      // exceptions could be thrown here as well
-                        valid = true;
-                    }
+                    m++;
+                    smoothingKernel[n][m] = originalImage[i][j];        // possible exception
                 }
             }
-            catch(ArrayIndexOutOfBoundsException e)
+
+            int average = avgArray(smoothingKernel, smoothingFactor);
+
+            for (int i = (x_target - surfaceRange); i <= (x_target + surfaceRange); i++)
             {
-                UserInterface.displayError("Smoothing surface goes out of bounds of the image array.");
+                for (int j = (y_target - surfaceRange); j <= (y_target + surfaceRange); j++)
+                {
+                    originalImage[i][j] = average;                      // possible exceptions 
+                }
             }
-        }while(!valid);
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+            throw new ArrayIndexOutOfBoundsException("Out of bounds");
+        }
         return originalImage;
     }
 }

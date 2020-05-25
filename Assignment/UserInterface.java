@@ -226,12 +226,32 @@ public class UserInterface
 
 
         int[][] arr = new int[x][y];
-        System.out.println(arr.length); 
         System.out.println("These Coordinates are (x,y)"); 
 
         for(int i = 0; i < x; i++)
         {
             for(int j = 0; j < y; j++)
+            {
+                String msg = "(" + (i + 1) + "," + (j + 1) + "): ";
+                arr[i][j] = userInput(msg, Integer.MIN_VALUE, Integer.MAX_VALUE);
+            }
+        }
+
+        System.out.println("Successfully created array."); 
+        printTwoDArray(arr);
+        return arr;
+    }
+
+    public static int[][] createKernel()
+    {
+        int k = userInput("Please enter in the kernel size k: ", 1, Integer.MAX_VALUE);
+
+        int[][] arr = new int[k][k];
+        System.out.println("These Coordinates are (x,y)"); 
+
+        for(int i = 0; i < k; i++)
+        {
+            for(int j = 0; j < k; j++)
             {
                 String msg = "(" + (i + 1) + "," + (j + 1) + "): ";
                 arr[i][j] = userInput(msg, Integer.MIN_VALUE, Integer.MAX_VALUE);

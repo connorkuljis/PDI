@@ -92,11 +92,24 @@ public class testMain
         Image image = new Image(c);
         System.out.println(image.toString()); 
 
-        Image convolute = new Image(image.convolution(hor));
-        System.out.println(convolute.toString()); 
+        // Image convolute = new Image(image.convolution(hor));
+        // System.out.println(convolute.toString()); 
 
-        Image smoothed = new Image(convolute.smoothing());
-        System.out.println(smoothed.toString()); 
+        /*
+        try
+        {
+            Image test = new Image(image.smoothing(3,2,5,0.089));
+            System.out.println(test.toString()); 
+        }
+        catch (Exception e)
+        {
+            System.out.println(e); 
+        }
+        */
+
+        Image xx = new Image(DetectEdges.imageTypeSubMenu());
+        System.out.println(xx.toString()); 
+
 
 
 
