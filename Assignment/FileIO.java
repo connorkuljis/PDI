@@ -1,6 +1,12 @@
 /* FILE: FileIO.java
- * AUTHOR: Connor Kuljis 19459138
- * PURPOSE: class of methods to read and write csv/png's
+ * AUTHOR: Connor Kuljis 
+ * STUDENT ID: 19459138
+ * UNIT: COMP 1007 Programming Design and Implementation (PDI) Sem 1 2020
+ * PURPOSE: class of methods to read/write and name csv/png's
+ * REQUIRES:
+ * REFERENCE: SELF REFERENCE NOTICE - this is an updated version of FileIO from P08
+ * COMMENTS: 
+ * LAST MOD: 27/05/2020
  */ 
 import java.util.*;
 import java.io.*;
@@ -74,7 +80,7 @@ public class FileIO
         return parsedArray;
     }
 
-    /* Name: getNumeRowsInFile
+    /* Name: getNumRowsInFile
      * IMPORTS: fileName as a string
      * EXPORTS: multidimenstional array of csv file
      * Purpose: constructs a 2D array of integers from a csvfile (String)
@@ -97,6 +103,12 @@ public class FileIO
         return lineNum;
     }
 
+    /*************************************************************************
+     * NAME: arrayIsRectangle
+     * IMPORTS: stringArray(ARRAY OF Strings)
+     * EXPORTS: valid (Boolean)
+     * PURPOSE: returns true if a string array is perfectly rectanglar
+     * **********************************************************************/
     private static boolean arrayIsRectangle(String[] stringArray)
     {
         // scan the first line and get the number of elements "size"
@@ -125,6 +137,13 @@ public class FileIO
         return valid;
     }
 
+    /*************************************************************************
+     * NAME: parseStringToInt
+     * IMPORTS: stringArray(ARRAY OF String), totalRows (Integer)
+     * EXPORTS: parsedArray (Integer)
+     * PURPOSE: converts a String Array of numbers separated by commas to a
+     *          2D integer array
+     * **********************************************************************/
     private static int[][] parseStringToInt(String[] stringArray, int totalRows)
     {
         int cols = stringArray.length;
@@ -148,14 +167,16 @@ public class FileIO
         return parsedArray;
     }
 
-    /*
-     * attempts to write a 2D array to a file
-     *
-     *
-     */
+    /*************************************************************************
+     * NAME: writeFile
+     * IMPORTS: fileName (String), writeArray (2D Array of Integers)
+     * EXPORTS: none
+     * PURPOSE: writes a mulidimensional array of integers to a .csv file
+     * **********************************************************************/
     public static void writeFile(String fileName, int[][] writeArray)
     {
-        String[] stringArray = new String[writeArray.length];
+        String[] stringArray = new String[writeArray.length]; // temp array to hold string data
+        // try catch initialisation
         String line = "";
         FileOutputStream fileStrm = null; 
         PrintWriter pw;
@@ -195,6 +216,13 @@ public class FileIO
         }
     }
 
+    /*************************************************************************
+     * NAME: readPNG
+     * IMPORTS: filename (String)
+     * EXPORTS: image (2D Array of Integers)
+     * PURPOSE: reads a .png file to a multidimensional array of integer values
+     * ASSERTION: exceptions are re-thrown to the called of the method
+     * **********************************************************************/
     public static int[][] readPNG(String fileName) throws IOException, NullPointerException
     {
         BufferedImage img; 
@@ -229,13 +257,17 @@ public class FileIO
         }
         catch(IOException e) 
         {
-            //UserInterface.displayError("Error with .png reading: " + e.getMessage());
-            // Alternatively you could rethrow an IllegalArgumentException
             throw new IOException("Error with .png reading!" );
         }
         return image; 
     }
 
+    /*************************************************************************
+     * NAME: writePNG
+     * IMPORTS: filename (String), writeArray (2D Array of Integers)
+     * EXPORTS: none
+     * PURPOSE: writes a 2D Array of Integers to a file with the given filename
+     * **********************************************************************/
     public static void writePNG(String fileName, int[][] writeArray) 
     {
         // The following is very Java specific and is implemented in a way to 
@@ -279,21 +311,25 @@ public class FileIO
      * EXPORTS: concatenatedFileName (String)
      * PURPOSE: uses the Date class, a user entered base filename, and filetype
      *          extension string to concatenate a new filename
+     * ASSERTION: will loop until if an invalid date is entered
      * **********************************************************************/
     public static String fileNamingConvention(String filename, String extension)
     {
         boolean valid = false;
         int digit;
+
+        // new date object
         Date newDate = null;
         do
         {
             try
             {
+                // although 8 digits asked a user might enter something like 01xxxxxx, which as an integer is the same as 1xxxxxxxx
                 digit = UserInterface.userInput("Please enter an 8 digit Date to save with: ", 1000000, 99999999);
                 newDate = new Date(digit);
-                valid = true;
+                valid = true; // if the date is invalid an exception will be thrown and do while will loop again
             }
-            catch (Exception e)
+            catch(Exception e)  // illegalArgument exception
             {
                 UserInterface.displayError(e.getMessage());
             }
@@ -304,6 +340,7 @@ public class FileIO
         String month = Integer.toString(newDate.getMonth());
         String year = Integer.toString(newDate.getYear());
 
+        // processing the string
         String concatenatedFilename = (year + "-" + month + "-" + day + "_Processed_" + filename + extension ); 
         return concatenatedFilename;
     }

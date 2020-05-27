@@ -3,7 +3,7 @@
 // USERNAME : 19459138
 // UNIT     : PDI
 // PURPOSE  : Class of an image object
-// REFERENCE: Self-Reference Notice, This is an updated version of the P06 Image class
+// REFERENCE: SELF REFERENCE NOTICE This is an updated version of the P06 Image class
 // COMMENTS : 
 // REQUIRES :
 // LAST MOD : 27/05/2020

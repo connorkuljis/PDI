@@ -1,8 +1,10 @@
 /* FILE: DetectEdges.java
- * PURPOSE: a method for detecting edges in png's/csv files
- * AUTHOR: Connor Kuljis 19459138
+ * AUTHOR: Connor Kuljis 
+ * STUDENT ID: 19459138
+ * PURPOSE: a static class for reading in png's/csv files and exporting their integer array format
+// REFERENCE: SELF REFERENCE NOTICE This is an updated version of the P08 DetectEdges class
  * UNIT: PDI Sem 1 2020
- * LAST MOD: 16th May 2020  */
+ * LAST MOD: 27th May 2020  */
 
 import java.util.*;
 import java.io.*;
@@ -12,10 +14,10 @@ import javax.imageio.*;
 public class DetectEdges
 {
     /*
-     * Name: detectEdges
-     * Purpose: can detect edges in csv or png files, by performing matrix operations
-     * IMPORTS: nothing
-     * EXPORTS: 
+     * Name: imageTypeSubMenu
+     * Purpose: a sub menu for reading in a file from .csv or .png files
+     * IMPORTS: none
+     * EXPORTS: image (2D Array of Inteers)
      * Created: 15/05/2020
      */
     public static int[][] imageTypeSubMenu()
@@ -82,14 +84,6 @@ public class DetectEdges
                     break;
             }
         } while(!close);
-
-
-        // appending to filename
-        // String newImageFilename = imageFilename + "_Converted.png";
-
-        // confirmation message, error handing is done inside the method writeFile
-        // FileIO.writePNG(newImageFilename, convoluteArray);
-        // System.out.println("File (" + newImageFilename + ") written. Goodbye!"); 
         return image;
     }
 }

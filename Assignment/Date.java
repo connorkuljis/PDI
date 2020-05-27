@@ -1,12 +1,12 @@
 // FILE     : Date.java
 // AUTHOR   : Connor Kuljis
 // USERNAME : 19459138
-// UNIT     : PDI
-// PURPOSE  : class of an date object
-// REFERENCE: worksheet 6 q 2
-// COMMENTS : 
+// UNIT     : COMP 1007 Programming Design and Implementation (PDI) - Sem 1 2020
+// PURPOSE  : Model class for Data
+// COMMENTS : this class will validate date formats, including leap days/years
+// REFERENCE: SELF REFERENCE NOTICE - this is an updated version of Date from P06
 // REQUIRES : none
-// LAST MOD : 02/05/2020
+// LAST MOD : 27/05/2020
 import java.util.*;
 public class Date
 {
@@ -33,7 +33,7 @@ public class Date
 
     /************************************************************
      * Alternate Constructor:
-     * IMPORT: none
+     * IMPORT: inIntegerFullDate (Integer)
      * EXPORT: none
      * ASSERTION: 
      * COMMENT: Imports information which is used to calculate or otherwise obtain values for classes
@@ -232,6 +232,7 @@ public class Date
 
         if(isLeapYear(year) == false)
         {
+            // mapping month the number of days of a non - leap year
             int[] calendarDays = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 ,31};
             maxDays = calendarDays[month - 1];
 
@@ -242,6 +243,7 @@ public class Date
         }
         else
         {
+            // mapping month the number of days of a leap year
             int[] leapCalendarDays = new int[]{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
             maxDays = leapCalendarDays[month - 1];
@@ -278,7 +280,7 @@ public class Date
     private boolean validYear(int inYear)
     {
         boolean isValid = false;
-        if ((inYear >= 0) || (inYear < 10000))
+        if ((inYear >= 0) || (inYear < 10000)) // up to 9999
         {
             isValid = true;
         }

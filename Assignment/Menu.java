@@ -1,3 +1,11 @@
+// FILE: Menu.java
+// AUTHOR: Connor Kuljis
+// STUDENT ID: 19459138
+// UNIT: COMP1007 - Programming Design and Implementation (PDI) sem 1 2020
+// PURPOSE: A user menu for the PDI Assignment
+// REFERENCE:
+// REQUIRES: Image, Date, UserInterface, FileIO, PDIMath, DetectEdges
+// LAST MOD: 27/05/2020
 import java.util.*;
 import java.io.*;
 
@@ -8,6 +16,12 @@ public class Menu
         menu();
     }
 
+    /*************************************************************************
+     * NAME: Menu
+     * IMPORTS: none
+     * EXPORTS: none
+     * PURPOSE: A top level menu in which smaller sub-menus are called
+     * **********************************************************************/
     public static void menu()
     {
 
@@ -60,7 +74,6 @@ public class Menu
                  
                 case 4:                                   // Exporting
                     exportImage(currentImage);
-                    
                     break;
                 
                 case 5:                                   // Smoothing
@@ -76,6 +89,12 @@ public class Menu
         }while(!close);
     }
 
+    /*************************************************************************
+     * NAME: exportImage
+     * IMPORTS: currentImage (Image)
+     * EXPORTS: none
+     * PURPOSE: writes currently stored Image to a csv or png file
+     * **********************************************************************/
     public static void exportImage(Image currentImage)
     {
         int[][] rawImage = currentImage.getOriginalImage();
@@ -88,80 +107,27 @@ public class Menu
         {
             case 'P':
                 extension = ".png";
-                filename = fileNamingConvention(filename, extension);
+                filename = FileIO.fileNamingConvention(filename, extension);
                 FileIO.writePNG(filename, rawImage);
                 System.out.println("File (" + filename + ")"); 
                 break;
 
             case 'C':
                 extension = ".csv";
-                filename = fileNamingConvention(filename, extension);
+                filename = FileIO.fileNamingConvention(filename, extension);
                 FileIO.writeFile(filename, rawImage);
                 System.out.println("File (" + filename + ")"); 
                 break;
         }
     }
 
+
     /*************************************************************************
-     * NAME: fileNamingConvention
-     * IMPORTS:
-     * EXPORTS
-     * PURPOSE
+     * NAME: smoothingMenu
+     * IMPORTS: imageObj (Image)
+     * EXPORTS: imageObj (Image)
+     * PURPOSE: sub-menu that calls the inObj.smoothing method after accepting user input 
      * **********************************************************************/
-    public static String fileNamingConvention(String filename, String extension)
-    {
-        boolean valid = false;
-        int digit;
-        Date newDate = null;
-        do
-        {
-            try
-            {
-                digit = UserInterface.userInput("Please enter an 8 digit Date to save with: ", 1000000, 99999999);
-                newDate = new Date(digit);
-                valid = true;
-            }
-            catch (Exception e)
-            {
-                UserInterface.displayError(e.getMessage());
-            }
-        }while(!valid);
-
-        String day = Integer.toString(newDate.getDay());
-        String month = Integer.toString(newDate.getMonth());
-        String year = Integer.toString(newDate.getYear());
-
-        String concatenatedFilename = (year + "-" + month + "-" + day + "_Processed_" + filename + extension ); 
-
-        return concatenatedFilename;
-
-    }
-
-    public static int[][] validMatrix(String type)
-    {
-        int[][] matrix = null;
-        boolean valid = false;
-        while(!valid)
-        {
-            try
-            {
-                String matrixFile = UserInterface.userInput("Please enter the filename of the " + type + ": ");
-                matrix = FileIO.readFile(matrixFile); // this is where the exception is thrown
-                valid = true;
-            }
-            catch(IllegalArgumentException e)
-            {
-                UserInterface.displayError(e.getMessage());
-            }
-            catch(FileNotFoundException e)
-            {
-                UserInterface.displayError(e.getMessage());
-            }
-        }
-        UserInterface.printTwoDArray(matrix);
-        return matrix;
-    }
-
     public static Image smoothingMenu(Image imageObj)
     {
         boolean valid = false;
@@ -185,6 +151,12 @@ public class Menu
         return imageObj;
     }
 
+    /*************************************************************************
+     * NAME: readImageSubMenu
+     * IMPORTS: none
+     * EXPORTS: theImage (2D Array of Integers)
+     * PURPOSE: sub-menu for reading in an image from a file or from user input
+     * **********************************************************************/
     public static int[][] readImageSubMenu()
     {
         int[][] theImage = null;
@@ -202,6 +174,12 @@ public class Menu
         return theImage;
     }
 
+    /*************************************************************************
+     * NAME: readKernelSubMenu
+     * IMPORTS: none
+     * EXPORTS: kernel (2D Array of Integers)
+     * PURPOSE: sub-menu for reading in an image from a file or from user input
+     * **********************************************************************/
     public static int[][] readKernelSubMenu()
     {
         int[][] kernel = null;
@@ -210,13 +188,43 @@ public class Menu
         switch(choice)
         {
             case 1:
-                kernel = validMatrix("kernel");
+                kernel = readKernel();
                 break;
             case 2:
                 kernel = UserInterface.createKernel();
                 break;
         }
         return kernel;
+    }
+
+    /*************************************************************************
+     * NAME: readKernel
+     * IMPORTS: type (String)
+     * EXPORTS: matrix (2D ARRAY OF Integers)
+     * PURPOSE: reads a single CSV file and returns a mutlidementional array of integers 
+     * **********************************************************************/
+    public static int[][] readKernel()
+    {
+        int[][] matrix = null;
+        boolean valid = false;
+        while(!valid)
+        {
+            try
+            {
+                String matrixFile = UserInterface.userInput("Please enter the filename of the kernel :");
+                matrix = FileIO.readFile(matrixFile); // this is where the exception is thrown
+                valid = true;
+            }
+            catch(IllegalArgumentException e)
+            {
+                UserInterface.displayError(e.getMessage());
+            }
+            catch(FileNotFoundException e)
+            {
+                UserInterface.displayError(e.getMessage());
+            }
+        }
+        return matrix;
     }
 
 }
