@@ -45,7 +45,7 @@ public class FileIO
 
             if(!arrayIsRectangle(stringArray))
             {
-                throw new IllegalArgumentException("Invalid Matrix, it is not square. (eg: dimensions are not n x n)");
+                throw new IllegalArgumentException("Invalid file/filetype: dimensions are not n x n ");
             }
             parsedArray = parseStringToInt(stringArray, totalRows); // error could be throw here if string array has non ints
         }
@@ -271,5 +271,40 @@ public class FileIO
             // Alternatively you could rethrow an IllegalArgumentException
                 
         }
+    }
+
+    /*************************************************************************
+     * NAME: fileNamingConvention
+     * IMPORTS: filename (String), extension(String)
+     * EXPORTS: concatenatedFileName (String)
+     * PURPOSE: uses the Date class, a user entered base filename, and filetype
+     *          extension string to concatenate a new filename
+     * **********************************************************************/
+    public static String fileNamingConvention(String filename, String extension)
+    {
+        boolean valid = false;
+        int digit;
+        Date newDate = null;
+        do
+        {
+            try
+            {
+                digit = UserInterface.userInput("Please enter an 8 digit Date to save with: ", 1000000, 99999999);
+                newDate = new Date(digit);
+                valid = true;
+            }
+            catch (Exception e)
+            {
+                UserInterface.displayError(e.getMessage());
+            }
+        }while(!valid);
+
+        // accesing Date classfields(Integers) and storing them as Strings
+        String day = Integer.toString(newDate.getDay());
+        String month = Integer.toString(newDate.getMonth());
+        String year = Integer.toString(newDate.getYear());
+
+        String concatenatedFilename = (year + "-" + month + "-" + day + "_Processed_" + filename + extension ); 
+        return concatenatedFilename;
     }
 }

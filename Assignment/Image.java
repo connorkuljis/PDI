@@ -2,11 +2,11 @@
 // AUTHOR   : Connor Kuljis
 // USERNAME : 19459138
 // UNIT     : PDI
-// PURPOSE  : class of an image object
-// REFERENCE: 
+// PURPOSE  : Class of an image object
+// REFERENCE: Self-Reference Notice, This is an updated version of the P06 Image class
 // COMMENTS : 
-// REQUIRES : Convolute.java, Kernel.java
-// LAST MOD : 02/05/2020
+// REQUIRES :
+// LAST MOD : 27/05/2020
 import java.util.*;
 
 public class Image
@@ -173,54 +173,25 @@ public class Image
         return result;
     }
 
-    /* Name: avgArray
-     * IMPORTS: image (2DARRAY OF Integers)
-     * EXPORTS: avg (integer) - average of all integers in the array
-     * Purpose: constructs a 2D array of integers from a csvfile (String)
-     * Assertion: a kernel is valid if the file it is reading from exists, each element is an integer and the size is square
-     * Created: 20 May 2020 */
-    private int avgArray(int[][] smoothingKernel, double smValue)
-    {
-        int total = 0;
-        for (int i = 0; i < smoothingKernel.length; i++)
-        {
-            for (int j = 0; j < smoothingKernel[0].length; j++)
-            {
-                total += smoothingKernel[i][j];
-            }
-        }
-
-        int numRows = smoothingKernel.length;
-        int numCols = smoothingKernel[0].length;
-        int numElements = numRows * numCols; // because it will be square
-
-        double avg = (double) total / (double) numElements; 
-        avg *= smValue;
-        int ceilAvg = PDIMath.ceil(avg);
-        System.out.println(ceilAvg);
-        return ceilAvg;
-    }
-
-
-    /* Name: smoothing
-     * IMPORTS: 
+    /* ***********************************************************************
+     * NAME: smoothing
+     * PURPOSE: smooths out surrounding areas of a target element in a multidementional array
+     * IMPORTS: surfaceSize (Integer), x (Integer), y (Integer), smoothingFactor (Real)
      * EXPORTS: image (2D ARRAY OF INTEGERS) - that has been smoothed around a given pixel
-     * Purpose: constructs a 2D array of integers from a csvfile (String)
-     * Assertion: a kernel is valid if the file it is reading from exists, each element is an integer and the size is square
-     * Created: 20 May 2020 */
+     * EXPLANATION: creates a new array of select values and finds the average * smoothing value and updates the current image object
+     * **********************************************************************/
     public int[][] smoothing(int surfaceSize, int x, int y, double smoothingFactor) throws ArrayIndexOutOfBoundsException, IllegalArgumentException
     {
-        
-
         int x_target = y - 1;    // accounting for 0 index not included for user
         int y_target = x - 1;    // flipping x and y coordinates in matrix
 
-        if (surfaceSize % 2 == 0) // the surface size must be odd to perfectly surround pixel
+        int even = 0;
+        if (surfaceSize % 2 == even) // the surface size must be odd to perfectly surround pixel
         {
             throw new IllegalArgumentException("Surface is not odd to perfectly surround target.");
         }
 
-        if (smoothingFactor < 0.0 || smoothingFactor > 1.0) // factor must be a real number between 0 and 1
+        if (smoothingFactor < 0.0 || smoothingFactor > 1.0) 
         {
             throw new IllegalArgumentException("Smoothing factor must be between 0.0 and 1.0 inclusive.");
         }
@@ -228,7 +199,7 @@ public class Image
         
         int surfaceRange = (surfaceSize - 1) / 2; // maximum boundary size at any point from the target pixel
 
-        int[][] smoothingKernel = new int[surfaceSize][surfaceSize];
+        int[][] smoothingKernel = new int[surfaceSize][surfaceSize]; // creating new array to store values in smoothing area
 
         // domain of all array positions within the surface range around the target pixel
         int x_min = (x_target - surfaceRange), x_max = (x_target + surfaceRange);
@@ -264,5 +235,34 @@ public class Image
             throw new ArrayIndexOutOfBoundsException("Out of bounds");
         }
         return originalImage;
+    }
+
+    /* ***********************************************************************
+     * NAME: avgArray
+     * PURPOSE: finds the average of all elements in a given array mutiplied by a value
+     * IMPORTS: smoothingKernel (2D ARRAY OF Integers), smoothingValue (Real)
+     * EXPORTS: ceilAverage (Integer)
+     * EXPLANATION: finds the ceil'd sum of all elements, divided by the number of elements, times a smoothing value
+     * **********************************************************************/
+    private int avgArray(int[][] smoothingKernel, double smoothingValue)
+    {
+        int total = 0;
+        for (int i = 0; i < smoothingKernel.length; i++)
+        {
+            for (int j = 0; j < smoothingKernel[0].length; j++)
+            {
+                total += smoothingKernel[i][j];
+            }
+        }
+
+        int numRows = smoothingKernel.length;
+        int numCols = smoothingKernel[0].length;
+        int numElements = numRows * numCols; // because it will be square
+
+        double avg = (double) total / (double) numElements; 
+        avg *= smoothingValue;
+        int ceilAvg = PDIMath.ceil(avg);
+        System.out.println(ceilAvg);
+        return ceilAvg;
     }
 }
