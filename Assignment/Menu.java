@@ -61,19 +61,13 @@ public class Menu
                     break;
                  
                 case 4:                                   // Exporting
-                    System.out.println(currentImage.toString()); 
+                    exportImage(currentImage);
+                    
                     break;
                 
                 case 5:                                   // Smoothing
-                    if(currentImage != null)
-                    {
-                        currentImage = new Image(smoothingMenu(currentImage));
-                        System.out.println(currentImage.toString()); 
-                    }
-                    else
-                    {
-                        System.out.println("Hey there is no Image!"); 
-                    }
+                    currentImage = new Image(smoothingMenu(currentImage));
+                    System.out.println(currentImage.toString()); 
                     break;
 
                 case 0:
@@ -84,6 +78,60 @@ public class Menu
         }while(!close);
     }
 
+    public static void exportImage(Image currentImage)
+    {
+        int[][] rawImage = currentImage.getOriginalImage();
+        String filename = UserInterface.userInput("\nPlease enter the File Name: ");
+        char choice = UserInterface.userInput("\nWhat filetype would you like to save with? (C)SV or (P)NG", 'A', 'z');
+        char upperChoice = Character.toUpperCase(choice);
+        String extension = "";
+
+        switch(upperChoice)
+        {
+            case 'P':
+                extension = ".png";
+                filename = fileNamingConvention(filename, extension);
+                FileIO.writePNG(filename, rawImage);
+                System.out.println("File (" + filename + ")"); 
+                break;
+
+            case 'C':
+                extension = ".csv";
+                filename = fileNamingConvention(filename, extension);
+                FileIO.writeFile(filename, rawImage);
+                System.out.println("File (" + filename + ")"); 
+                break;
+        }
+    }
+
+    public static String fileNamingConvention(String filename, String extension)
+    {
+        boolean valid = false;
+        int digit;
+        Date newDate = null;
+        do
+        {
+            try
+            {
+                digit = UserInterface.userInput("Please enter an 8 digit Date to save with: ", 1000000, 99999999);
+                newDate = new Date(digit);
+                valid = true;
+            }
+            catch (Exception e)
+            {
+                UserInterface.displayError(e.getMessage());
+            }
+        }while(!valid);
+
+        String day = Integer.toString(newDate.getDay());
+        String month = Integer.toString(newDate.getMonth());
+        String year = Integer.toString(newDate.getYear());
+
+        String concatenatedFilename = (year + "-" + month + "-" + day + "_Processed_" + filename + extension ); 
+
+        return concatenatedFilename;
+
+    }
 
     public static int[][] validMatrix(String type)
     {
