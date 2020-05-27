@@ -11,7 +11,8 @@ public class Menu
     public static void menu()
     {
 
-        Image currentImage = null;                 // REFERENCE TO THE MAIN IMAGE OBJECT
+        // reference variables that will be updated by the user through the menu
+        Image currentImage = null;                 
         int[][] kernel = null;
 
         System.out.println("|---------------------------|"); 
@@ -28,7 +29,6 @@ public class Menu
             {
                 case 1:
                     currentImage = new Image(readImageSubMenu());
-                    System.out.println(currentImage.toString()); 
                     break;
             }
         }while((currentImage == null));
@@ -41,7 +41,6 @@ public class Menu
             {
                 case 1:                                  // Import Image
                     currentImage = new Image(readImageSubMenu());
-                    System.out.println(currentImage.toString()); 
                     break;
 
                 case 2:                                  // Import Kernel
@@ -52,7 +51,6 @@ public class Menu
                     if((currentImage != null) && (kernel != null))
                     {
                         currentImage = new Image(currentImage.convolution(kernel));
-                        System.out.println(currentImage.toString()); 
                     }
                     else
                     {
@@ -104,6 +102,12 @@ public class Menu
         }
     }
 
+    /*************************************************************************
+     * NAME: fileNamingConvention
+     * IMPORTS:
+     * EXPORTS
+     * PURPOSE
+     * **********************************************************************/
     public static String fileNamingConvention(String filename, String extension)
     {
         boolean valid = false;
@@ -202,7 +206,7 @@ public class Menu
     {
         int[][] kernel = null;
 
-        int choice = UserInterface.userInput("\nPlease select and option to import file:\n1. File\n2. User Input\n", 1, 2);
+        int choice = UserInterface.userInput("\nPlease select and option to import file:\n1. CSV File\n2. User Input\n", 1, 2);
         switch(choice)
         {
             case 1:
