@@ -222,6 +222,7 @@ public class FileIO
      * EXPORTS: image (2D Array of Integers)
      * PURPOSE: reads a .png file to a multidimensional array of integer values
      * ASSERTION: exceptions are re-thrown to the called of the method
+     * REFERENCE: Notice - this is a supplied method by unit coordinator in Prac08
      * **********************************************************************/
     public static int[][] readPNG(String fileName) throws IOException, NullPointerException
     {
@@ -267,6 +268,7 @@ public class FileIO
      * IMPORTS: filename (String), writeArray (2D Array of Integers)
      * EXPORTS: none
      * PURPOSE: writes a 2D Array of Integers to a file with the given filename
+     * REFERENCE: Notice - this is a supplied method by unit coordinator in Prac08
      * **********************************************************************/
     public static void writePNG(String fileName, int[][] writeArray) 
     {

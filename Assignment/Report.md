@@ -14,7 +14,7 @@ In total there 7 classes, 2 of which are model classes - Image and Date.
 Object oriented approach to an image object. The image has a single classfield and is generally constructed by passing in a 2D array of integers via the alternate constructor. This allows easy creation of images objects via FileIO. Within the class it also includes public submodules to handle the convolute() and smoothing() operations. I prefer this as I can directly perform those operations on the object, and can convolute/ smooth the image multiple times without creating many more arrays.
 
 ## Date class
-A class for creating dates. Allows for validation of dates and dates that coincide on a leap year. The date is created from an 8 digit integer, and will throw an IllegalArgumentException if the date is invalid. This date class is incorporated in the FileIO class when naming files. I had decided to use the date class despite the assignment specifaction not stating that the date had to be valid when naming files.
+A class for creating dates. Allows for validation of dates and dates that coincide on a leap year. The date is created from an 8 digit integer, and will throw an IllegalArgumentException if the date is invalid. This date class is incorporated in the FileIO class when naming files. I decided to use the date class as it allows me to validate dates, and the image can be exported many times.
 
 ## Menu
 The main functionality stems from my Menu class which is a base skeleton of the program which branches off and calls other small sub-menus for further functionality. This gives it a more readable structure and avoids having multiple nesting ofcase/switch statements and makes it more cohesive at the expense of more coupling.
@@ -29,7 +29,7 @@ FileIO is a class of static methods and functions to safely read, write and name
 Class of mathematic functions for use within the program. Learning how to create a private library rather than relying on the Java API.
 
 ## UserInterface  
-Class to handle input and output to the user. An approach to data validation and method overloading
+Class to handle input and output to the user. An approach to data validation and method overloading.
 
 # Importance of static and model classes
 Model classes can be used as a template for creating objects. Static classes often provide common functionality through various methods in a class.
@@ -39,7 +39,7 @@ Model classes, such as the Image class, help manage interactions in a straight f
 There are many implications of the convolute algorithm, it could also be used to remove or isolate lines in an image. Imagine an image with horizontal and vertical lines, but we just want singular lines running in one direction. By applying a convolution with either horizontal or vertical kernels we could remove any of the opposing lines. This could be used in the context of maps, diagrams or topography, eg: a train map, circuit diagram, satellite image, barcode.
 
 # Challenges Faced in Design and Implementation
-One of the challenges I faced was *naming*, more specifically having meaningful names wether it be for variables, methods, arguments, classes, directories or files. It was clear to me once dealing with many different class files with multiple methods, especially looking bad at earlier practicals, things can get messy and and without proper comments can sometimes make little sense; even if they technically fit the Univeristy style guide. I have learnt to use longer, intention revealing names, creating names where the length of name is relative to the scope of the program and understanding the purpose of good naming. 
+One of the challenges I faced was *naming*, more specifically having meaningful names wether it be for variables, methods, arguments, classes, directories or files. It was clear to me once dealing with many different class files with multiple methods, especially looking at earlier practicals, things can get messy and and without proper comments can sometimes make little sense; even if they fit the the given style guide. I have learnt to use longer, intention revealing names, creating names where the length of name is relative to the scope of the program and understanding the purpose of good naming. (Should take as much care when naming variables as if it is the name of a newborn child.)
 
 Another obstacle was the grand design/implementation and the linking of different submodules together. When I first started I wasnt quite sure where things needed to go and in what order. Just a general sense of direction. But by breaking things down in to small tasks helped me overcome this obstacle. 
 

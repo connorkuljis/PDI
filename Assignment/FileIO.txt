@@ -1,0 +1,149 @@
+PROGRAM: FileIO
+
+SUBMODULE: readFile
+IMPORTS: fileName (String)
+EXPORTS: parsedArray (2D ARRAY OF Integers)
+ALGORITHM:
+    file := OPENFILE fileName
+    line := ""
+    lineNum := 0
+    parsedArray (2D ARRAY OF Integers) := null
+ 
+    TRY
+        totalRows := getNumRowsinFile <- fileName
+        stringArray (ARRAY OF STRINGS OF size totalRows)
+        INPUT line FROM reader
+        WHILE(NOT END OF FILE)
+            lineNum := lineNum + 1
+            stringArray[lineNum - 1] := line
+            INPUT line FROM file
+        END WHILE
+        CLOSEFILE file
+
+        parsedArray := parseStringToInt <- stringArray, totalRows
+    
+        IF NOT (arrayIsRectangle <- stringArray) THEN
+            THROW NEW IllegalArgumentException <- "Array rows differ in size"
+        END IF
+
+        CATCH IOException
+            IF file IS NOT EMPTY THEN
+                TRY REOPEN FILE
+            END IF
+            THROW NEW FILENOTFOUND EXCEPTION 'Could not find file'
+    END TRY
+END readFile
+
+SUBMODULE: getNumRowsInFile
+IMPORTS: fileName (String)
+EXPORTS: lineNum (Integer)
+ALGORITHM:
+    lineNum := 0
+    line := ""
+    file := OPENFILE fileName
+ 
+    INPUT line FROM fileName
+    WHILE NOT (fileName = EOF)
+        lineNum := lineNum + 1
+        INPUT line FROM fileName
+    END WHILE
+    CLOSEFILE filename
+END getNumRowsinFile
+
+SUBMODULE: arrayIsRectangle
+IMPORTS: stringArray (ARRAY OF STRINGS)
+EXPORTS: valid (boolean)
+ALGORITHM:
+    valid := true
+    maxLength := length of SPLIT stringArray[0] ON ','
+ 
+    lineMismatch := 0
+    FOR (i := 0 TO maxLength (exclusive) INC BY 1)
+        length := SPLIT stringArray[i] ON ','
+        IF (LENGTH DOES NOT EQUAL maxLength)
+            lineMismatch := lineMismatch + 1
+        END IF
+    END FOR
+   
+    IF (lineMismatch DOES NOT EQUAL 0)
+        valid := false
+    END IF
+END arrayIsRectangle
+     
+
+SUBMODULE: parseStringToInt 
+IMPORTS: stringArray (ARRAY OF STRINGS), totalRows(integer)
+EXPORTS: parsedArray (2D ARRAY OF Integers)
+ALGORITHM:
+    cols := LENGTH OF stringArray
+    rows := totalRows
+
+    count := -1
+    parsedArray(2D ARRAY OF INTEGERS OF SIZE cols, rows)
+    FOR (i := 0 TO rows (exclusive) INC BY 1)
+        SPLIT stringArray[i] ON ''
+        WHILE stringArray[i] NOT EOL
+            count := count + 1
+            element := token (CONVERT TO INTEGER)
+            parsedArray[i][count] := element
+        END WHILE
+        count := -1
+    END FOR
+END parseStringToInt
+
+SUBMODULE: writeFile
+IMPORTS: fileName (String) writeArray (2D Array of Integers)
+EXPORTS: none
+ALGORITHM:
+        stringArray (ARRAY OF STRINGS OF SIZE LENGTH OF writeArray)
+        line := ""
+        pw := WRITEFILE fileName
+        FOR (i := 0 TO ROWS OF writeArray (exclusie) INC BY 1)
+            FOR (j := 0 TO COLS OF writeArray (exclusie) INC BY 1)
+                IF (LAST ELEMENT IN ROW) THEN
+                    line := line + writeArray[i][j] (CONVERT TO STRING)
+                ELSE
+                    line := line + writeArray[i][j] (CONVERT TO STRING) + ','
+                END IF
+            END FOR
+            INPUT line TO pw
+            line := ""
+        END FOR
+        CLOSE WRITE FILE
+END writeFile
+
+SUBMODULE: readPNG
+IMPORTS: fileName (String)
+EXPORTS: image (2D ARRAY OF INTEGER)
+ALGORITHM:
+    ***
+
+SUBMODULE: writePNG
+IMPORTS: fileName (String), writeArray(2D ARRAY OF INTEGERS)
+EXPORTS: none
+ALGORITHM:
+     ***
+
+SUBMODULE: fileNamingConvention
+IMPORTS: filename (String), extention (String)
+EXPORTS: concatenatedFilename
+ALGORITHM:
+    valid := FALSE
+    DO
+        TRY
+            INPUT digit (between 100000 and 9999999)
+            newDate := new Date <- digit
+            valid := TRUE
+        CATCH Exception e
+            UserInterface.displayError <- e.getMessage <- none
+        END TRY
+     WHILE(NOT valid)
+ 
+     day := newDate.getDay <- none (CONVERT TO STRING)
+     month := newDate.getMonth <- none (CONVERT TO STRING)
+     year := newDate.getYear <- none (CONVERT TO STRING)
+
+     concatenatedFilename := year + "-" + month + "-" + day "_Processed_" + filename + extension
+END fileNamingConvention
+
+

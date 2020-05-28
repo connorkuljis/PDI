@@ -1,0 +1,199 @@
+CLASS: Date
+
+PUBLIC CLASS CONSTANTS:
+
+CLASS FIELDS: 
+    day(integer)
+    month(integer)
+    year(integer)
+
+CONSTRUCTORS:
+Default:
+    IMPORT: 
+    EXPORT: none
+    ASSERTION: a valid default date is the first day of the first month, year 0
+    ALGORITHM:
+        date := 1
+        month := 1
+        year := 0
+        
+Alternate:
+    IMPORT: inIntegerFullDate (Integer)
+    EXPORT: none
+    ASSERTION: imports the date as an 8 digit integer
+    ALGORITHM:
+        rawDay := inIntegerFullDate (CONVERT TO REAL) DIV 100000
+        inDay := rawDay (CONVERT TO INTEGER)
+
+        rawMonth := rawDay MOD inDay * 100
+        inMonth := rawMonth(CONVERT TO INTEGER)
+
+        rawYear := rawMonth MOD intMonth * 10000.01
+        inYear := rawYear (CONVERT TO INTEGER)
+
+        setYear <- inYear
+        setMonth <- inMonth
+        setDay <- inDay
+
+Copy:
+    IMPORT: Date inDate
+    EXPORT: creates an object with an identical object state as the import
+    ASSERTION: Creates an object with an identical object state as the import
+    ALGORITHM:
+        day := inDate.getDay <- none
+        month := inDate.getMonth <- none
+        year := inDate.getYear <- none
+
+MUTATORS:
+SUBMODULE: setDay
+    IMPORT: inMonth(integer)
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+        IF NOT validDay <- inDay THEN
+            THROW ERROR
+        ELSE
+        day := inDay
+
+SUBMODULE: setMonth
+    IMPORT: inMonth(integer)
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+        IF NOT validMonth <- inMonth THEN
+            THROW ERROR
+        ELSE
+        month := inMonth
+            
+
+SUBMODULE: setYear
+    IMPORT: inYear(integer)
+    EXPORT: none
+    ASSERTION:
+    ALGORITHM:
+        IF NOT validYear <- inYear THEN
+            THROW ERROR
+        ELSE
+        year := inYear
+
+ACCESSORS:
+    SUBMODULE: getDate
+    IMPORT: none
+    EXPORT: day(integer)
+  
+    SUBMODULE: getMonth
+    IMPORT: none
+    EXPORT: month(integer)
+
+    SUBMODULE: getYear
+    IMPORT: none
+    EXPORT: year(integer)
+
+SUBMODULE: equals
+    IMPORT: inObj (Object)
+    EXPORT: areEqual (boolean)
+    ASSERTION: two dates are the same if they have the same day and month and year
+    ALGORITHM:
+        areEqual := false
+        IF inObj ISA Date THEN
+            Date inDate := inObj(CONVERT TO DATE)
+            areEqual := (day = inDate.getDay <- none) AND (month = inDate.getMonth <- none) AND (year = inDate.getYear <- none)
+
+SUBMODULE: clone
+    IMPORT: none
+    EXPORT: cloneDate (Object)
+    ASSERTION:
+    ALGORITHM:
+        CONSTRUCT cloneDate USING COPY CONSTRUCTOR WITH THIS OBJECT
+        
+
+SUBMODULE: toString
+    IMPORT: none
+    EXPORT: str(string)
+    ASSERTION:
+    ALGORITHM:
+        str = "It is the " + day + getSuffix <- day + " day of " + getMonthName <- month + " in " + year + " " + printIfLeapYear <- year
+
+PRIVATE SUBMODULES
+SUBMODULE: isLeapYear
+    IMPORT: inYear(integer)
+    EXPORT: isLeapYear(boolean)
+    ASSERTION:
+    ALGORITHM:
+        isLeapYear := false
+        IF (inYear MOD 400 = 0) AND (inYear MOD 100 = 0) AND (inYear MOD 4 = 0) THEN
+            isLeapYear := true
+        END IF
+
+SUBMODULE: getSuffix
+    IMPORT: inDay(integer)
+    EXPORT: suffix(string)
+    ASSERTION: first, second and third days each have their own suffix's
+    ALGORITHM:
+        lastDigit := inDay MOD 10
+        IF lastDigit = 1 THEN
+            suffix := "st"
+        ELSE IF lastDigit = 2 THEN
+            suffix := "nd"
+        ELSE IF lastDigit = 3 THEN
+            suffix := "rd"
+        ELSE 
+            suffix := "nd"
+        END IF
+
+SUBMODULE: validDay
+    IMPORT: inDay(integer), month(intger), year(integer)
+    EXPORT: isValid(boolean)
+    ASSERTION:
+    ALGORITHM:
+        IF leapYear <- year = false THEN
+            calendayDays[] := {31,28,31,30,31,30,31,31,30,31,30,31} 
+            maxDays := calendayDays[month-1]
+            
+            IF inDay <= maxDays AND inDay > 0 THEN
+                isValid := true
+            END IF
+        ELSE
+            leapCalendayDays[] := {31,29,31,30,31,30,31,31,30,31,30,31} 
+            maxDays = leapCalendayMonth[month-1]
+    
+            IF inDay <= maxDays AND inDay > 0 THEN
+                isValid := true
+            END IF
+        END IF
+   
+SUBMODULE: validMonth
+    IMPORT: inMonth (integer)
+    EXPORT: isValid(boolean)
+    ASSERTION:
+    ALGORITHM:
+        isValid := false
+        IF inMonth > 0 OR inMonth <= 12 THEN
+            isValid := true
+        END IF
+
+SUBMODULE: validYear
+    IMPORT: inYear(integer)
+    EXPORT: isValid(boolean)
+    ASSERTION:
+    ALGORITHM:
+        IF inYear >=0 OR inYear < 10000 THEN
+            isValid := true
+        END IF
+
+SUBMODULE: printIfLeapYear
+    IMPORT: inYear(integer) 
+    EXPORT: lyString(String)
+    ASSERTION:
+    ALGORITHM:
+        lyString := "It is not a leap year."
+        IF isLeapYear <- inYear = true THEN
+            lyString := "It is a leap year."
+        END IF
+
+SUBMODULE: getMonthName
+    IMPORT: inMonth(integer)
+    EXPORT: monthNames(String)
+    ALGORITHM:
+        monthNames[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
+        monthNames := monthNames[inMonth-1]
