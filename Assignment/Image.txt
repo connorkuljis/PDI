@@ -116,6 +116,98 @@ SUBMODULE: calcConvolute
             END FOR
         END FOR
 
+SUBMODULE: smoothing
+    IMPORT: surfaceSize(integer), x (integer), y (integer), smoothingFactor (Real)
+    EXPORT: originalImage (2D ARRAY OF Integers)
+    ASSERTION: smooths the current image given imported variables on the current image
+    ALGORITHM:
+
+    smoothingKernel(2D ARRAY OF Integers OF SIZE surfaceSize)
+    
+    x_target := y - 1
+    y_target := x - 1
+   
+    even := 0
+    IF (surfaceSize MOD 2 EQUALS even)
+        THROW EXCEPTION ("Surface is not odd to perfectly surround target")
+    END IF
+
+    IF (smoothingFactor < 0.0 OR smoothingFactor > 1.0)
+        THROW EXCEPTION ("Smoothing factor must be between 0.0 and 1.0 inclusive")
+    END IF
+
+    surfaceRange := surfaceSize - 1 / 2
+
+    x_min := x_target - surfaceRange
+    x_max := x_target + surfaceRange
+    y_min := y_target - surfaceRange
+    y_max := y_target + surfaceRange
+
+    TRY
+        n := -1
+        FOR (i := x_min TO x_max (INCLUSIVE) i++)
+            n := n + 1
+            m := -1
+            FOR (j := y_min TO y_max (INCLUSIVE) i++)
+                m := m + 1
+                smoothingKernel[n][m] := originalImage[i][j]
+            END FOR
+        END FOR
+
+        average := avgArray <- smoothingKernel, smoothingFactor
+
+        FOR (i := x_min TO x_max (INCLUSIVE) i++)
+            FOR (j := y_min TO y_max (INCLUSIVE) i++)
+                originalImage[i][j] := average
+            END FOR
+        END FOR
+    CATCH (IndexOutOfBounds e)
+        THROW EXCEPTION ("Out of bounds")
+    END TRY
+END smoothing
+
+SUBMODULE: avgArray
+    IMPORT: smoothingKernel (2D ARRAY OF Integer), smoothingValue (Real)
+    EXPORT: ceilAvg(Integer)
+    ALGORITHM:
+    
+    total := 0
+    FOR (i := 0 to LENGTH OF ROWS OF smoothingKernel EXCLUSIVE INC by 1)
+        FOR (j := 0 to LENGTH OF COLS OF smoothingKernel EXCLUSIVE INC by 1)
+            total = total + smoothingKernel[i][j]
+        END FOR
+    END FOR
+ 
+    numElements := numRows * numCols
+    avg := total (CONVERT TO REAL) DIV numElements (CONVERT TO REAL)
+    avge = avg * smoothingValue
+    ceilAvg := PDIMath.ceil <- avg
+END avgArray
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
 
 
 

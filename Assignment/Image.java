@@ -247,22 +247,22 @@ public class Image
     private int avgArray(int[][] smoothingKernel, double smoothingValue)
     {
         int total = 0;
-        for (int i = 0; i < smoothingKernel.length; i++)
+        int numRows = smoothingKernel.length;
+        int numCols = smoothingKernel[0].length;
+
+        for (int i = 0; i < numRows; i++)
         {
-            for (int j = 0; j < smoothingKernel[0].length; j++)
+            for (int j = 0; j < numCols; j++)
             {
                 total += smoothingKernel[i][j];
             }
         }
 
-        int numRows = smoothingKernel.length;
-        int numCols = smoothingKernel[0].length;
         int numElements = numRows * numCols; // because it will be square
 
         double avg = (double) total / (double) numElements; 
         avg *= smoothingValue;
         int ceilAvg = PDIMath.ceil(avg);
-        System.out.println(ceilAvg);
         return ceilAvg;
     }
 }

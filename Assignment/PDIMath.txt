@@ -1,0 +1,121 @@
+PROGRAM: PDIMath
+
+SUBMODULE: min
+IMPORTS: a (integer), b (integer)
+EXPORTS: min (integer)
+ALGORITHM:
+    IF (a > b) THEN
+        min := b
+    END IF
+    IF (b > a) THEN
+        min := a
+    END IF
+
+SUBMODULE: min
+IMPORTS: a (real), b (real)
+EXPORTS: min (Real)
+ALGORITHM:
+    IF (a > b) THEN
+        min := b
+    END IF
+    IF (b > a) THEN
+        min := a
+    END IF
+
+SUBMODULE: max
+IMPORTS: a (integer), b (integer)
+EXPORTS: min (integer)
+ALGORITHM:
+    IF (a < b) THEN
+        max := b
+    END IF
+    IF (b > a) THEN
+        max := a
+    END IF
+
+SUBMODULE: max
+IMPORTS: a (real), b (real)
+EXPORTS: min (real)
+ALGORITHM:
+    IF (a < b) THEN
+        max := b
+    END IF
+    IF (b > a) THEN
+        max := a
+    END IF
+
+SUBMODULE: abs
+IMPORTS: a (integer)
+EXPORTS: a (integer)
+ALGO:
+    IF (a < 0) THEN
+        a := -a
+    END IF
+
+SUBMODULE: abs
+IMPORTS: a (real)
+EXPORTS: a (real)
+ALGO:
+    IF (a < 0) THEN
+        a := -a
+    END IF
+
+SUBMODULE: floor
+IMPORTS: a (real)
+EXPORTS: result (integer)
+ALGO:
+    IF (a > 0) THEN
+        result := a (CONVERT TO INTEGER)
+    END IF
+    IF (a < 0) THEN
+        result := a (CONVERT TO INTEGER) - 1
+    END IF
+
+SUBMODULE: ceil
+IMPORTS: a (real)
+EXPORTS: result (integer)
+ALGO:
+    IF (a > 0) THEN
+        result := a (CONVERT TO INTEGER) + 1
+    END IF
+    IF (a < 0) THEN
+        result := a (CONVERT TO INTEGER) 
+    END IF
+
+SUBMODULE: pow
+IMPORTS: base (real), exponent (integer)
+EXPORTS: result (real)
+ALGO:
+    result := 1
+    FOR(int i:=0 TO exponent (exclusive) INC BY 1)
+        result := base * result
+    END FOR
+
+SUBMODULE: pi
+IMPORTS: precision (real)
+EXPORTS: pi (real)
+ALGO:
+    pi := 0.0
+    theta := 95.5
+    radians = theta (CONVERT TO RADIANS)
+
+    FOR(int i:=0 TO precision (inclusive) INC BY 1)
+        nume := radians * ((2 * i) + 1) (CONVERT TO SIN ANGLE)
+        denom := (2 * i) + 1
+        eq = (num DIV denom) * 4
+        pi = pi + eq
+    END FOR
+
+SUBMODULE: e
+IMPORTS: precision (real)
+EXPORTS: e (real)
+ALGO:
+    e := 1.0
+    factorial := 1.0
+
+    FOR(int i:=1 TO precision (exclusive) INC BY 1)
+        factorial = factorial * i
+        e = e + (1.0 DIV factorial)
+    END FOR
+
+END PROGRAM
