@@ -12,6 +12,10 @@ import java.util.*;
 
 public class UserInterface
 {
+    public static void println(String message)
+    {
+        System.out.println(message); 
+    }
 
     /*
     * SUBMODULE: userInput
@@ -184,7 +188,7 @@ public class UserInterface
 
         try
         {
-            System.out.println(prompt);
+            System.out.print(prompt);
             value = sc.nextLine();
         }
         catch(InputMismatchException e)
@@ -210,9 +214,10 @@ public class UserInterface
     {
         for(int i = 0; i < myArray.length; i++)
         {
+            System.out.print("| "); 
             for(int j = 0; j < myArray[0].length; j++)
             {
-                System.out.print(myArray[i][j] + " "); 
+                System.out.print(myArray[i][j] + " | "); 
             }
             System.out.println(" "); 
         }

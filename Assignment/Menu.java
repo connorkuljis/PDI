@@ -28,11 +28,9 @@ public class Menu
         // reference variables that will be updated by the user through the menu
         Image currentImage = null;                 
         int[][] kernel = null;
-
-        System.out.println("|---------------------------|"); 
-        System.out.println("| PDI Assignment Sem 1 2020 |"); 
-        System.out.println("| Connor Kuljis, 19459138   |"); 
-        System.out.println("|---------------------------|"); 
+        
+        // Short Welcome Message
+        displayWelcome();
 
         boolean close = false;
         do
@@ -49,12 +47,17 @@ public class Menu
         
         do
         {
-            String prompt = "\nPlease select an option:\n1. Import Image:\n2. Import Kernel:\n3. Convolution:\n4. Export Image:\n5. Smoothing:\n0. Exit:\n";
+            // tells the user the dimension (resolution) of currently stored image and kernel
+            displayInformation(currentImage, kernel);
+
+            // this is out full menu
+            String prompt = "\nPlease select an option:\n1. Import Image:\n2. Import Kernel:\n3. Convolution:\n4. Smoothing:\n5. Export Image:\n0. Exit:\n";
             int choice = UserInterface.userInput(prompt, 0, 5);
             switch(choice)
             {
                 case 1:                                  // Import Image
-                    currentImage = new Image(readImageSubMenu());
+                    int[][] temp = readImageSubMenu();
+                    currentImage = new Image(temp);
                     break;
 
                 case 2:                                  // Import Kernel
@@ -64,25 +67,25 @@ public class Menu
                 case 3:                                  // Convolution
                     if((currentImage != null) && (kernel != null))
                     {
-                        currentImage = new Image(currentImage.convolution(kernel));
+                        currentImage.convolution(kernel);
                     }
                     else
                     {
-                        System.out.println("Hey there is no Image or Kernel!"); 
+                        UserInterface.println("Hey there is no Image or Kernel!"); 
                     }
                     break;
                  
-                case 4:                                   // Exporting
-                    exportImage(currentImage);
+                case 4:                                   // Smoothing
+                    smoothingMenu(currentImage);
+                    UserInterface.println(currentImage.toString()); 
                     break;
                 
-                case 5:                                   // Smoothing
-                    currentImage = new Image(smoothingMenu(currentImage));
-                    System.out.println(currentImage.toString()); 
+                case 5:                                   // Export
+                    exportImage(currentImage);
                     break;
 
                 case 0:
-                    System.out.println("Goodbye!"); 
+                    UserInterface.println("Goodbye!"); 
                     close = true;
                     break;
             }
@@ -90,37 +93,41 @@ public class Menu
     }
 
     /*************************************************************************
-     * NAME: exportImage
-     * IMPORTS: currentImage (Image)
+     * NAME: displayWelcome
+     * IMPORTS: none
      * EXPORTS: none
-     * PURPOSE: writes currently stored Image to a csv or png file
+     * PURPOSE: prints a welcome message to the user
      * **********************************************************************/
-    public static void exportImage(Image currentImage)
+    public static void displayWelcome()
     {
-        int[][] rawImage = currentImage.getOriginalImage();
-        String filename = UserInterface.userInput("\nPlease enter the File Name: ");
-        char choice = UserInterface.userInput("\nWhat filetype would you like to save with? (C)SV or (P)NG", 'A', 'z');
-        char upperChoice = Character.toUpperCase(choice);
-        String extension = "";
-
-        switch(upperChoice)
-        {
-            case 'P':
-                extension = ".png";
-                filename = FileIO.fileNamingConvention(filename, extension);
-                FileIO.writePNG(filename, rawImage);
-                System.out.println("File (" + filename + ")"); 
-                break;
-
-            case 'C':
-                extension = ".csv";
-                filename = FileIO.fileNamingConvention(filename, extension);
-                FileIO.writeFile(filename, rawImage);
-                System.out.println("File (" + filename + ")"); 
-                break;
-        }
+        UserInterface.println("|---------------------------|"); 
+        UserInterface.println("| PDI Assignment Sem 1 2020 |"); 
+        UserInterface.println("| Connor Kuljis, 19459138   |"); 
+        UserInterface.println("|---------------------------|"); 
     }
 
+    /*************************************************************************
+     * NAME: displayInformation
+     * IMPORTS: currentImage(Image), kernel (2D ARRAY OF Integer)
+     * EXPORTS: none
+     * PURPOSE: will print current information about the stored image and kernel to the user
+     * **********************************************************************/
+    public static void displayInformation(Image currentImage, int[][] kernel)
+    {
+        int[][] myArray = currentImage.getOriginalImage();
+        int length = myArray.length;
+        int width = myArray[0].length;
+        UserInterface.println("\n\tCurrently stored image = [" + length + " x " + width + "]" ); 
+
+        if(kernel == null)
+        {
+            UserInterface.println("\n\tNo Kernel has been imported"); 
+        }
+        else
+        {
+            UserInterface.println("\n\tCurrently stored kernel = [" + kernel.length + " x " + kernel[0].length + "]" ); 
+        }
+    }
 
     /*************************************************************************
      * NAME: smoothingMenu
@@ -128,16 +135,23 @@ public class Menu
      * EXPORTS: imageObj (Image)
      * PURPOSE: sub-menu that calls the inObj.smoothing method after accepting user input 
      * **********************************************************************/
-    public static Image smoothingMenu(Image imageObj)
+    public static void smoothingMenu(Image imageObj)
     {
         boolean valid = false;
         do
         {
             try
             {
+                // getting surface size
                 int surfaceSize = UserInterface.userInput("Please enter a smoothing surface: ", 1, Integer.MAX_VALUE);
-                int x_target = UserInterface.userInput("Please enter the pixel x-coordinate: ", 1, Integer.MAX_VALUE);
-                int y_target = UserInterface.userInput("Please enter pixel y-coordinate: ", 1, Integer.MAX_VALUE);
+
+                // getting coordinates
+                String coordinates = UserInterface.userInput("Please enter a pixel to smooth (x,y): ");
+                
+                String[] arrOfCoordinates = coordinates.split(",");
+                int x_target = Integer.parseInt(arrOfCoordinates[0]);
+                int y_target = Integer.parseInt(arrOfCoordinates[1]);
+
                 double smoothingFactor = UserInterface.userInput("Please enter a smoothness factor: ", 0.0, 1.0);
                 
                 imageObj.smoothing(surfaceSize, x_target, y_target, smoothingFactor); 
@@ -145,10 +159,9 @@ public class Menu
             }
             catch(Exception e)
             {
-                System.out.println(e); 
+                UserInterface.displayError(e.getMessage()); 
             }
         }while(!valid);
-        return imageObj;
     }
 
     /*************************************************************************
@@ -225,6 +238,38 @@ public class Menu
             }
         }
         return matrix;
+    }
+
+    /*************************************************************************
+     * NAME: exportImage
+     * IMPORTS: currentImage (Image)
+     * EXPORTS: none
+     * PURPOSE: writes currently stored Image to a csv or png file
+     * **********************************************************************/
+    public static void exportImage(Image currentImage)
+    {
+        int[][] rawImage = currentImage.getOriginalImage();
+        String filename = UserInterface.userInput("\nPlease enter the File Name: ");
+        char choice = UserInterface.userInput("\nWhat filetype would you like to save with? (C)SV or (P)NG", 'A', 'z');
+        char upperChoice = Character.toUpperCase(choice);
+        String extension = "";
+
+        switch(upperChoice)
+        {
+            case 'P':
+                extension = ".png";
+                filename = FileIO.fileNamingConvention(filename, extension);
+                FileIO.writePNG(filename, rawImage);
+                UserInterface.println("File (" + filename + ")"); 
+                break;
+
+            case 'C':
+                extension = ".csv";
+                filename = FileIO.fileNamingConvention(filename, extension);
+                FileIO.writeFile(filename, rawImage);
+                UserInterface.println("File (" + filename + ")"); 
+                break;
+        }
     }
 
 }

@@ -127,7 +127,7 @@ public class Image
     // IMPORT: kernel (2D array of integers)
     // EXPORT: resultArray (2D array of integers)
     // ASSERTION: assume the kernel is valid and is n*n in size
-    public int[][] convolution(int[][] kernel)
+    public void convolution(int[][] kernel)
     {
         int[][] resultArray;
         int n, m, k;
@@ -149,7 +149,7 @@ public class Image
                 resultArray[i][j] = calcConvolute(i, j, kernel); 
             }
         }
-        return resultArray;
+        originalImage = resultArray;
     }
 
     /*
@@ -180,7 +180,7 @@ public class Image
      * EXPORTS: image (2D ARRAY OF INTEGERS) - that has been smoothed around a given pixel
      * EXPLANATION: creates a new array of select values and finds the average * smoothing value and updates the current image object
      * **********************************************************************/
-    public int[][] smoothing(int surfaceSize, int x, int y, double smoothingFactor) throws ArrayIndexOutOfBoundsException, IllegalArgumentException
+    public void smoothing(int surfaceSize, int x, int y, double smoothingFactor) throws ArrayIndexOutOfBoundsException, IllegalArgumentException
     {
         int x_target = y - 1;    // accounting for 0 index not included for user
         int y_target = x - 1;    // flipping x and y coordinates in matrix
@@ -195,7 +195,6 @@ public class Image
         {
             throw new IllegalArgumentException("Smoothing factor must be between 0.0 and 1.0 inclusive.");
         }
-        
         
         int surfaceRange = (surfaceSize - 1) / 2; // maximum boundary size at any point from the target pixel
 
@@ -216,10 +215,12 @@ public class Image
                 for (int j = y_min; j <= y_max; j++)
                 {
                     m++;
+                    // filling a new array of values within the smoothing surface area
                     smoothingKernel[n][m] = originalImage[i][j];        // possible exception
                 }
             }
 
+            // average is the ceil'd average of all elements (sxs) * smoothingFactor
             int average = avgArray(smoothingKernel, smoothingFactor);
 
             for (int i = (x_target - surfaceRange); i <= (x_target + surfaceRange); i++)
@@ -234,7 +235,6 @@ public class Image
         {
             throw new ArrayIndexOutOfBoundsException("Out of bounds");
         }
-        return originalImage;
     }
 
     /* ***********************************************************************
