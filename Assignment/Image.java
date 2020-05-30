@@ -180,21 +180,10 @@ public class Image
      * EXPORTS: image (2D ARRAY OF INTEGERS) - that has been smoothed around a given pixel
      * EXPLANATION: creates a new array of select values and finds the average * smoothing value and updates the current image object
      * **********************************************************************/
-    public void smoothing(int surfaceSize, int x, int y, double smoothingFactor) throws ArrayIndexOutOfBoundsException, IllegalArgumentException
+    public void smoothing(int surfaceSize, int x, int y, double smoothingFactor) throws ArrayIndexOutOfBoundsException
     {
         int x_target = y - 1;    // accounting for 0 index not included for user
         int y_target = x - 1;    // flipping x and y coordinates in matrix
-
-        int even = 0;
-        if (surfaceSize % 2 == even) // the surface size must be odd to perfectly surround pixel
-        {
-            throw new IllegalArgumentException("Surface is not odd to perfectly surround target.");
-        }
-
-        if (smoothingFactor < 0.0 || smoothingFactor > 1.0) 
-        {
-            throw new IllegalArgumentException("Smoothing factor must be between 0.0 and 1.0 inclusive.");
-        }
         
         int surfaceRange = (surfaceSize - 1) / 2; // maximum boundary size at any point from the target pixel
 

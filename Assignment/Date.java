@@ -66,8 +66,8 @@ public class Date
      ************************************************************/
      public Date(Date inDate)
     {
-        day = inDate.getDay();
         month = inDate.getMonth();
+        day = inDate.getDay();
         year = inDate.getYear();
     }
 

@@ -73,7 +73,7 @@ public class UserInterface
                 sc.next();
                 value = lower - 1.0;
             }
-            outPrompt = "ERROR: please enter a valid value \n" + " between " + lower + " and " + upper + prompt;
+            outPrompt = "ERROR: please enter a valid value  between " + lower + " and " + upper + "\n" + prompt;
         } while ((value < lower) || (value > upper));
         return value;
     }

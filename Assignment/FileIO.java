@@ -333,6 +333,7 @@ public class FileIO
             }
             catch(Exception e)  // illegalArgument exception
             {
+                e.printStackTrace();
                 UserInterface.displayError(e.getMessage());
             }
         }while(!valid);

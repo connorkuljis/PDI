@@ -11,6 +11,20 @@ import java.io.*;
 
 public class Menu
 {
+	public static final int[][] VERTICAL_KERNEL =
+						{
+							{1, 0, -1},
+							{1, 0, -1},
+							{1, 0, -1}
+						};
+
+	public static final int[][] HORIZONTAL_KERNEL =
+						{
+							{1, 1, 1},
+							{0, 0, 0},
+							{-1, -1, -1}
+						};
+
     public static void main(String[] args)
     {
         menu();
@@ -50,37 +64,50 @@ public class Menu
             // tells the user the dimension (resolution) of currently stored image and kernel
             displayInformation(currentImage, kernel);
 
-            // this is out full menu
-            String prompt = "\nPlease select an option:\n1. Import Image:\n2. Import Kernel:\n3. Convolution:\n4. Smoothing:\n5. Export Image:\n0. Exit:\n";
-            int choice = UserInterface.userInput(prompt, 0, 5);
+            // Top level/super menu
+            String prompt = "\nPlease select an option:\n1. Import Image\n2. Import Kernel\n3. Convolution\n4. Detect Vertical Lines\n5. Detect Horizontal Lines\n6. Smoothing\n7. Export Image\n0. Exit\n";
+            int choice = UserInterface.userInput(prompt, 0, 7);
             switch(choice)
             {
                 case 1:                                  // Import Image
                     int[][] temp = readImageSubMenu();
                     currentImage = new Image(temp);
+                    UserInterface.println("Sucessfully imported image.");
                     break;
 
                 case 2:                                  // Import Kernel
                     kernel = readKernelSubMenu();
+                    UserInterface.println("Sucessfully imported kernel.");
                     break;
                 
                 case 3:                                  // Convolution
                     if((currentImage != null) && (kernel != null))
                     {
                         currentImage.convolution(kernel);
+						UserInterface.println("Sucessfully performed convolution. Image has been updated.");
                     }
                     else
                     {
-                        UserInterface.println("Hey there is no Image or Kernel!"); 
+                        UserInterface.println("ERROR: please ensure you have supplied a valid Image or Kernel! (Kernel may be missing)"); 
                     }
                     break;
+                // Detect Vertical Lines
+                case 4:
+                    currentImage.convolution(VERTICAL_KERNEL);
+					UserInterface.println("Sucessfully detected vertical lines. Image has been updated.");
+                    break;
                  
-                case 4:                                   // Smoothing
+                case 5:
+                    currentImage.convolution(HORIZONTAL_KERNEL);
+					UserInterface.println("Sucessfully detected horizontal lines. Image has been updated.");
+                    break;
+                 
+                case 6:                                   // Smoothing
                     smoothingMenu(currentImage);
-                    UserInterface.println(currentImage.toString()); 
+					UserInterface.println("Sucessfully performed smoothing. Image has been updated.");
                     break;
                 
-                case 5:                                   // Export
+                case 7:                                   // Export
                     exportImage(currentImage);
                     break;
 
