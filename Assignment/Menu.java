@@ -137,31 +137,52 @@ public class Menu
      * **********************************************************************/
     public static void smoothingMenu(Image imageObj)
     {
-        boolean valid = false;
+        boolean everythingIsValid = false;
         do
         {
-            try
+            UserInterface.println("### Smoothing Operation ###");
+            String errorMsg = "";
+            int surfaceSize = 0;
+            int odd = 0;
+            do
             {
                 // getting surface size
-                int surfaceSize = UserInterface.userInput("Please enter a smoothing surface: ", 1, Integer.MAX_VALUE);
+                System.out.println(errorMsg); 
+                surfaceSize = UserInterface.userInput("Please enter a smoothing surface: ", 1, Integer.MAX_VALUE);
+                errorMsg = "ERROR: Please double check you have entered an ODD surface size to perfectly surround the target";
+            }while(surfaceSize % 2 == odd);
 
-                // getting coordinates
-                String coordinates = UserInterface.userInput("Please enter a pixel to smooth (x,y): ");
-                
-                String[] arrOfCoordinates = coordinates.split(",");
-                int x_target = Integer.parseInt(arrOfCoordinates[0]);
-                int y_target = Integer.parseInt(arrOfCoordinates[1]);
+            boolean valid = false;
+            int x_target = 0;
+            int y_target = 0;
+            do
+            {
+                try
+                {
+                    String coordinates = UserInterface.userInput("Please enter a pixel to smooth (x,y): ");
+                    String[] arrOfCoordinates = coordinates.split(",");
+                    x_target = Integer.parseInt(arrOfCoordinates[0]);
+                    y_target = Integer.parseInt(arrOfCoordinates[1]);
+                    valid = true;
+                } 
+                catch(Exception e)
+                {
+                    UserInterface.displayError("Invalid (x,y) format, please enter values x separated by a ',' followed by y (no spaces)");
+                }
+            }while(!valid);
 
-                double smoothingFactor = UserInterface.userInput("Please enter a smoothness factor: ", 0.0, 1.0);
-                
+            double smoothingFactor = UserInterface.userInput("Please enter a smoothness factor: ", 0.0, 1.0);
+
+            try
+            {
                 imageObj.smoothing(surfaceSize, x_target, y_target, smoothingFactor); 
-                valid = true;
+                everythingIsValid = true;
             }
             catch(Exception e)
             {
                 UserInterface.displayError(e.getMessage()); 
             }
-        }while(!valid);
+        }while(!everythingIsValid);
     }
 
     /*************************************************************************
