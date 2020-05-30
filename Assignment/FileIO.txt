@@ -20,6 +20,42 @@ ALGORITHM:
         END WHILE
         CLOSEFILE file
 
+        arrayIsRectangle <- stringArray
+        parsedArray := parseStringToInt <- stringArray, totalRows
+    
+        CATCH IllegalArgumentException e
+            THROW NEW IllegalArgumentException <- e.getMessage <- none 
+        CATCH FileNotFoundException e
+            THROW NEW FileNotFoundException <- "could not find file"
+        CATCH IOException
+            IF file IS NOT EMPTY THEN
+                TRY REOPEN FILE
+            END IF
+            THROW NEW FILENOTFOUND EXCEPTION 'Could not find file'
+    END TRY
+END readFile
+
+SUBMODULE: readKernel
+IMPORTS: fileName (String)
+EXPORTS: parsedArray (2D ARRAY OF Integers)
+ALGORITHM:
+    file := OPENFILE fileName
+    line := ""
+    lineNum := 0
+    parsedArray (2D ARRAY OF Integers) := null
+ 
+    TRY
+        totalRows := getNumRowsinFile <- fileName
+        stringArray (ARRAY OF STRINGS OF size totalRows)
+        INPUT line FROM reader
+        WHILE(NOT END OF FILE)
+            lineNum := lineNum + 1
+            stringArray[lineNum - 1] := line
+            INPUT line FROM file
+        END WHILE
+        CLOSEFILE file
+
+        arrayIsRectangle <- stringArray
         parsedArray := parseStringToInt <- stringArray, totalRows
     
         IF NOT (arrayIsRectangle <- stringArray) THEN
@@ -52,9 +88,10 @@ END getNumRowsinFile
 
 SUBMODULE: arrayIsRectangle
 IMPORTS: stringArray (ARRAY OF STRINGS)
-EXPORTS: valid (boolean)
+EXPORTS: none
 ALGORITHM:
     valid := true
+
     maxLength := length of SPLIT stringArray[0] ON ','
  
     lineMismatch := 0
@@ -62,6 +99,7 @@ ALGORITHM:
         length := SPLIT stringArray[i] ON ','
         IF (LENGTH DOES NOT EQUAL maxLength)
             lineMismatch := lineMismatch + 1
+            THROW NEW IllegalArgumentException <- "File is not rectangular"
         END IF
     END FOR
    
@@ -69,9 +107,44 @@ ALGORITHM:
         valid := false
     END IF
 END arrayIsRectangle
+
+SUBMODULE: checkIfSquare
+IMPORTS: stringArray(Array of strings)
+EXPORTS: none
+ALGORITHM:
+    isSquare := FALSE
+    l := parsedArray.lenght
+    FOR i := 0 TO l (exclusive) INC BY 1
+        IF parsedArray[i].length NOT EQUAL l
+            THROW NEW IllegalArgumentException <- file is not square
+        END IF
+    END FOR
+end checkIfSquare
      
 
 SUBMODULE: parseStringToInt 
+IMPORTS: stringArray (ARRAY OF STRINGS), totalRows(integer)
+EXPORTS: parsedArray (2D ARRAY OF Integers)
+ALGORITHM:
+    cols := LENGTH OF stringArray
+    rows := totalRows
+
+    count := -1
+    parsedArray(2D ARRAY OF INTEGERS OF SIZE cols, rows)
+    FOR (i := 0 TO rows (exclusive) INC BY 1)
+        SPLIT stringArray[i] ON ''
+        WHILE stringArray[i] NOT EOL
+            count := count + 1
+            element := token (CONVERT TO INTEGER)
+            IF 0 < element > 255 THEN
+                TRHOW NEW IllegalArgumentEsxception <- "invalid element in the array"
+            parsedArray[i][count] := element
+        END WHILE
+        count := -1
+    END FOR
+END parseStringToInt
+
+SUBMODULE: parseKernelStringToInt 
 IMPORTS: stringArray (ARRAY OF STRINGS), totalRows(integer)
 EXPORTS: parsedArray (2D ARRAY OF Integers)
 ALGORITHM:
@@ -89,7 +162,7 @@ ALGORITHM:
         END WHILE
         count := -1
     END FOR
-END parseStringToInt
+END parseKernelStringToInt
 
 SUBMODULE: writeFile
 IMPORTS: fileName (String) writeArray (2D Array of Integers)

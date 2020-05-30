@@ -22,6 +22,7 @@ public class FileIO
      * EXPORTS: multidimenstional array of csv file
      * Purpose: constructs a 2D array of integers from a csvfile (String)
      * Assertion: if the csv is ragged it will throw an IllegalArgument Exception
+     * Assertion; EXCEPTION WILL BE THROWN IF ARRAY IS NOT RECTANGULAR, EACH ELEMENT IS NOT BETWEEN 0 AND 255, AND IF ELEMENT IS NOT AN INT
      * Created: 14th May 2020 */
     public static int[][] readFile(String fileName) throws FileNotFoundException, IllegalArgumentException, NumberFormatException
     {
@@ -49,8 +50,13 @@ public class FileIO
                 line = bufReader.readLine(); // NOTE: this must be the last line in the loop
             }
             fileStream.close();
+            // at this stage we have read in the file and stored each line as a string in stringArray
 
-            arrayIsRectangle(stringArray); // check if array is rectangle 
+            // sweep through and check the dimensions of the array
+            arrayIsRectangle(stringArray); // void method throws exception if array is not rectangle
+
+            // parsing the valid string array to an integer array
+            // parsedArray will check the bounds that each element must be 0 > element < 255
             parsedArray = parseStringToInt(stringArray, totalRows); // error could be throw here if string array has non ints
         }
         catch(IllegalArgumentException e)
@@ -78,7 +84,7 @@ public class FileIO
         return parsedArray;
     }
 
-    /* Name: readFile
+    /* Name: readKernel
      * IMPORTS: fileName of a csv file
      * EXPORTS: multidimenstional array of csv file
      * Purpose: constructs a 2D array of integers from a csvfile (String)
@@ -109,10 +115,15 @@ public class FileIO
                 line = bufReader.readLine(); // NOTE: this must be the last line in the loop
             }
             fileStream.close();
+            // at this stage we have read in the file and stored each line as a string in stringArray
 
+            // parsing the valid string array to an integer array
+            // parsing a KERNEL this time and accepts all integers, will throw error if not an int eg: str
             parsedArray = parseKernelStringToInt(stringArray, totalRows); // error could be throw here if string array has non ints
-            arrayIsRectangle(stringArray); // check if array is rectangle 
-            checkIfSquare(parsedArray); // check if square
+
+            // sweep through and check the dimensions of the array
+            arrayIsRectangle(stringArray); // is the array a rectangle (no jagged edges)?
+            checkIfSquare(parsedArray); // is the array a square?
         }
         catch(IllegalArgumentException e)
         {

@@ -3,10 +3,20 @@
  * AUTHOR: Connor Kuljis 19459138
  * UNIT: PDI SEM 1 2020
  * PURPOSE: provides static methods to be used for math in PDI
+ * REFERENCE: SELF REFERENCE NOTICE - Based on code from prior pracs
  **********************************************************************/
 import java.util.*;
 public class PDIMath
 {
+
+    /* ***********************************************************************
+     * NOTE: datatype* method overloading covers the following datatypes: Integer, Double, Float and Long
+     * NAME: min
+     * PURPOSE: returns the lower value
+     * IMPORTS: a, b (datatype*)
+     * EXPORTS: min (datatype)
+     * EXPLANATION: uses if statements to check which value is lower
+     * **********************************************************************/
     public static int min(int a, int b)
     {
         int min = 0;
@@ -65,6 +75,14 @@ public class PDIMath
     
     // MAX ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
+    /* ***********************************************************************
+     * NOTE: datatype* method overloading covers the following datatypes: Integer, Double, Float and Long
+     * NAME: max
+     * PURPOSE: returns the greater value
+     * IMPORTS: a, b (datatype*)
+     * EXPORTS: min (datatype)
+     * EXPLANATION: uses if statements to check which value is lower
+     * **********************************************************************/
     public static int max(int a, int b)
     {
         int max = 0;
@@ -122,6 +140,14 @@ public class PDIMath
     }
 
     // ABSOLUTE VALUE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    /* ***********************************************************************
+     * NOTE: datatype* method overloading covers the following datatypes: Integer, Double, Float and Long
+     * NAME: abs
+     * PURPOSE: returns the absolute value
+     * IMPORTS: a (datatype*)
+     * EXPORTS: a (datatype)
+     * EXPLANATION: only find abs if a is negative
+     * **********************************************************************/
     public static int abs(int a)
     {
         if(a < 0)
@@ -159,6 +185,13 @@ public class PDIMath
     }
 
     // FLOOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    /* ***********************************************************************
+     * NAME: floor
+     * PURPOSE: returns the floored value
+     * IMPORTS: a (double*)
+     * EXPORTS: result (integer)
+     * EXPLANATION: floor of -1.7 is -2 wheras floor of 1.7 is 1
+     * **********************************************************************/
     public static int floor(double a) // first integer to the left
     {
         // eg 1.9 returns 1
@@ -176,6 +209,13 @@ public class PDIMath
     }
 
     // CEILING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    /* ***********************************************************************
+     * NAME: floor
+     * PURPOSE: returns the ceild value
+     * IMPORTS: a (double*)
+     * EXPORTS: result (integer)
+     * EXPLANATION: ceil of -1.7 is -1 wheras ceil of 1.7 is 2
+     * **********************************************************************/
     public static int ceil(double a) // first integer to the right
     {
         // eg 0.8 returns 1

@@ -1,0 +1,206 @@
+PROGRAM Menu
+PUBLIC CLASS CONSTANTS : VERTICAL KERNEL := [1,0,-1]
+                                            [1,0,-1]
+                                            [1,0,-1]
+                
+                          HORIZONTAL KERNEL := [1,1,1]
+                                               [0,0,0]
+                                               [-1,-1,-1]
+    MAIN:
+        menu <- none
+    END MAIN:
+
+SUBMODULE: menu
+IMPORTS: none
+EXPORTS: none
+ALGORITHM:
+    currentImage := null
+    kernel := null
+ 
+    displayWelcome <- none
+    close := FALSE
+    DO
+        prompt := "\nPlease select an option:\n1. Import Image:\n"
+        choice := UserInterface.userInput <- prompt, 1, 1
+        CASE choice 
+            1:
+                currentImage := CONSTRUCT Image USING ALTERNATE CONSTRUCTOR WITH readImageSubMenu <- none
+    WHILE currentImage EQUALS null
+
+    DO
+        displayInformation <- currentImage, kernel
+ 
+        prompt := "\nPlease select an option:\n1. Import Image\n2. Import Kernel\n3. Convolution\n4. Detect Vertical Lines\n5. Detect Horizontal Lines\n6. Smoothing\n7. Export Image\n0. Exit\n"
+        choice := UserInterface.userInput(prompt, 0, 7)
+
+        CASE choice
+            1:
+                temp := readImageSubMenu <- none
+                currentImage := CONSTRUCT Image USING ALTERNATE CONSTRUCTOR WITH temp
+            2:
+                kernel := readKernelSubMenu <- none
+            3:
+                IF currentImage IS NOT NULL AND kernel IS NOT NULL THEN
+                    currentImage.convolution <- kernel
+                ELSE
+                    OUTPUT := "ERROR: please ensure you have supplied a valid Image or Kernel! (Kernel may be missing)"
+            4: 
+                currentImage.convolution <- VERTICAL KERNEL
+            5: 
+                currentImage.convolution <- HORIZONTAL KERNEL
+            6: 
+                smoothingMenu <- currentImage
+            7:
+                exportImage <- currentImage
+                OUTPUT "successfully exported image"
+            0:
+                OUTPUT "Goodbye!"
+                close := TRUE
+        END CASE
+    WHILE NOT CLOSE
+END menu
+
+SUBMODULE: displayWelcome
+IMPORTS: none
+EXPORTS: none
+ALGORITHM:
+    OUTPUT "|---------------------------|"
+           "| PDI Assignment Sem 1 2020 |"
+           "| Connor Kuljis, 19459138   |"
+           "|---------------------------|"
+END displayWelcome
+
+SUBMODULE: displayInformation
+IMPORTS: currentImage(Image), kernel(2d array of integers)
+EXPORTS: none
+ALGORITHM:
+    TRY
+        myArray := currentImage.getOriginalImage <- none
+        length := myArray.lenght
+        width := myArray[0].lenght
+        OUTPUT ""\n\tCurrently stored image = [" + length + " x " + width + "]""
+    CATCH Exception e
+        OUTPUT e.getMessage <- none
+    END TRY
+  
+    IF kernel EQUALS null THEN
+        OUTPUT "\n\tNo Kernel has been imported"
+    ELSE
+        OUTPUT "\n\tCurrently stored kernel = [" + kernel.length + " x " + kernel[0].length + "]"
+    END IF
+END displayInformation
+
+SUBMODULE: smoothingMenu
+IMPORTS: imageObj (Image)
+EXPORTS: none
+ALGORITHM:
+    everythingIsValid := FALSE
+    DO
+        OUTPUT "### SMOOTHING OPERATION ###"
+        errMsg := ''
+        surfaceSize := 0
+        odd := 0
+        DO
+            OUTPUT errMsg
+            surfaceSize := UserInterface.userInput <- "Please enter a smoothing surface" , 1, Integer.MAX_VALUE
+            errMsg := ERROR: Please double check you have entered an ODD surface size to perfectly surround the target
+        WHILE surfaceSize MOD 2 EQUALS 0
+      
+        valid := FALSE
+        x_target := 0
+        y_target := 0
+        DO 
+            TRY
+                coordinates := UserInterface.userInput <- "please enter a pixel to smooth (x,y)"
+                arrOfCoordinates := coordinates.split <- ","
+                x_target := arrOfCoordinates[0] (CONVERT TO INTEGER)
+                y_target := arrOfCoordinates[1] (CONVERT TO INTEGER)
+                valid := TRUE
+            CATCH Exception e
+                OUTPUT "Invalid (x,y) format, please enter values x separated by a ',' followed by y (no spaces)"
+            END TRY
+        WHILE NOT VALID
+ 
+        smoothingFactor := UserInterface.userInput <- "Please enter a smoothness factor: ", 0.0, 1.0
+        
+        TRY
+            imageObj.smoothing <- surfaceSize, x_target, y_target, smoothingFactor
+            everythingIsValid := TRUE
+        CATCH Exception e
+            OUTPUT e.getMessage <- none
+        END TRY
+    WHILE everythingIsValid
+END smoothingMenu
+
+SUBMODULE: readImageSubMenu
+IMPORTS: none
+EXPORTS: theImage (2d array of integers)
+ALGORITHM:
+    theImage := null
+    choice := UserInterface.userInput <- "\nPlease select and option to import file:\n1. File\n2. User Input\n", 1, 2
+    CASE choice
+        1:
+            theImage := DetectEdges.imageTypeSubMenu <- none
+        2: 
+            theImage := UserInterface.create2DArray <- none
+     END CASE
+END readImageSubMenu
+    
+
+SUBMODULE: readKernelSubMenu
+IMPORTS: none
+EXPORTS: kernel (2d array of integers)
+ALGORITHM:
+    kernel := null
+    choice := UserInterface.userInput <- "\nPlease select and option to import file:\n1. CSV File\n2. User Input\n", 1, 2
+    CASE choice
+        1:
+            kernel := readKernel <- none
+        2: 
+            kernel := UserInterface.createKernel <- none
+     END CASE
+END readKernelSubMenu
+
+SUBMODULE: readKernel
+IMPORTS:none
+EXPORTS: matrix(2d array of integers)
+ALGORITHM:
+    matrix := null
+    valid := FALSE
+    WHILE NOT valid 
+        TRY 
+            matrixFile := UserInterface.userInput <- "Please enter the filename of the kernel: "
+            matrix := FileIO.readKenrnel <- matrixFIle
+        CATCH IllegalArgumentException e
+            OUTPUT e.getMessage <- none
+        CATCH FileNotFoundException e
+            OUTPUT e.getMessage <- none
+        END TRY
+END readKernel
+
+SUBMODULE: exportImage
+IMPORTS: currentImage(image)
+EXPORTS: none
+ALGORITHM:
+    rawImage := currentImage.getOriginalImage <- none
+    filename := UserInterface.userInput <- "\nPlease enter the File Name: "
+    choice := UserInterface.userInput <- "\nWhat filetype would you like to save with? (C)SV or (P)NG", 'A', 'z'
+    upperChoice := Character.toUpperCase <- choice
+   
+    CASE upperChoice
+        P:
+            extension := '.png'
+            filename := FileIO.fileNamingConvention <- filename, extension
+            FileiO.writePNG <- filename, rawImage
+            OUTPUT "File (" + filename + ")"
+        C:
+            extension := '.csv'
+            filename := FileIO.fileNamingConvention <- filename, extension
+            FileiO.writePNG <- filename, rawImage
+            OUTPUT "File (" + filename + ")"
+END exportImage
+
+
+
+
+
