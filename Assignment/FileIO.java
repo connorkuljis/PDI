@@ -36,6 +36,7 @@ public class FileIO
         {
             totalRows = getNumRowsInFile(fileName); // get number of lines in file
             String[] stringArray = new String[totalRows]; // making a right sized array to number of lines
+
             // reading the text to a String array
             fileStream = new FileInputStream(fileName);
             reader = new InputStreamReader(fileStream);
@@ -49,15 +50,73 @@ public class FileIO
             }
             fileStream.close();
 
-            if(!arrayIsRectangle(stringArray))
-            {
-                throw new IllegalArgumentException("Invalid file/filetype: dimensions are not n x n ");
-            }
+            arrayIsRectangle(stringArray); // check if array is rectangle 
             parsedArray = parseStringToInt(stringArray, totalRows); // error could be throw here if string array has non ints
         }
-        catch(NumberFormatException e) // catching the non-ints
+        catch(IllegalArgumentException e)
         {
-            throw new NumberFormatException("Matrix has a non-integer element in it.");
+            throw new IllegalArgumentException(e.getMessage());
+        }
+        catch(FileNotFoundException e)
+        {
+            throw new FileNotFoundException("Could not find file.");
+        }
+        catch(IOException e) // general exception for readLine()
+        {
+            if(fileStream != null)
+            {
+                try
+                {
+                    fileStream.close();
+                }
+                catch(IOException ex2)
+                {
+                }
+            }
+            UserInterface.displayError(e.getMessage());
+        }
+        return parsedArray;
+    }
+
+    /* Name: readFile
+     * IMPORTS: fileName of a csv file
+     * EXPORTS: multidimenstional array of csv file
+     * Purpose: constructs a 2D array of integers from a csvfile (String)
+     * Assertion: if the csv is ragged it will throw an IllegalArgument Exception
+     * Created: 14th May 2020 */
+    public static int[][] readKernel(String fileName) throws FileNotFoundException, IllegalArgumentException, NumberFormatException
+    {
+        FileInputStream fileStream = null;
+        InputStreamReader reader;
+        BufferedReader bufReader;
+        String line = "";
+        int lineNum = 0, totalRows;
+        int[][] parsedArray = null;
+
+        try
+        {
+            totalRows = getNumRowsInFile(fileName); // get number of lines in file
+            String[] stringArray = new String[totalRows]; // making a right sized array to number of lines
+            // reading the text to a String array
+            fileStream = new FileInputStream(fileName);
+            reader = new InputStreamReader(fileStream);
+            bufReader = new BufferedReader(reader);
+            line = bufReader.readLine();
+            while(line != null)
+            {
+                lineNum++;
+                stringArray[lineNum - 1] = line;
+                line = bufReader.readLine(); // NOTE: this must be the last line in the loop
+            }
+            fileStream.close();
+
+            parsedArray = parseKernelStringToInt(stringArray, totalRows); // error could be throw here if string array has non ints
+            arrayIsRectangle(stringArray); // check if array is rectangle 
+            checkIfSquare(parsedArray); // check if square
+        }
+        catch(IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException(e.getMessage());
         }
         catch(FileNotFoundException e)
         {
@@ -107,9 +166,9 @@ public class FileIO
      * NAME: arrayIsRectangle
      * IMPORTS: stringArray(ARRAY OF Strings)
      * EXPORTS: valid (Boolean)
-     * PURPOSE: returns true if a string array is perfectly rectanglar
+     * PURPOSE: throws exception if file is not rectangle
      * **********************************************************************/
-    private static boolean arrayIsRectangle(String[] stringArray)
+    private static void arrayIsRectangle(String[] stringArray) throws IllegalArgumentException
     {
         // scan the first line and get the number of elements "size"
         // if the next lines do not equals the size return false
@@ -128,14 +187,35 @@ public class FileIO
             if(length != maxLength)
             {
                 lineMismatch++;
+                throw new IllegalArgumentException("File is not rectangular (n x m)");
             }
         }
         if(lineMismatch != 0)
         {
             valid = false;
         }
-        return valid;
     }
+
+    /*************************************************************************
+     * NAME: checkIfSquare
+     * IMPORTS: stringArray(ARRAY OF Strings)
+     * EXPORTS: valid (Boolean)
+     * PURPOSE: throws exception if file is not square
+     * **********************************************************************/
+    private static void checkIfSquare(int[][] parsedArray) throws IllegalArgumentException
+    {
+        boolean isSquare = true;
+        int l = parsedArray.length;
+        for (int i = 0; i < l; i++)
+        {
+            if(parsedArray[i].length != l)
+            {
+                isSquare = false;
+                throw new IllegalArgumentException("File is not square (n x n)");
+            }
+        }
+    }
+
 
     /*************************************************************************
      * NAME: parseStringToInt
@@ -144,9 +224,40 @@ public class FileIO
      * PURPOSE: converts a String Array of numbers separated by commas to a
      *          2D integer array
      * **********************************************************************/
-    private static int[][] parseStringToInt(String[] stringArray, int totalRows)
+    private static int[][] parseStringToInt(String[] stringArray, int totalRows) throws IllegalArgumentException
     {
-        int cols = stringArray.length;
+        StringTokenizer counter = new StringTokenizer(stringArray[0], ",");
+        int cols = counter.countTokens();
+        
+        int rows = totalRows;
+
+        int[][] parsedArray = new int[rows][cols];
+
+        int count = -1;
+        int element;
+        for(int i = 0; i < rows; i++)
+        {
+            StringTokenizer tokenizer = new StringTokenizer(stringArray[i], ",");
+            while(tokenizer.hasMoreTokens())
+            {
+                count++;
+                element = Integer.parseInt(tokenizer.nextToken());
+                // validation
+                if ((element > 255) || (element < 0))
+                {
+                    throw new IllegalArgumentException("invalid element in array.");
+                }
+                parsedArray[i][count] = element;
+            }
+            count = -1; // resetting the count
+        }
+        return parsedArray;
+    }
+
+    private static int[][] parseKernelStringToInt(String[] stringArray, int totalRows) throws IllegalArgumentException
+    {
+        StringTokenizer counter = new StringTokenizer(stringArray[0], ",");
+        int cols = counter.countTokens();
         int rows = totalRows;
 
         int[][] parsedArray = new int[rows][cols];

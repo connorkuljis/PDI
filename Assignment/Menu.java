@@ -34,7 +34,8 @@ public class Menu
      * NAME: Menu
      * IMPORTS: none
      * EXPORTS: none
-     * PURPOSE: A top level menu in which smaller sub-menus are called
+     * PURPOSE: A top level menu in which smaller sub-menus are called. There are
+     *          7 options and will loop until user selects zero to exit
      * **********************************************************************/
     public static void menu()
     {
@@ -46,6 +47,7 @@ public class Menu
         // Short Welcome Message
         displayWelcome();
 
+        // Initial menu, users will get access to full menu once they have imported a valid image.
         boolean close = false;
         do
         {
@@ -54,6 +56,7 @@ public class Menu
             switch(choice)
             {
                 case 1:
+                    // read can select file path or manual entry
                     currentImage = new Image(readImageSubMenu());
                     break;
             }
@@ -72,19 +75,16 @@ public class Menu
                 case 1:                                  // Import Image
                     int[][] temp = readImageSubMenu();
                     currentImage = new Image(temp);
-                    UserInterface.println("Sucessfully imported image.");
                     break;
 
                 case 2:                                  // Import Kernel
                     kernel = readKernelSubMenu();
-                    UserInterface.println("Sucessfully imported kernel.");
                     break;
                 
                 case 3:                                  // Convolution
                     if((currentImage != null) && (kernel != null))
                     {
                         currentImage.convolution(kernel);
-						UserInterface.println("Sucessfully performed convolution. Image has been updated.");
                     }
                     else
                     {
@@ -94,21 +94,19 @@ public class Menu
                 // Detect Vertical Lines
                 case 4:
                     currentImage.convolution(VERTICAL_KERNEL);
-					UserInterface.println("Sucessfully detected vertical lines. Image has been updated.");
                     break;
                  
                 case 5:
                     currentImage.convolution(HORIZONTAL_KERNEL);
-					UserInterface.println("Sucessfully detected horizontal lines. Image has been updated.");
                     break;
                  
                 case 6:                                   // Smoothing
                     smoothingMenu(currentImage);
-					UserInterface.println("Sucessfully performed smoothing. Image has been updated.");
                     break;
                 
                 case 7:                                   // Export
                     exportImage(currentImage);
+					UserInterface.println("Sucessfully exported image.");
                     break;
 
                 case 0:
@@ -141,10 +139,17 @@ public class Menu
      * **********************************************************************/
     public static void displayInformation(Image currentImage, int[][] kernel)
     {
-        int[][] myArray = currentImage.getOriginalImage();
-        int length = myArray.length;
-        int width = myArray[0].length;
-        UserInterface.println("\n\tCurrently stored image = [" + length + " x " + width + "]" ); 
+        try
+        {
+            int[][] myArray = currentImage.getOriginalImage();
+            int length = myArray.length;
+            int width = myArray[0].length;
+            UserInterface.println("\n\tCurrently stored image = [" + length + " x " + width + "]" ); 
+        }
+        catch(Exception e)
+        {
+            UserInterface.println(e.getMessage());
+        }
 
         if(kernel == null)
         {
@@ -272,8 +277,8 @@ public class Menu
         {
             try
             {
-                String matrixFile = UserInterface.userInput("Please enter the filename of the kernel :");
-                matrix = FileIO.readFile(matrixFile); // this is where the exception is thrown
+                String matrixFile = UserInterface.userInput("Please enter the filename of the kernel: ");
+                matrix = FileIO.readKernel(matrixFile); // this is where the exception is thrown
                 valid = true;
             }
             catch(IllegalArgumentException e)

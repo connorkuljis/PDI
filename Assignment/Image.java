@@ -128,28 +128,39 @@ public class Image
     // EXPORT: resultArray (2D array of integers)
     // ASSERTION: assume the kernel is valid and is n*n in size
     public void convolution(int[][] kernel)
-    {
-        int[][] resultArray;
-        int n, m, k;
-
-        // getting dimentions of the convolute array
-        n = originalImage.length;        // rows
-        m = originalImage[0].length;     // columns
-
-        // getting dimensions of kernel assuming it is k by k
-        k = kernel.length;    
-
-        resultArray = new int[(n - k + 1)][(m - k + 1)];
-
-        // looping through the result array
-        for(int i = 0; i < resultArray.length; i++)
+    { 
+        try
         {
-            for(int j = 0; j < resultArray[0].length; j++)
+            int[][] resultArray;
+            int n, m, k;
+
+            // getting dimentions of the convolute array
+            n = originalImage.length;        // rows
+            m = originalImage[0].length;     // columns
+
+            // getting dimensions of kernel assuming it is k by k
+            k = kernel.length;    
+
+            resultArray = new int[(n - k + 1)][(m - k + 1)];
+
+            // looping through the result array
+            for(int i = 0; i < resultArray.length; i++)
             {
-                resultArray[i][j] = calcConvolute(i, j, kernel); 
+                for(int j = 0; j < resultArray[0].length; j++)
+                {
+                    resultArray[i][j] = calcConvolute(i, j, kernel); 
+                }
             }
+            originalImage = resultArray;
         }
-        originalImage = resultArray;
+        catch(NegativeArraySizeException e)
+        {
+            UserInterface.displayError("You may be trying to convolute an image that is smaller than the kernel.");
+        }
+        catch(Exception e)
+        {
+            UserInterface.displayError(e.getMessage());
+        }
     }
 
     /*
@@ -210,7 +221,7 @@ public class Image
             }
 
             // average is the ceil'd average of all elements (sxs) * smoothingFactor
-            int average = avgArray(smoothingKernel, smoothingFactor);
+            int average = PDIMath.avgArray(smoothingKernel, smoothingFactor);
 
             for (int i = (x_target - surfaceRange); i <= (x_target + surfaceRange); i++)
             {
@@ -226,32 +237,4 @@ public class Image
         }
     }
 
-    /* ***********************************************************************
-     * NAME: avgArray
-     * PURPOSE: finds the average of all elements in a given array mutiplied by a value
-     * IMPORTS: smoothingKernel (2D ARRAY OF Integers), smoothingValue (Real)
-     * EXPORTS: ceilAverage (Integer)
-     * EXPLANATION: finds the ceil'd sum of all elements, divided by the number of elements, times a smoothing value
-     * **********************************************************************/
-    private int avgArray(int[][] smoothingKernel, double smoothingValue)
-    {
-        int total = 0;
-        int numRows = smoothingKernel.length;
-        int numCols = smoothingKernel[0].length;
-
-        for (int i = 0; i < numRows; i++)
-        {
-            for (int j = 0; j < numCols; j++)
-            {
-                total += smoothingKernel[i][j];
-            }
-        }
-
-        int numElements = numRows * numCols; // because it will be square
-
-        double avg = (double) total / (double) numElements; 
-        avg *= smoothingValue;
-        int ceilAvg = PDIMath.ceil(avg);
-        return ceilAvg;
-    }
 }

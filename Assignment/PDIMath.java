@@ -233,4 +233,34 @@ public class PDIMath
         }
         return e;
     }
+
+    /* ***********************************************************************
+     * NAME: avgArray
+     * PURPOSE: finds the average of all elements in a given array mutiplied by a value
+     * IMPORTS: smoothingKernel (2D ARRAY OF Integers), smoothingValue (Real)
+     * EXPORTS: ceilAverage (Integer)
+     * EXPLANATION: finds the ceil'd sum of all elements, divided by the number of elements, times a smoothing value
+     * **********************************************************************/
+    public static int avgArray(int[][] smoothingKernel, double smoothingValue)
+    {
+        int total = 0;
+        int numRows = smoothingKernel.length;
+        int numCols = smoothingKernel[0].length;
+
+        for (int i = 0; i < numRows; i++)
+        {
+            for (int j = 0; j < numCols; j++)
+            {
+                total += smoothingKernel[i][j];
+            }
+        }
+
+        int numElements = numRows * numCols; // because it will be square
+
+        double avg = (double) total / (double) numElements; 
+        avg *= smoothingValue;
+        int ceilAvg = ceil(avg);
+        return ceilAvg;
+    }
+
 }
