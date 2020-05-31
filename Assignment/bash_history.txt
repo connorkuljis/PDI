@@ -1,0 +1,500 @@
+    4  cat DetectEdges.java 
+    5  ls
+    6  cat FileIO.java 
+    7  clear
+    8  ls -l
+    9  cat PDIMath.java 
+   10  cat UserInterface.java 
+   11  clear
+   12  lear
+   13  clear
+   14  ls -l
+   15  exit
+   16  PDI
+   17  cd Assignment/
+   18  vim Menu.java 
+   19  tmux
+   20  clear
+   21  exit
+   22  PDI
+   23  cd Assignment/
+   24  git add *
+   25  git commit -m "doing documentation"
+   26  git push
+   27  ls
+   28  ls -l
+   29  git status
+   30  git add *
+   31  git status
+   32  git add -u
+   33  git status
+   34  git commit -n "git add -u"
+   35  git commit -m "git add -u"
+   36  git push
+   37  git push
+   38  PDI 
+   39  cd Assignment/
+   40  vim repo
+   41  vim Report.md 
+   42  vim Report.md 
+   43  ls -la
+   44  rm .Report.md.swp 
+   45  vim Report.md 
+   46  git add *
+   47  git commit -m "draft report"
+   48  git push
+   49  git push
+   50  vim Report.md 
+   51  clear
+   52  ls -l
+   53  vim Date.txt 
+   54  ls -l
+   55  ls -l
+   56  clear
+   57  ls -l
+   58  vim DetectEdges.txt 
+   59  vim DetectEdges.java 
+   60  vim DetectEdges.txt 
+   61  ls
+   62  ls -l
+   63  clear
+   64  ls -l
+   65  vim FileIO.java 
+   66  clear
+   67  ls -l
+   68  ls ../P06
+   69  ls ../P06/AssignmentTask/
+   70  pwd
+   71  cp ../P06/AssignmentTask/ImagePsuedo.txt ./
+   72  clear
+   73  ls
+   74  ls -l
+   75  mv ImagePsuedo.txt Image.txt
+   76  git add *
+   77  git commit -m "psuedocode"
+   78  git push
+   79  vim Image.txt 
+   80  cp ../P07/PDIMath.txt ./
+   81  vim PDIMath.txt 
+   82  cp ../P07/AssignmentTask/UserInterface.txt ./
+   83  ls -l
+   84  vim UserInterface.txt 
+   85  git add *
+   86  git commit -m "added all psuedo"
+   87  git push
+   88  exit
+   89  exit
+   90  PDi
+   91  PDI
+   92  cd Assignment/
+   93  cat FileIO.java 
+   94  ls -l
+   95  cd ../
+   96  cd P06
+   97  cp Date.txt ../Assignment/
+   98  cd ../P08/AssignmentTask/
+   99  cp DetectEdges.txt ../AssignmentTask/
+  100  cp DetectEdges.txt ../../Assignment/
+  101  cat DetectEdges.java 
+  102  clear
+  103  pwd
+  104  cd ../../Assignment/
+  105  cat DetectEdges.txt 
+  106  cat DetectEdges.ja
+  107  cat DetectEdges.java 
+  108  clear
+  109  ls -l
+  110  cd ../
+  111  grep "FileIO' P*
+  112  grep "FileIO" P*
+  113  grep "FileIO' P*
+  114  grep FileIO P*
+  115  ls 
+  116  ls
+  117  clear
+  118  ls
+  119  ls P09
+  120  ls P08
+  121  ls P08/AssignmentTask/
+  122  ls
+  123  cd Ass
+  124  cd Assignment/
+  125  cp ../P08/AssignmentTask/FileIO.txt ./
+  126  clear
+  127  ls -l
+  128  vim FileIO.txt 
+  129  vim Image.java 
+  130  javac Image.java 
+  131  vim Image.java 
+  132  cd ../
+  133  tree
+  134  cd P08
+  135  exit
+  136  PDI
+  137  clear
+  138  tmux
+  139  PDI
+  140  cd Assignment/
+  141  java Menu 
+  142  ls
+  143  cat 2012-12-12_Processed_test.csv 
+  144  java Menu 
+  145  cat 2012-12-12_Processed_yep.csv 
+  146  cat Images/Image_B.csv
+  147  java Menu 
+  148  cat 2000-9-23_Processed_asdf.csv 
+  149  javac Image.java 
+  150  javac Menu.java 
+  151  javac Menu.java 
+  152  java Menu 
+  153  cat 1999-2-19_Processed_simply.csv 
+  154  javac Menu.java 
+  155  ls -l
+  156  cat 2000-9-23_Processed_asdf.csv 
+  157  javac Menu.java 
+  158  javac Image.java 
+  159  java Menu 
+  160  javac Image.java 
+  161  javac Menu.java 
+  162  java Menu 
+  163  javac Image.java 
+  164  javac Menu.java 
+  165  java Menu 
+  166  javac Image.java 
+  167  java Menu 
+  168  javac *.java
+  169  java Menu 
+  170  javac *.java
+  171  java Menu 
+  172  javac Menu.java 
+  173  java Menu 
+  174  javac Menu.java 
+  175  javac Menu.java 
+  176  javac Menu.java 
+  177  java Menu 
+  178  java Menu 
+  179  javac Menu.java 
+  180  java Menu 
+  181  javac Menu.java 
+  182  java Menu 
+  183  javac Menu.java 
+  184  java Menu 
+  185  vim 2020-5-30_Processed_holygrail.png 
+  186  ls -l
+  187  rm 1999-2-19_Processed_simply.csv 
+  188  ls
+  189  rm 2000-12-12_Processed_test123.csv 
+  190  rm 2000-12-13_Processed_asdf4321.csv 
+  191  ls -l
+  192  rm 2000-9-23_Processed_asdf.csv 
+  193  rm 2020-4-23_Processed_asdf.csv 
+  194  rm 2020-5-30_Processed_holygrail.png 
+  195  ls -l
+  196  rm 2012-12-12_Processed_yep.csv 
+  197  rm 2012-12-12_Processed_test.csv 
+  198  ls -l
+  199  ls *.java
+  200  javac Menu.java 
+  201  javac Menu.java 
+  202  java Menu 
+  203  javac *.java
+  204  java Menu 
+  205  javac Menu.java 
+  206  javac Menu.java 
+  207  java Menu 
+  208  javac UserInterface.java 
+  209  java Menu 
+  210  javac UserInterface.java 
+  211  java Menu 
+  212  javac UserInterface.java 
+  213  java Menu 
+  214  javac UserInterface.java 
+  215  java Menu 
+  216  javac UserInterface.java 
+  217  java Menu 
+  218  javac UserInterface.java 
+  219  java Menu 
+  220  javac UserInterface.java 
+  221  javac UserInterface.java 
+  222  java Menu 
+  223  javac UserInterface.java 
+  224  java Menu 
+  225  javac UserInterface.java 
+  226  javac *.java
+  227  javac *.java
+  228  java Menu 
+  229  javac *.java
+  230  git add *
+  231  git commit -m "pre submission"
+  232  git push
+  233  javac Menu.java 
+  234  javac Menu.java 
+  235  javac Menu.java 
+  236  java Menu 
+  237  javac Menu.java 
+  238  javac Menu.java 
+  239  java Menu 
+  240  javac Menu.java 
+  241  javac Menu.java 
+  242  javac Menu.java 
+  243  java Menu 
+  244  javac Menu.java 
+  245  java Menu 
+  246  javac Menu.java 
+  247  java Menu 
+  248  javac Menu.java 
+  249  java Menu 
+  250  javac Menu.java 
+  251  javac Menu.java 
+  252  java Menu 
+  253  javac Menu.java 
+  254  javac Menu.java 
+  255  javac Menu.java 
+  256  javac Menu.java 
+  257  java Menu 
+  258  javac Menu.java 
+  259  java Menu 
+  260  java Menu 
+  261  javac Menu.java 
+  262  javac Menu.java 
+  263  javac Menu.java 
+  264  javac Menu.java 
+  265  java Menu 
+  266  javac Menu.java 
+  267  javac Menu.java 
+  268  javac Menu.java 
+  269  java Menu 
+  270  javac Menu.java 
+  271  java Menu 
+  272  javac Menu.java 
+  273  javac Menu.java 
+  274  javac Menu.java 
+  275  javac Menu.java 
+  276  java Menu 
+  277  java Menu 
+  278  java Menu 
+  279  javac Menu.java 
+  280  java Menu 
+  281  javac Menu.java 
+  282  java Menu 
+  283  ls
+  284  git add *
+  285  git commit -m "asdf"
+  286  git push
+  287  javac Image.java 
+  288  javac *.java
+  289  java Menu 
+  290  javac *.java
+  291  java Menu 
+  292  javac *.java
+  293  java Menu 
+  294  vim Date.java 
+  295  ls -l
+  296  cat Images/VerticalKernel.csv 
+  297  cat ImagesHorizontalKernel.csv 
+  298  cat Images/HorizontalKernel.csv 
+  299  javac Menu.java 
+  300  java Menu 
+  301  javac Menu.java 
+  302  java Menu 
+  303  javac Menu.java 
+  304  java Menu 
+  305  ls -l
+  306  git add *
+  307  git commit -m "added vertical and hor"
+  308  git push
+  309  ls
+  310  java Menu 
+  311  javac Image
+  312  javac Image.java 
+  313  javac Image.java 
+  314  java Menu 
+  315  javac FileIO.java 
+  316  javac FileIO.java 
+  317  javac FileIO.java 
+  318  javac FileIO.java ]
+  319  javac FileIO.java ]
+  320  javac FileIO.java 
+  321  javac FileIO.java 
+  322  javac FileIO.java 
+  323  java Menu 
+  324  ls
+  325  cd Images/
+  326  vim Invalid.csv 
+  327  cd ../
+  328  java Menu 
+  329  java Menu 
+  330  javac Menu.java 
+  331  java Menu 
+  332  javac Menu.java 
+  333  java Menu 
+  334  javac FileIO.java 
+  335  javac FileIO.java 
+  336  javac FileIO.java 
+  337  javac Menu.java 
+  338  java Menu 
+  339  java Menu 
+  340  javac *.java
+  341  java Menu 
+  342  javac FileIO.java 
+  343  javac FileIO.java 
+  344  javac FileIO.java 
+  345  javac FileIO.java 
+  346  javac *.java
+  347  java Menu 
+  348  javac FileIO.java 
+  349  javac FileIO.java 
+  350  javac Menu.java 
+  351  java Menu
+  352  javac *.java
+  353  java Menu 
+  354  javac *.java
+  355  java Menu 
+  356  javac FileIO.java 
+  357  java *.java
+  358  javac *java
+  359  java Menu 
+  360  javac FileIO.java 
+  361  javac FileIO.java 
+  362  javac *.java
+  363  java Menu
+  364  javac Menu.java 
+  365  java Menu 
+  366  javac FileIO.java 
+  367  javac FileIO.java 
+  368  javac *.java
+  369  java Menu
+  370  javac *.java
+  371  javac *.java
+  372  java Menu 
+  373  javac *.java
+  374  javac *.java
+  375  java Menu
+  376  javac *.java
+  377  java Menu
+  378  javac *.java
+  379  java Menu 
+  380  javac *.java
+  381  java Menu 
+  382  javac *.java
+  383  java Menu 
+  384  javac *.java
+  385  javac *.java
+  386  javac *.java
+  387  java Menu 
+  388  javac *.java
+  389  javac *.java
+  390  java Menu 
+  391  javac *.java
+  392  javac *.java
+  393  javac *.java
+  394  java Menu 
+  395  javac *.java
+  396  java Menu 
+  397  javac *.java
+  398  java Menu 
+  399  javac *.java
+  400  javac *.java
+  401  java Menu 
+  402  javac *.java
+  403  javac *.java
+  404  java Menu 
+  405  git add *
+  406  git commit "tstig"
+  407  git commit -m "tstig"
+  408  git push
+  409  clear
+  410  ls -l
+  411  ll
+  412  ls -al
+  413  ls *.txt
+  414  vim Menu.txt
+  415  ls -l
+  416  vim DetectEdges.txt 
+  417  vim FileIO.txt 
+  418  ls -l
+  419  exit
+  420  PDI
+  421  cd Assignment/
+  422  vim Menu.java 
+  423  cat 2000-12-12_Processed_test123.csv 
+  424  ls -l
+  425  vat 2000-12-13_Processed_asdf4321.csv 
+  426  cat 2000-12-13_Processed_asdf4321.csv 
+  427  vim Menu.java 
+  428  clear
+  429  javac *.java
+  430  java Menu 
+  431  javac *.java
+  432  java Menu 
+  433  javac *.java
+  434  java Menu 
+  435  ls -l
+  436  vim Menu.java 
+  437  ls -l
+  438  vim Menu.java 
+  439  cd Images/
+  440  vim Invalid.csv 
+  441  cd ../
+  442  vim Menu.java 
+  443  cd Images/
+  444  vim Invalid.csv 
+  445  cd ../
+  446  vim FileIO.
+  447  vim FileIO.java 
+  448  clear
+  449  ls
+  450  ls -l
+  451  javac *.java
+  452  java Menu
+  453  clear
+  454  vim Menu.java 
+  455  clear
+  456  vim Menu.java 
+  457  vim FileIO.java 
+  458  javac *.java
+  459  java Menu 
+  460  clear
+  461  ls -l
+  462  rm *.png
+  463  ls
+  464  git add *
+  465  git commit -m "add psuedo done"
+  466  git push
+  467  ls -l
+  468  rm Report.md 
+  469  touch README.md
+  470  tree ./ > README.md 
+  471  vim README.md 
+  472  ls -l
+  473  git add *
+  474  rm *.class
+  475  ls
+  476  ls -l
+  477  git add *
+  478  git commit -m "cleaned class files for submission"
+  479  git push
+  480  javac *.java
+  481  java Menu 
+  482  git status
+  483  ls -l
+  484  rm *.class
+  485  ls -l
+  486  git add -u
+  487  git status
+  488  git commit -m "git add -u to clean"
+  489  git push
+  490  exit
+  491  PDI
+  492  cd Assignment/
+  493  java Menu.j
+  494  java Menu
+  495  ls
+  496  cat 2020-4-23_Processed_asdf.csv 
+  497  tmux
+  498  exit
+  499  PDI
+  500  cd Assignment/
+  501  ls -l
+  502  hist > bash_history.txt
+  503  history > bash_history.txt
