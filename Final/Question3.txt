@@ -1,0 +1,46 @@
+PROGRAM Question 3
+
+SUBMODULE: calculateLevenshtein
+IMPORTS: x (String), y (String)
+EXPORTS: result(Integer)
+ASSERTION: will return the difference between 2 strings
+NOTEICE: This has been taken from PDI LECTURE 10 slide 22 (acessed 15/06/2020)
+ALGORITHM:
+    dp (2D ARRAY OF Integers OF SIZE (LENGTH x), (LENGTH y))
+    FOR (ii := 0 TO LENGTH x (exclusive) INC BY 1)
+	FOR (jj := 0 TO LENGTH y (exclusive) INC BY 1)
+	    IF ii = 0 THEN
+		dp[ii][jj] =: jj
+	    ELSE IF jj = 0 THEN
+		dp[ii][jj] := ii
+	    ELSE
+		dp[ii][jj] := min <- ((dp[ii-1][jj-1] + costOfSubstitution <- (x[ii-1], y[jj-1]), dp[ii-1][jj], dp[ii][jj-1])
+	    END IF
+	END FOR
+    END FOR
+    result := dp[LENGTH x][LENGTH y]
+
+SUBMODULE: min
+IMPORTS: a, b, c (Integer)
+EXPORTS: min (integer)
+ALGORITHM:
+    min := 0
+    IF (a < b AND a < c) THEN
+	min := a
+    ELSE IF (b < a AND b < c) THEN
+	min := b
+    ELSE IF (c < a AND c < b) THEN
+	min := c
+
+SUBMODULE: costOfSubstitution
+IMPORTS: x (Character), y (Character)
+EXPORTS: substitutionCost (Integer)
+ALGORITHM:
+    IF x EQUALS y THEN
+	substitutionCost := 0
+    ELSE
+	substitutionCost := 1
+
+
+
+

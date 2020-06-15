@@ -56,61 +56,117 @@ END MAIN
     IMPORTS: input (String)
     EXPORTS: isReal(boolean)
     ALGORITHM:
-	OUTPUT "Please select 1.Binary, 2. Decimal, 3. Octal, 4. Hexadecimal. 0. Exit"
-        close := FALSE
-            INPUT choice
+	OUTPUT "What would you like to convert to: 1.Binary, 2. Decimal, 3. Octal, 4. Hexadecimal. 0. Exit"
+	INPUT choice
 
-            CASE choice
-                1:
-                    input := inputNumber <-none 
-		    isReal := isRealNumber <- input
-		    convertSubMenu <- input, isReal
-                2:
-                    input := inputNumber <-none 
-		    isReal := isRealNumber <- input
-		    convertSubMenu <- input, isReal
-                3:
-                    input := inputNumber <-none 
-		    isReal := isRealNumber <- input
-		    convertSubMenu <- input, isReal
-                4:
-                    input := inputNumber <-none 
-		    isReal := isRealNumber <- input
-		    convertSubMenu <- input, isReal
-                0:
-		    OUTPUT "Goodbye"
+	CASE choice
+	    1:
+
+	    2:
+
+	    3:
+		IF isReal THEN
+		    OUTPUT "Will not convert as real number has been entered"
+                ELSE 
+		    binaryToOctal <- input
+		END IF
+	    4:
+		IF isReal THEN
+		    OUTPUT "Will not convert as real number has been entered"
+                ELSE 
+		    binaryToHex <- input
+		END IF
+	    0:
+		OUTPUT "Goodbye"
 
     SUBMODULE: printArray
     IMPORTS: myArray (ARRAY of String)
     EXPORTS: none
     ALGORITHM:
+	  OUTPUT "Printing Output"
+          FOR (i := myArray.length TO 0 (inclusive) DEC BY 1)
+              OUTPUT myArray[i] + " "
+	  END FOR
 
-    SUBMODULE: binaryToOcatal
+    SUBMODULE: binaryToOctal
     IMPORTS: number (String)
     EXPORTS: none
     ALGORITHM:
+	groupedStrings := split <- number, 3
+	exponents := [4, 2, 1]
+	converted := sumGroups <- groupedStrings, exponents
+        printArray <- converted
 
     SUBMODULE: binaryToHex
     IMPORTS: numer (String)
     EXPORTS: none
     ALGORITHM:
+	groupedStrings := split <- number, 4
+	exponents := [8, 4, 2, 1]
+	converted := sumGroups <- groupedStrings, exponents
+        newconverted := hexMap(converted)
+        printArray <- newconverted
 
     SUBMODULE: hexMap
     IMPORTS: converted (Array of String)
     EXPORTS: converted (Array of String)
     ALGORITHM:
+    FOR (i := 0 TO converted.length -1 (INCLUSIVE) INC BY 1)
+	IF converted[i] EQUALS null THEN
+	    OUTPUT "0"
+	ELSE IF converted[i] EQUALS "10' THEN
+	    converted[i] := "A"
+	ELSE IF converted[i] EQUALS "11' THEN
+	    converted[i] := "B"
+	ELSE IF converted[i] EQUALS "12' THEN
+	    converted[i] := "C"
+	ELSE IF converted[i] EQUALS "13' THEN
+	    converted[i] := "D"
+	ELSE IF converted[i] EQUALS "14' THEN
+	    converted[i] := "E"
+	ELSE IF converted[i] EQUALS "15' THEN
+	    converted[i] := "F"
+        END IF
+    END FOR
 
     SUBMODULE: sumGroups
     IMPORTS: groupedStrings (Array of String), exponents (Array of Integers)
     EXPORTS: converted (Array of String)
     ALGORITHM:
+	converted (ARRAY OF String OF SIZE exponents.lenght)
+	FOR (i := 0 TO groupedStrings.length - 1 (exclusive) INC BY 1)
+	    sum := 0
+	    FOR (j := 0 To groupedStrings[i].length (exclusive) INC BY 1)
+		number := groupedStrings.charAt(j) (CONVERT CHARACTER TO INTEGER)
+		exponent := exponent[j]
+		sum = sum + (number * exponent)
+	    END FOR
+	converted[i] := sum (Convert INTEGER TO STRING)
 
     SUBMODULE: split
     IMPORTS: number(String), grouping (int)
     EXPORTS: groupedStrings (Array of String)
     ALGORITHM:
+        count := 0
+        FOR (i := number.length() TO 0 (inclusive) SUBTRACT grouping)
+	    count = count + 1
+        END FOR
+
+	groupedString (ARRAY OF STRINGS OF SIZE count)
+
+        count := 0
+        FOR (i := number.length() TO 0 (inclusive) SUBTRACT grouping)
+	    temp := i - grouping
+	    groupedStrings[count] := number.substring <- (max <- temp, 0), i
+        END FOR
 
     SUBMODULE: max
     IMPORTS: a (integer), b (integer)
     EXPORTS: max (integers)
     ALGORITHM:
+	max := 0
+	IF (a > b) THEN
+	    max := a
+	ELSE IF (b > a ) THEN
+	    max := b 
+	END IF

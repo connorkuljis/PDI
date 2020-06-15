@@ -1,0 +1,498 @@
+    1  sudo apt get install gfm3
+    2  sudo apt-get install gfm3
+    3  sudo apt-get install gdm3
+    4  sudo dpkg-reconfigure gdm3
+    5  sudo apt install lightdm
+    6  sudo apt-get purge nvidia*
+    7  sudo add-apt-repository ppa:graphics-drivers
+    8  sudo apt-get update
+    9  ubuntu-drivers devices
+   10  sudo apt-get install nvidia-driver-415
+   11  sudo apt-get update
+   12  sudo apt-get install nvidia-driver-440
+   13  sudo reboot now
+   14  sudo apt install gnome-shell-extensions
+   15  sudo apt install gnome-tweaks
+   16  ls
+   17  ls -a
+   18  mkdir. themes
+   19  mkdir .themes
+   20  mv Downloads/Nordic.tar.xz .themes/
+   21  ls
+   22  cd .themes/
+   23  ls
+   24  tar -xvf Nordic.tar.xz 
+   25  ls
+   26  sudo apt-get install gnome-shell-extensions
+   27  blueman
+   28  bluetoothctl 
+   29  sudo vim /etc/bluetooth/main.conf 
+   30  sudo apt install vim
+   31  sudo vim /etc/bluetooth/main.conf 
+   32  sudo service bluetooth restart
+   33  mv Downloads/evatheme.tar.gz .themes/
+   34  cd .themes/
+   35  ls
+   36  tar -xvf evatheme.tar.gz 
+   37  ls
+   38  rm evatheme.tar.gz 
+   39  rm Nordic.tar.xz 
+   40  ls
+   41  clear
+   42  ls
+   43  cd Downloads/
+   44  ks
+   45  ls
+   46  cd ../
+   47  ls
+   48  cd Downloads/
+   49  ls
+   50  ls -a
+   51  cd ../
+   52  mkdir .icons
+   53  mv Downloads/papirus-icon-theme.tar.xz .icons/
+   54  ls
+   55  cd .icons/
+   56  ls
+   57  tar -xvf papirus-icon-theme.tar.xz 
+   58  cd ../Downloads/
+   59  ls
+   60  unzip latest.zip 
+   61  ls
+   62  sudo apt install tmux
+   63  tmux
+   64  vim .tmux.conf
+   65  source .tmux.conf 
+   66  ls
+   67  exit
+   68  ls
+   69  ls -al
+   70  vim .tmux.conf 
+   71  exit
+   72  ls
+   73  tmux
+   74  exit
+   75  ls
+   76  vim ~/.tmux.conf 
+   77  exit
+   78  vim .tmux.conf 
+   79  tmux
+   80  ls
+   81  vim ~/.tmux.conf
+   82  exit
+   83  ls
+   84  exit
+   85  ls
+   86  tmux
+   87  ls
+   88  tmux new bash
+   89  xit
+   90  exit
+   91  alsmaixer
+   92  alsamixer
+   93  tmux new bash
+   94  rm -rf .tmux.conf 
+   95  ls
+   96  tmux -2
+   97  vim .bashrc
+   98  tmux
+   99  vim .vimrc
+  100  curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  101  sudo apt install curl
+  102  curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  103  vim .vimrc
+  104  source .vimrc
+  105  vim .vimrc
+  106  source .vimrc
+  107  vim .vimrc
+  108  sudo apt install git
+  109  vim .vimrc
+  110  source .vimrc 
+  111  vim .vimrc
+  112  source .vimrc 
+  113  vim .vimrc
+  114  ls
+  115  cd /usr/share/
+  116  ls -l
+  117  cd themes/
+  118  ls
+  119  cd Yaru
+  120  ls
+  121  cd gnome-shell/
+  122  ls
+  123  ls -l
+  124  cd ../
+  125  ls
+  126  sudo vim ~/usr/share/gnome-shell/theme/gnome-shell.css
+  127  cd ~
+  128  sudo vim /usr/share/gnome-shell/theme/gnome-shell.css
+  129  cd usr/sh
+  130  cd /usr/share/gnome-theme
+  131  cd ~
+  132  cd
+  133  ls
+  134  cd /usr/share/
+  135  ls
+  136  cd gnome-shell/
+  137  ls
+  138  cd theme/
+  139  ls
+  140  cd Yaru/
+  141  ls
+  142  vim gnome-shell-theme.gresource 
+  143  cd ../
+  144  ls
+  145  vim gnome-classic.css 
+  146  cd ../
+  147  fzf theme
+  148  fzf
+  149  fzf 
+  150  d ~
+  151  cd 
+  152  fzf
+  153  cd .themes/
+  154  ls
+  155  cd Nordic/
+  156  ls
+  157  cd gnome-shell/
+  158  ls
+  159  vim gnome-shell.css 
+  160  cd 
+  161  cd /etc/lightdm/
+  162  ls
+  163  vim users.conf 
+  164  cd lightdm.conf.d/
+  165  ls
+  166  cd ../
+  167  vim users.conf 
+  168  cd 
+  169  cd /usr/share/lightdm/
+  170  ls
+  171  cd lightdm.conf.d/
+  172  ls
+  173  cat 50-ubuntu.conf 
+  174  cat 50-unity-greeter.conf 
+  175  cat *.conf
+  176  cd
+  177  cd /usr/share/glib-2.0/schemas/
+  178  ls
+  179  ls -l
+  180  cd
+  181  cd /etc/lightdm
+  182  ls
+  183  cd
+  184  sudo dpkg -l *greeter*
+  185  sudo vim /etc/lightdm/lightdm.conf.d/
+  186  sudo cd /etc/lightdm/lightdm.conf.d/
+  187  cd /etc/lightdm/lightdm.conf.d/
+  188  ls
+  189  lightdm --show-config
+  190  cd
+  191  cd /usr/share/lightdm/
+  192  ls
+  193  cd lightdm.conf.d/
+  194  ls
+  195  vim 50-greeter-wrapper.conf 
+  196  ls
+  197  ls -l
+  198  cat *.conf
+  199  cat 50-greeter-wrapper.conf 
+  200  cat 50-disable-log-backup.conf 
+  201  update-alternatives --config desktop-background
+  202  cd
+  203  cd /usr/share/icons/default/
+  204  ls
+  205  sudo vim index.theme 
+  206  compiz --replace
+  207  dconf write /org/gnome/desktop/interface/cursor-size 25
+  208  mv Downloads/BS.tar.gz .icons/
+  209  cd .icons/
+  210  ls
+  211  tar -xvf BS.tar.gz 
+  212  sudo update-alternatives --config x-cursor-theme
+  213  dconf write /org/gnome/desktop/interface/cursor-size 25
+  214  ubuntu-restricted-extras
+  215  sudo apt install ubuntu-restricted-extras
+  216  cd Downloads/
+  217  ls
+  218  tar -xvf anyconnect-linux64-4.7.04056-predeploy-k9.tar.gz 
+  219  ls
+  220  cd anyconnect-linux64-4.7.04056/
+  221  ls
+  222  cd vpn/
+  223  ls
+  224  bash vpn_install.sh 
+  225  sudo bash vpn_install.sh 
+  226  ssh 19459138@lab218-a01.cs.curtin.edu.au
+  227  cd Downloads/
+  228  ls
+  229  rm *
+  230  ls
+  231  rm -rf *
+  232  ls
+  233  wget -nc https://dl.winehq.org/wine-builds/winehq.key
+  234  sudo apt-key add winehq.key
+  235  dpkg --add-architecture i386 
+  236  sudo dpkg --add-architecture i386 
+  237  sudo apt update
+  238  sudo apt-get install --install-recommends winehq-stable
+  239  sudo apt-add-repository 'deb http://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+  240  wine --version
+  241  sudo apt install wine
+  242  echo "Xcursor.size: 24" >> /root/.Xdefaults
+  243  sudo echo "Xcursor.size: 24" >> /root/.Xdefaults
+  244  ls
+  245  cd ../
+  246  sudo echo "Xcursor.size: 24" >> /root/.Xdefaults
+  247  ls -lah
+  248  sudo apt-get install gdm
+  249  sudo dpkg-reconfigure gdm
+  250  cd /etc/gdm3/
+  251  ls
+  252  sudo vim greeter.dconf-defaults 
+  253  cd 
+  254  cd /usr/share/icons/default/
+  255  ls
+  256  sudo vim index.theme 
+  257  sudo apt install steam
+  258  cd /usr/share/icons/
+  259  ls
+  260  cd default/
+  261  ls
+  262  vim index.theme 
+  263  find /usr/share/icons ~/.local/share/icons ~/.icons -type d -name "cursors"
+  264  vim index.theme 
+  265  sudo vim index.theme 
+  266  wine --version
+  267  sudo vim index.theme 
+  268  gsettings set org.gnome.desktop.interface cursor-size 24
+  269  gsettings set org.gnome.desktop.interface cursor-size 16
+  270  sudo vim index.theme 
+  271  gsettings set org.gnome.desktop.interface cursor-size 24
+  272  sudo vim /etc/X11/Xresources/x11-common
+  273  sudo dpkg-reconfigure gdm3
+  274  sudo dpkg --configure lightdm
+  275  sudo dpkg-reconfigure gdm3
+  276  sudo apt install gdm
+  277  sudo apt-get update
+  278  sudo apt-get upgrade
+  279  sudo apt-get install gnome
+  280  sudo apt install gnome-shell gnome
+  281  sudo dpkg-reconfigure gdm3
+  282  ls -l
+  283  mkdir Games
+  284  ls
+  285  mv Steam/ Games/
+  286  ls
+  287  cd Games/
+  288  ls
+  289  cd ../
+  290  ls
+  291  cd Games/
+  292  sudo rm -rf Steam/
+  293  ls
+  294  cd ../
+  295  sudo apt install pomodoro
+  296  exit
+  297  ls -la
+  298  cd Games/
+  299  ls
+  300  cd ../
+  301  mv Games/Steam/ ./
+  302  ls
+  303  cd Games/
+  304  ls
+  305  cd ../
+  306  exit
+  307  ls -la
+  308  ls
+  309  ls -l
+  310  ls -al
+  311  mv .steam Games/
+  312  ls
+  313  ls -la
+  314  mv Games/.steam/ ./
+  315  ls
+  316  sudo apt install steam
+  317  tmux
+  318  exit
+  319  alsamixer 
+  320  cd ../Down
+  321  cd ../../Downloads/
+  322  ls
+  323  bash Anaconda3-2020.02-Linux-x86_64.sh
+  324  ls
+  325  bash Anaconda3-2020.02-Linux-x86_64.sh
+  326  conda activate base
+  327  exit
+  328  cd
+  329  ks
+  330  ls
+  331  mkdir Packages
+  332  exit
+  333  cd Downloads/
+  334  ls
+  335  tar -xvf 19459138_PDIAssignment.tar.gz 
+  336  ls
+  337  cd Assignment/
+  338  ls
+  339  javac *.java
+  340  java Menu 
+  341  ls
+  342  clear
+  343  ls
+  344  cd Images/
+  345  ls
+  346  eog Insta.png
+  347  cd ../
+  348  java Menu
+  349  ls
+  350  oeg 2000-3-27_Processed_THIS.png 
+  351  eog 2000-3-27_Processed_THIS.png 
+  352  cd
+  353  vim .vimrc 
+  354  cd Downloads/
+  355  ls
+  356  zathura PDI_Lecture_10
+  357  sudo apt install zathura
+  358  zathura PDI_Lecture_10.pdf 
+  359  cd ../Documents/
+  360  ls
+  361  mkdir 1007-PDI
+  362  ls
+  363  mkdir 1005-FOP
+  364  ls
+  365  cd 1005-FOP/
+  366  cd ../
+  367  cd 1007-PDI/
+  368  tmux
+  369  jupyter notebook
+  370  conda deactivate
+  371  cd Downloads/
+  372  ls
+  373  eog file
+  374  zathura file
+  375  mv file DecOfOriginality.pdf
+  376  ls
+  377  cp DecOfOriginality.pdf ../Documents/1007-PDI/
+  378  cd ../Documents/1007-PDI/
+  379  ls
+  380  zathura DecOfOriginality.pdf 
+  381  git --version
+  382  git clone https://github.com/connorkuljis/PDI.git
+  383  ls
+  384  cd PDI
+  385  ls
+  386  mkdir Final
+  387  ls
+  388  mv ../DecOfOriginality.pdf ./
+  389  ls
+  390  mv DecOfOriginality.pdf Final/
+  391  ls
+  392  cd Final/
+  393  cd ../P10
+  394  ls
+  395  conda deactivate
+  396  javac Levenshtein.java 
+  397  java Levenshtein 
+  398  javac Levenshtein.java 
+  399  java Levenshtein 
+  400  javac Levenshtein.java && java Levenshtein 
+  401  cd ../
+  402  ls
+  403  cd Final/
+  404  ;s
+  405  ls
+  406  cd ../P10
+  407  ls
+  408  javac Levenshtein.java && java Levenshtein 
+  409  javac Bwt.java 
+  410  javac Bwt.java && java Bwt 
+  411  javac Levenshtein.java 
+  412  javac Levenshtein.java && java Levenshtein 
+  413  javac Rosetta.java 
+  414  javac Rosetta.java && java Rosetta 
+  415  exit
+  416  cd 
+  417  conda deactivate
+  418  cd Downloads/
+  419  ls
+  420  ls -l
+  421  rm 'PDI_Lecture_10(1).pdf' 
+  422  ls
+  423  ls -l
+  424  mv PDI_* ../Documents/1007-PDI/
+  425  ls
+  426  cd home/
+  427  ls
+  428  cd connor/
+  429  ls
+  430  cd 
+  431  cd ../
+  432  ls
+  433  cd
+  434  ls
+  435  cd Packages/
+  436  ls
+  437  cd ../
+  438  ls
+  439  cd Documents/
+  440  cd ..
+  441  cd Downloads/
+  442  ls
+  443  cd home/
+  444  ls
+  445  cd connor/
+  446  ls
+  447  cd Packages/
+  448  ls
+  449  cd ../
+  450  cd
+  451  ls
+  452  cd Downloads/
+  453  ls
+  454  rm 19459138_PDIAssignment.tar.gz 
+  455  rm Anaconda3-2020.02-Linux-x86_64.sh 
+  456  rm winehq.key 
+  457  rm DecOfOriginality.pdf 
+  458  ls
+  459  cd Assignment/
+  460  ls
+  461  cd ../
+  462  rm -rf Assignment/
+  463  ls
+  464  cd ~/Documents/1007-PDI/
+  465  ls
+  466  zathura PDI_Lecture_10.pdf 
+  467  cd PDI/
+  468  ls
+  469  cd Final/
+  470  ls
+  471  javac Question2.java 
+  472  javac Question2.java && java Question2 
+  473  ls
+  474  javac Question2.java && java Question2 
+  475  exit
+  476  cd ../
+  477  ls
+  478  cd Final/
+  479  conda deactivate
+  480  ls
+  481  vim Question4.java
+  482  mv Question4.java Levenshtein.java
+  483  ls
+  484  rm Question4.class 
+  485  ls
+  486  vim Levenshtein.java 
+  487  ls
+  488  vim Question2.java 
+  489  mv Question2.java NumberConverter.java
+  490  ls
+  491  javac NumberConverter.java 
+  492  java NumberConverter 
+  493  ls
+  494  rm Question2.class 
+  495  ls
+  496  ls -l
+  497  vim Levenshtein.java 
+  498  history > BashHistory.txt
