@@ -1,0 +1,116 @@
+PROGRAM Question 1
+START MAIN
+    menu <-none
+END MAIN
+
+    SUBMODULE: menu
+    IMPORTS: none
+    EXPORTS: none
+    ALGORITHM:
+        close := FALSE
+        DO
+            OUTPUT "Please select 1.Binary, 2. Decimal, 3. Octal, 4. Hexadecimal. 0. Exit"
+            INPUT choice
+
+            CASE choice
+                1:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                2:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                3:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                4:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                0:
+		    OUTPUT "Goodbye"
+		    close := TRUE
+
+    SUBMODULE: inputNumber
+    IMPORTS: none
+    EXPORTS: input (String)
+    ALGORITHM:
+	OUTPUT "Please enter a number to convert"
+	INPUT input
+
+    SUBMODULE: isRealNumber
+    IMPORTS: number String)
+    EXPORTS: real (boolean)
+    ALGORITHM:
+	real := FALSE
+	TRY
+	    splitString := number (SPLIT ON '//.')
+	    real := TRUE
+	CATCH (Exception e)
+	    real := FALSE
+	END TRY
+
+    SUBMODULE: convertSubMenu
+    IMPORTS: input (String)
+    EXPORTS: isReal(boolean)
+    ALGORITHM:
+	OUTPUT "Please select 1.Binary, 2. Decimal, 3. Octal, 4. Hexadecimal. 0. Exit"
+        close := FALSE
+            INPUT choice
+
+            CASE choice
+                1:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                2:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                3:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                4:
+                    input := inputNumber <-none 
+		    isReal := isRealNumber <- input
+		    convertSubMenu <- input, isReal
+                0:
+		    OUTPUT "Goodbye"
+
+    SUBMODULE: printArray
+    IMPORTS: myArray (ARRAY of String)
+    EXPORTS: none
+    ALGORITHM:
+
+    SUBMODULE: binaryToOcatal
+    IMPORTS: number (String)
+    EXPORTS: none
+    ALGORITHM:
+
+    SUBMODULE: binaryToHex
+    IMPORTS: numer (String)
+    EXPORTS: none
+    ALGORITHM:
+
+    SUBMODULE: hexMap
+    IMPORTS: converted (Array of String)
+    EXPORTS: converted (Array of String)
+    ALGORITHM:
+
+    SUBMODULE: sumGroups
+    IMPORTS: groupedStrings (Array of String), exponents (Array of Integers)
+    EXPORTS: converted (Array of String)
+    ALGORITHM:
+
+    SUBMODULE: split
+    IMPORTS: number(String), grouping (int)
+    EXPORTS: groupedStrings (Array of String)
+    ALGORITHM:
+
+    SUBMODULE: max
+    IMPORTS: a (integer), b (integer)
+    EXPORTS: max (integers)
+    ALGORITHM:
